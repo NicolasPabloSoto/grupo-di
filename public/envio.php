@@ -1,7 +1,7 @@
 <?php
 
-$destinatario = "nsoto@gmail.com";
-$titulo = "Mensaje Enviado desde Singlr.cl";
+$destinatario = "nicolas.diseno@gmail.com";
+$titulo = "Mensaje Enviado desde grupo-di website";
 
 // Sanitizar los datos recibidos del formulario
 $nombre = test_input($_POST['nombre']);
@@ -12,14 +12,14 @@ $mensaje = test_input($_POST['asunto']);
 $saltoEnter = "\n";
 
 // Comprobar que el correo es válido
-if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) { 
     echo "Correo inválido.";
     exit;
 }
 
 // Crear los headers
 $headers = array(
-    'From' => 'clientes@singlr.com',
+    'From' => 'alumnos@grupodi.com',
     'Reply-To' => $mail,
     'X-Mailer' => 'PHP/' . phpversion()
 );
