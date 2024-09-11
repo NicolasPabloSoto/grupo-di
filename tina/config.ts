@@ -24,6 +24,8 @@ export default defineConfig({
     },
   },
 
+  contentApiUrlOverride: '/api/tina/gql',
+
 
   schema: {
     collections: [
