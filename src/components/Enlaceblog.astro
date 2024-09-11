@@ -1,0 +1,278 @@
+Enlaceblog.astro
+
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+
+const posts = (await getCollection("blog"))
+    .sort((a, b) => {
+        const dateA = a.data.posted || a.data.pubDate;
+        const dateB = b.data.posted || b.data.pubDate;
+        return (dateB?.valueOf() || 0) - (dateA?.valueOf() || 0);
+    })
+    .slice(0, 2); // rescata los 2 más recientes
+
+type BlogPost = CollectionEntry<"blog">;
+
+// corta el contenido
+const truncateContent = (content: string, maxLength: number): string => {
+    return content.length > maxLength
+        ? content.slice(0, maxLength) + "..."
+        : content;
+};
+---
+
+<div class="containerBlog">
+    <div class="marginBlog">
+        <div class="noticiasBlog">
+            {
+                posts.map((post: BlogPost) => (
+                    <div class="blogEntrada">
+                        <div class="dataText">
+                            <p class="fecha">
+                                <FormattedDate
+                                    date={post.data.posted || post.data.pubDate}
+                                />
+                            </p>
+                            <p class="titulo">{post.data.title}</p>
+                            <p class="contenido">
+                                {truncateContent(post.body, 200)}
+                            </p>
+                            <a href={`/blog/${post.slug}/`}>
+                                <p>Seguir Leyendo</p>
+                            </a>
+                        </div>
+
+                        <div class="dataImg">
+                            <img src={post.data.heroImage} alt="" />
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    a {
+    }
+    .containerBlog {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        place-items: center;
+        -background-color: black;
+    }
+
+    .marginBlog {
+        width: 98%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        -background-color: blue;
+    }
+
+    .noticiasBlog {
+        position: relative;
+        flex: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .blogEntrada {
+        position: relative;
+        display: flex;
+        flex: 49%;
+        border-radius: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: var(--color-bg-azul);
+        box-shadow: var(--box-shadow-inicial);
+        justify-content: center;
+        align-items: center;
+        transform: scale(1);
+        transition: all ease-in-out 0.3s;
+        height: fit-content;
+        padding-bottom: 10px;
+    } 
+
+    .blogEntrada:hover{
+        transform: scale(1.01);
+    }
+
+    .dataText {
+        height: 90%;
+        flex: calc(100% - 200px - 1rem);
+        -background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .fecha {
+        height: fit-content;
+        font-size: 0.6em;
+        font-weight: 700;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        color: rgb(68, 65, 65);
+        padding-top: 5px;
+        padding-left: 20px;
+    }
+    
+    .titulo {
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        font-size: 1.1em;
+        font-weight: 600;
+        line-height: 1em;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        color: rgb(48, 46, 46);
+        padding-left: 20px;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+    .contenido {
+        width: 90%;
+        float: left;
+        font-size: 0.6em;
+        font-weight: 500;
+        line-height: 1em;
+        padding-left: 20px;
+        color: rgb(68, 65, 65);
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        display: inline-block;
+        width: fit-content;
+        height: 20px;
+        font-size: 0.7em;
+        font-weight: 500;
+        line-height: 1em;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        color: white;
+        padding-left: 20px;
+        text-decoration: none;
+        padding: 9px 25px 4px 25px;
+        border-radius: 1rem;
+        background-color: var(--color-base);
+        margin-left: 20px;
+    }
+
+    .dataImg {
+        flex: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    img {
+        height: 90%;
+        width: 90%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .blogEntrada {
+            height: fit-content;
+            padding: 0px 0px;
+        }
+
+        .titulo{
+            font-size: 0.9em;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        .blogEntrada {
+            height: fit-content;
+            padding: 5px 0px;
+        }
+
+        .dataImg {
+            flex: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        img {
+            height: 90%;
+            width: 90%;
+        }
+
+        .fecha {
+            font-size: 0.6em;
+            font-weight: 700;
+            padding-top: 5px;
+            padding-left: 20px;
+        }
+        
+        .titulo {
+            font-size: 1em;
+            font-weight: 600;
+            line-height: 1em;
+            text-align: left;
+            color: rgb(48, 46, 46);
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contenido {
+            font-size: 0.6em;
+            font-weight: 600;
+            line-height: 1em;
+            margin-bottom: 10px;
+            color: rgb(107, 101, 101);
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            display: inline-block;
+            width: fit-content;
+            height: 18px;
+            font-size: 0.6em;
+            font-weight: 500;
+            line-height: 1em;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            color: white;
+            padding-left: 20px;
+            text-decoration: none;
+            padding: 9px 25px 4px 25px;
+            border-radius: 0.9rem;
+            background-color: var(--color-base);
+            margin-left: 20px;
+        }
+    }
+
+</style>

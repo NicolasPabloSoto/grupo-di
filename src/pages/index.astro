@@ -1,50 +1,554 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Slider from "../components/Slider.astro";
+import Estadisticas from "../components/estadisticas.astro";
+import Programas from "../components/Programas.astro";
+import Enlaceblog from "../components/Enlaceblog.astro";
+import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
+import Formulario from "../components/Formulario.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
-
-<!doctype html>
-<html lang="en">
+ 
+<!doctype html> 
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
+
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<div class="sliderHome"> 
+				<Slider />
+			</div>
+
+			<div class="contInfoHome">
+				<div class="contInfoIzq">
+					<GrupoLogotipo
+						width={60}
+						height={60}
+						fill="white"
+						class="iconoEmpresa"
+					/>
+					<p class="bajadaHome">CONSULTORIA Y CAPACITACIÓN</p>
+					<h1 class="sloganHome">
+						Capacitarse es Crecer, <br />
+						te ayudamos hacia <br />
+						nuevas fronteras. <br />
+					</h1>
+					<p class="textHome">
+						Bienvenidos a Grupo DI, Potenciamos tu crecimiento con
+						capacitación innovadora y metodologías adaptativas.
+						¡Comencemos!
+					</p>
+
+					<div class="botonesHome">
+						<a class="botonEquipo" href="/equipo.astro">Conócenos</a>
+						<a class="botonCursos" href="#metodos">Cursos</a>
+					</div>
+				</div>
+				<div class="contInfoDer" style=" flex: 50%;"></div>
+			</div>
+
+			<div class="datosNum">
+				<Estadisticas />
+			</div>
+
+			<h3 class="titulosHome">&#8212; Explora lo que tus profesores comparten &#8212;</h3>
+
+			<div class="blogEntradas">
+				<Enlaceblog />
+			</div>
+
+			<div class="metodos" id="metodos">
+				<Programas />
+			</div>
+
+			<div class="formulario" id="formulario">
+				<Formulario />
+			</div>
+	
+			<div class="mapa">
+				<div class="mapaEsp">
+					<div class="mapaText">
+						<p class="mapaSlogan">Visítanos junto a tu empresa y vive una experiencia de aprendizaje a través de nuestros equipo de profesores en nuestro Campus</p>
+						<p class="mapaDire">Estado 10, Oficina 1602, Santiago de Chile</p>
+					</div>
+					<div class="mapaGoogle">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl" class="googleMap" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.contInfoHome {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		z-index: 10;
+		margin-top: 70px;
+		flex: 50%;
+	}
+
+	.iconoEmpresa {
+		filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.262));
+	}
+
+	.bajadaHome {
+		width: fit-content;
+		margin: 0px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		font-size: 0.7em;
+		color: white;
+		padding: 5px 10px 3px 10px;
+		border-radius: 10px;
+		background-color: var(--color-base);
+	}
+
+	.sloganHome {
+		margin: 0px;
+		margin-bottom: 20px;
+		margin-top: 10px;
+		line-height: 0.9em;
+		letter-spacing: -0.02em;
+		font-weight: 600;
+		color: white;
+		text-shadow: rgba(55, 55, 54, 0.5) 1px 0 10px;
+	}
+
+	.textHome {
+		margin-bottom: 40px;
+		width: 80%;
+		font-size: medium;
+		text-wrap: balance;
+		color: white;
+	}
+
+	.botonesHome {
+		width: 40%;
+		display: flex;
+		gap: 1em;
+	}
+
+	.botonEquipo {
+		height: 40px;
+		width: 100%;
+		border: none;
+		border-radius: 0.4em;
+		background-color: var(--color-base);
+		font-size: 1rem;
+		font-weight: 600;
+		color: white;
+		box-shadow: var(--box-shadow-inicial);
+		transition: all ease-in-out 0.3s;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: scale(1);
+		text-decoration: none;
+	}
+
+	.botonEquipo:hover {
+		font-size: 1.05rem;
+		transform: scale(1.03);
+		box-shadow: 0 0px 10px rgba(var(--black), 80%);
+	}
+
+	.botonCursos {
+		height: 40px;
+		width: 100%;
+		border: none;
+		border-radius: 0.4em;
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--color-base);
+		background-color: var(--color-bg-azul);
+		box-shadow: var(--box-shadow-inicial);
+		transition: all ease-in-out 0.3s;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		transform: scale(1);
+	}
+
+	.botonCursos:hover {
+		font-size: 1.05rem;
+		transform: scale(1.03);
+		box-shadow: 0 0px 10px rgba(var(--black), 80%);
+	}
+
+	.sliderHome {
+		width: 100%;
+		height: fit-content;
+		position: absolute;
+		top: 0px;
+		left: 0px; 
+	}
+
+	.datosNum {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		border-radius: 1rem;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		margin-top: 100px; 
+	}
+
+	.blogEntradas {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: gray;
+		margin-top: 20px;
+	}
+
+	.metodos {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: black;
+		margin-top: 120px; 
+	}
+
+
+	.formulario {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: gray;
+		margin-top: 200px; 
+		margin-bottom: 100px;
+	}
+
+	.titulosHome{
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		text-align: center;
+		color: rgb(68, 65, 65);
+		margin-top: 80px;
+		margin-bottom: 70px;
+		font-size: 1.8em;
+	}
+
+	.mapa{
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: gray;
+		margin-top: 5px; 
+		margin-bottom: 150px;
+		-background-color: red;
+	}
+
+	.mapaEsp{
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		-background-color: rgba(55, 55, 54, 0.5);
+	}
+
+	.mapaText{
+		flex: calc(50% - 1rem);
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+	}
+
+	.mapaGoogle{
+		flex: calc(50% - 1rem);
+		display: flex;
+		justify-content: end;
+		align-items: center;
+	}
+
+	.mapaSlogan{
+		font-size: 1.6em;
+		font-weight: 500;
+		line-height: 1.1em;
+		text-wrap: balance;
+		color: rgb(98, 93, 93);
+		margin-bottom: 40px;
+	}
+
+	.mapaDire{
+		font-size: 0.9em;
+		font-weight: 500;
+		color: var(--color-base);
+		/* color: rgb(68, 65, 65); */
+	}
+
+	.googleMap{
+		height: 400px;
+		width: 100%;
+		border-radius: 1rem;
+		max-width: 600px;
+		box-shadow: var(--box-shadow-inicial);
+	}
+
+	/* animacion -------------------------------------------- */
+
+	@keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-100px);
+        }
+      }
+
+      .anima {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      } 
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+
+		.titulosHome{
+
+		} 
+
+		.bajadaHome {
+			font-size: 0.7em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 3em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 40%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.contInfoHome{
+			flex: 60%;
+		}
+		.bajadaHome {
+			font-size: 0.6em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 2.5em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 40%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+
+		.datosNum{
+			margin-bottom: 30px;
+		}
+
+		.metodos {
+			margin-top: 60px;
+		}
+
+		.formulario {
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.contInfoHome{
+			justify-content: center;
+			align-items: center;
+			margin-top: 15px;
+		}
+
+		.bajadaHome {
+			font-size: 0.6em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 2.2em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 100%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+
+		.titulosHome{
+			padding: 0 0;
+			margin-bottom: 20px; 
+		}
+
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.datosNum{
+			margin-bottom: 20px;
+		}
+
+		.formulario {
+			height: fit-content;
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+
+		.titulosHome{
+			font-size: 2em;
+		}
+
+		.mapaSlogan{
+			font-size: 1.4em;
+			font-weight: 500;
+			line-height: 1.05em;
+			text-wrap: balance;
+			color: rgb(52, 50, 50);
+			margin-bottom: 40px;
+		}
+
+		.mapaDire{
+			font-size: 0.8em;
+			font-weight: 500;
+			color: rgb(68, 65, 65);
+		}
+	} 
+</style>
+ 

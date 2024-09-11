@@ -1,104 +1,52 @@
 ---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+type BlogPost = CollectionEntry<'blog'>;
+
 const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	(a: BlogPost, b: BlogPost) => {
+		const dateA = a.data.posted?.valueOf() ?? new Date(0).valueOf();
+		const dateB = b.data.posted?.valueOf() ?? new Date(0).valueOf();
+		return dateB - dateA;
+	}
 );
+
+// Función para truncar el contenido
+const truncateContent = (content: string, maxLength: number): string => {
+    return content.length > maxLength
+        ? content.slice(0, maxLength) + "..."
+        : content;
+};
 ---
 
-<!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		<BaseHead title="Blog" description="Ultimos Blogs de nuestros Profesores" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
+			<section class="contBlogs">
 				<ul>
 					{
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+									<div class="contenidoTexto">
+										<h4 class="title">{post.data.title}</h4>
+										<p class="date">
+											<FormattedDate date={post.data.posted || new Date()} />
+										</p>
+										<p class="contenido">
+											{truncateContent(post.data.description || '', 200)}
+										</p>
+									</div>
 								</a>
 							</li>
 						))
@@ -109,3 +57,252 @@ const posts = (await getCollection('blog')).sort(
 		<Footer />
 	</body>
 </html>
+
+<style>
+
+	.contBlogs{
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		padding-bottom: 200px;
+		margin-top: 50px;
+		-background-color: red; 
+	}
+
+	.date{
+		font-size: 0.7em;
+		margin-top: 10px;
+		color: rgb(86, 86, 86);
+	}
+	
+	.title{
+		font-size: 1.4em;
+		line-height: 1;
+		text-wrap:wrap;
+		margin-bottom: 20px;
+		color: rgb(86, 86, 86);
+	}
+
+	.contenido{
+		font-size: 0.9em;
+		line-height: 1.6em;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		color: rgb(140, 133, 133);
+	}
+	
+	.enlaceBlog{
+		font-size: 0.8em;
+		font-weight: bolder;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		color: rgb(86, 86, 86);
+
+	}
+			
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li{}
+
+	li:hover{
+
+	}
+
+	ul li {
+		width: calc(50% - 1rem);
+	}
+	ul li * {
+		text-decoration: none;
+		transition: 0.2s ease;
+	}
+
+	
+	ul li:first-child {
+		width: 100%;
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+	
+	ul li:first-child a{
+		width: 100%;
+		margin-bottom: 1rem;
+		text-align: center;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: start;
+		align-items: end;
+		gap: 2rem;
+		padding-bottom: 70px
+	}
+
+	ul li:first-child img {
+		height: auto;
+		width: calc(65% - 2rem);
+		flex: calc(65% - 2rem);
+	}
+
+	ul li:first-child .contenidoTexto{
+		flex: calc(35% - 2rem);
+		text-align: left;
+	}
+
+	ul li:first-child .date {
+		font-size: 0.9em;
+		margin-bottom: 10px;
+	}
+	
+	ul li:first-child .title {
+		font-size: 2.2em;
+		margin-bottom: 30px;
+	}
+	
+	ul li:first-child .contenido {
+		font-size: 1em;
+		margin-bottom: 30px;
+	}
+
+	ul li img {
+		margin-bottom: 0;
+		border-radius: 12px;
+	}
+
+	ul li a {
+		display: block;
+		border-bottom: 1px solid rgba(86, 86, 86,0.3);
+		padding-bottom: 20px;
+	}
+
+
+
+	ul li a:hover h4 {
+		color: var(--color-base-claro);
+		text-decoration: underline;
+	}
+
+	ul li a:hover .contenido{
+		color: rgb(59, 55, 55);
+	}
+
+	ul a:hover img {
+		box-shadow: var(--box-shadow);
+	}
+
+	ul li a:hover {
+		border-bottom: 1px solid #6e80e477;
+	}
+
+	.enlaceBlog :hover{
+		color: var(--color-base-claro);
+	}
+
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+
+		ul li:first-child a {
+			margin-bottom: 20px;
+			padding-bottom: 60px;
+			flex-direction: row-reverse;
+			justify-content: start;
+		}
+
+		ul li:first-child .contenidoTexto{
+			flex: calc(50% - 1rem);
+			text-align: left;
+		}
+
+		ul li:first-child img {
+			width: calc(50% - 1rem);
+			flex: calc(50% - 1rem);
+			height: auto;
+		}
+
+		ul li:first-child .title {
+			font-size: 2.369rem;
+		}
+
+		ul li:first-child .date {
+			font-size: 0.8em;
+			margin-bottom: 10px;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		ul li:first-child a {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+			flex-direction: column;
+			justify-content: start;
+		}
+
+		ul li:first-child .contenidoTexto{
+			flex: calc(30% - 1rem);
+			text-align: left;
+		}
+
+		ul li:first-child img {
+			width: calc(100% - 1rem);
+			flex: calc(70% - 1rem);
+			height: auto;
+		}
+
+		ul li:first-child .date {
+			font-size: 0.7em;
+			margin-bottom: 10px;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px){
+		ul li:first-child a {
+			margin-bottom: 0px;
+			padding-bottom: 20px;
+			flex-direction: column;
+			justify-content: start;
+		}
+
+		ul li:first-child .contenidoTexto{
+			flex: calc(30% - 1rem);
+			text-align: left;
+		}
+
+		ul li:first-child img {
+			width: calc(100% - 0rem);
+			flex: calc(70% - 1rem);
+			height: auto;
+		}
+
+		ul li {
+			width: calc(100% - 1rem);
+		}
+	}
+
+
+	@media (max-width: 720px) { 
+		/* ul {
+			gap: 0.5em;
+		}
+		ul li {
+			width: 100%;
+			text-align: center;
+		}
+		ul li:first-child {
+			margin-bottom: 0;
+		}
+		ul li:first-child .title {
+			font-size: 1.563em;
+		} */
+	}
+
+	p{
+		padding: 0;
+		margin: 0;
+	}
+
+</style>

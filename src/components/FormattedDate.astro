@@ -1,5 +1,39 @@
 ---
 interface Props {
+	date: Date | string | undefined;
+}
+
+const { date } = Astro.props;
+
+function formatDate(date: Date | string | undefined) {
+    if (!date) {
+        return 'No date';
+    }
+    
+    const dateObject = date instanceof Date ? date : new Date(date);
+    
+    if (isNaN(dateObject.getTime())) {
+        return 'Invalid date';
+    }
+    
+    return dateObject.toLocaleDateString('es-CL', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+    });
+}
+
+const formattedDate = formatDate(date);
+---
+
+<time datetime={date instanceof Date ? date.toISOString() : date}>
+	{formattedDate}
+</time>
+
+
+
+<!-- ---
+interface Props {
 	date: Date;
 }
 
@@ -14,4 +48,4 @@ const { date } = Astro.props;
 			day: 'numeric',
 		})
 	}
-</time>
+</time> -->
