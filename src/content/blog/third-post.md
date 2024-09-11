@@ -1,7 +1,10 @@
 ---
 pubDate: Jul 22 2022
 title: Cómo interpretar información en tu empresa
-description: Cómo interpretar información en tu empresa
+description: >-
+  La descripción de una empresa es un texto que ayuda a presentar tu negocio a
+  los clientes potenciales, inversionistas, socios y empleados. Debe ser clara,
+  concisa, atractiva y única.
 posted: 2024-08-01T04:00:00.000Z
 heroImage: /pexels-markusspiske-360591.jpg
 ---

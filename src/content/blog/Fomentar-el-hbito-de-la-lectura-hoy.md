@@ -1,6 +1,9 @@
 ---
 title: Fomentar el hábito de la lectura hoy
-description: Fomentar el hábito de la lectura hoy
+description: >-
+  A medida que crecen y se acercan a los 6 o 7 años, la relación con el libro
+  cambia. Al entrar a la escuela y aprender a leer, la lectura comienza a ser
+  parte de sus obligaciones y ya no causa tanto placer.
 posted: 2024-09-10T03:00:00.000Z
 heroImage: /pexels-pixabay-159711.jpg
 ---

@@ -9,8 +9,7 @@ const branch =
 export default defineConfig({
 
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  token: process.env.TINA_TOKEN,
+ 
 
   build: {
     outputFolder: "admin",
@@ -24,7 +23,6 @@ export default defineConfig({
     },
   },
 
-  contentApiUrlOverride: '/api/tina/gql',
 
 
   schema: {
