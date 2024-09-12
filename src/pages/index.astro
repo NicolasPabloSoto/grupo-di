@@ -7,7 +7,7 @@ import Estadisticas from "../components/estadisticas.astro";
 import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
-import Formulario from "../components/Formulario.astro";
+import Formulario from "../components/Formulario";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
  
@@ -67,7 +67,39 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</div>
 
 			<div class="formulario" id="formulario">
-				<Formulario />
+				<div class="contForm">
+
+					<div class="contRapido">
+						<div class="contRapidoEsp">
+							<h4>En que podemos Ayudarte</h4>
+							<div class="contEsptext">
+								<p class="subForm">
+									Si tienes dudas de como implementar los cursos en tu
+									organización no dudes en preguntarnos, o si ya tienes
+									pensado que quieres hacer escríbenos, te estamos esperando.
+								</p>
+								<p class="textForm">
+									Llena el formulario y te responderemos a la bervedad, si
+									necesitas ayuda comercial escribenos a:
+								</p>
+								<a href="mailto:contacto@grupodi.cl" class="correoLink">contacto@grupodi.cl</a>
+								<hr style="border-color:gray;">
+								<p class="textForm">
+									Si eres Alumno en nuestro campus y necesitas Ayuda, escribenos un correo a la siguiente dirección y te brindaremos el soporte que necesites:
+								</p>
+								<a href="capacitacion@grupodi.cl" class="correoLink">capacitacion@grupodi.cl</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="formularioContainer">
+						<div class="formCont">
+								<Formulario client:load />
+						</div>
+					</div>
+
+				</div>
+				
 			</div>
 	
 			<div class="mapa">
@@ -288,7 +320,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		width: 100%;
 		height: fit-content;
 		display: flex;
-		flex-direction: row;
+		flex-direction: row-reverse;
 		gap: 1rem;
 		-background-color: rgba(55, 55, 54, 0.5);
 	}
@@ -298,17 +330,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		display: flex;
 		flex-direction: column;
 		justify-content: start;
-		align-items: start;
+		align-items: end;
 	}
 
 	.mapaGoogle{
 		flex: calc(50% - 1rem);
 		display: flex;
-		justify-content: end;
+		justify-content: start;
 		align-items: center;
 	}
 
 	.mapaSlogan{
+		text-align: right;
 		font-size: 1.6em;
 		font-weight: 500;
 		line-height: 1.1em;
@@ -549,7 +582,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 
 		.mapaSlogan{
-			font-size: 1.4em;
+			text-align: center;
+			font-size: 1.6em;
 			font-weight: 500;
 			line-height: 1.05em;
 			text-wrap: balance;
@@ -558,10 +592,285 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 
 		.mapaDire{
+			width: 100%;
+			text-align: center;
 			font-size: 0.8em;
 			font-weight: 500;
-			color: rgb(68, 65, 65);
+			color: var(--color-base);
 		}
 	} 
 </style>
- 
+
+ <!-- estilo formulario ---------->
+
+ <style>
+    .contForm {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contRapido {
+        flex: calc(50% - 1rem);
+        -background-color: orange;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .contRapidoEsp {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        -background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .contEsptext {
+        width: 80%;
+        height: 80%;
+        -background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    h4 {
+        position: relative;
+        width: 100%;
+        font-size: 1.9em;
+        font-weight: bold;
+        color: rgb(68, 65, 65);
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .subForm {
+        font-size: 1.6em;
+        font-weight: 500;
+        line-height: 1.05em;
+        text-wrap: balance;
+        color: rgb(52, 50, 50);
+        margin-bottom: 40px; 
+    }
+
+    .textForm {
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1em;
+        color: rgb(68, 65, 65);
+        margin-bottom: 0px;
+    }
+
+    .correoLink {
+        font-size: 0.9em;
+        font-weight: 600;
+        line-height: 1.1em;
+        color: rgb(42, 58, 107);
+    }
+
+    .formularioContainer {
+        height: 600px;
+        flex: calc(50% - 1rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -background-color: cornflowerblue;
+    }
+
+    .formCont {
+        width: 95%;
+        height: 94%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.5rem;
+        background-color: var(--color-bg-azul);
+        box-shadow: var(--box-shadow);
+		padding: 20px 0px;
+    }
+
+    .formContEsp {
+        width: 90%;
+        height: 90%;
+        -background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .textFormulario {
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1em;
+        color: rgb(126, 121, 121);
+        padding-left: 0.5em;
+    }
+
+    .esp {
+        margin-top: 5px;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid rgb(118, 113, 113);
+        margin-bottom: 10px;
+        background-color: transparent;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+
+    input:focus {
+        outline: none;
+        color: rgb(112, 107, 107);
+    }
+
+    input::placeholder {
+        color: rgb(163, 153, 153);
+    }
+
+    textarea {
+        resize: none;
+        border: none;
+        min-height: 50px;
+        max-height: 100px;
+        border-radius: 0.5rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .subFormEnviar {
+        width: 100%;
+        height: 40px;
+        color: white;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        box-shadow: var(--box-shadow--inicial);
+        background-color: var(--color-base);
+        transition: all ease-in-out 0.3s;
+    }
+
+    .subFormEnviar:hover {
+        background-color: rgb(29, 133, 236);
+        box-shadow: var(--box-shadow);
+    }
+
+    #success {
+        position: relative;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 500;
+        color: rgb(41, 147, 174);
+        width: 100%;
+        height: 34px;
+        border-radius: 0.5rem;
+        -background-color: rgba(22, 203, 106, 0.5);
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    hr {
+        border-top: 1px solid rgb(118, 113, 113);
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        h4 {
+            font-size: 1.9em;
+            margin-bottom: 20px;
+        }
+
+        .contEsptext{
+            width: 90%;
+        }
+
+        .subForm {
+            font-size: 1.4em;
+            font-weight: 500;
+            line-height: 1.05em;
+            margin-bottom: 30px; 
+        }
+
+        .textForm {
+            font-size: 0.8em;
+            line-height: 1em;
+            margin-bottom: 0px;
+        }
+
+        .correoLink {
+            font-size: 0.9em;
+            font-weight: 600;
+            line-height: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .textFormulario{
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        input{
+            height: 30px;
+        }
+
+        textarea {
+            min-height: 50px;
+            max-height: 90px; 
+            margin-bottom: 10px;
+        }
+
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        .contForm {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+        .contRapido {
+            flex: calc(100% - 2rem);
+            height: fit-content;
+        }
+
+        .contRapidoEsp{
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contEsptext{
+            width: 90%;
+        }
+
+        h4{
+            text-align: left;
+            width: fit-content;
+            font-size: 2em;
+        }
+
+        .formularioContainer{
+            height: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .formCont{
+            height: fit-content;
+            padding: 30px 0;
+        }
+
+        form{
+            height: fit-content;
+        }
+
+        h4{
+            line-height: 1em;
+        }
+    }
+</style>
