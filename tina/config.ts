@@ -1,17 +1,17 @@
 import { defineConfig } from "tinacms";
 
-const branch = "main"; // Puedes dejarlo fijo ya que no usas Tina Cloud
-
 export default defineConfig({
-  branch,
+  branch: "main",
+  clientId: null,
+  token: null,
   build: {
-    outputFolder: "admin",
     publicFolder: "public",
+    outputFolder: "admin",
   },
   media: {
     tina: {
-      mediaRoot: "",
       publicFolder: "public",
+      mediaRoot: "uploads",
     },
   },
 
