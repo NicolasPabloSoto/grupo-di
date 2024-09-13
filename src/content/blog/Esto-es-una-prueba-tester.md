@@ -1,6 +1,6 @@
 ---
 pubDate: Jul 22 2022
-title: 'Stress Laboral '
+title: Stress Laboral Ojo!
 description: Acá va la descripción
 posted: 2024-08-22T04:00:00.000Z
 heroImage: /pexels-rdne-5542968.jpg
