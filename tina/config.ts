@@ -1,10 +1,27 @@
+// import { defineConfig } from "tinacms";
+
+// export default defineConfig({
+//   branch: 'main',
+//   build: {
+//     outputFolder: 'admin',
+//     publicFolder: 'public',
+//   },
+//   media: {
+//     tina: {
+//       mediaRoot: "uploads",
+//       publicFolder: "public",
+//     },
+//   },
+
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
-  branch: 'main',
+  branch: process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main",
+  clientId: process.env.TINA_CLIENT_ID || null,
+  token: process.env.TINA_TOKEN || null,
   build: {
-    outputFolder: 'admin',
-    publicFolder: 'public',
+    outputFolder: "admin",
+    publicFolder: "public",
   },
   media: {
     tina: {
