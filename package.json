@@ -3,18 +3,22 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
-    "build": "astro build",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && npm run tina-build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tina": "tinacms dev -c 'astro dev'",
+    "tina-build": "tinacms build && astro build",
+    "debug-build": "set -x && npm run build"
   },
-  
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.5",
     "@astrojs/react": "^3.6.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
+    "@tinacms/auth": "^1.0.6",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.1",
@@ -24,7 +28,7 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.6.1",
+    "@tinacms/cli": "^1.6.3",
     "@types/node": "^22.5.1"
   }
 }

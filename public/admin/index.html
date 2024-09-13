@@ -9,21 +9,23 @@
     <div id="root"></div>
     <script>
       function handleLoadError() {
-        document.getElementById('root').innerHTML = '<div style="max-width: 600px; margin: 0 auto; padding: 40px; text-align: center;"><h1>TinaCMS Admin</h1><p>This page is intended for local development only. In production, please edit your content directly through your content management workflow.</p></div>';
+        document.getElementById('root').innerHTML = '<div style="max-width: 600px; margin: 0 auto; padding: 40px; text-align: center;"><h1>TinaCMS Admin</h1><p>Unable to load the TinaCMS admin panel. This could be due to misconfiguration or missing build files. Please check your Tina setup and build process.</p></div>';
       }
 
+      // Try to load the Tina admin panel
+      var script = document.createElement('script');
+      script.onerror = handleLoadError;
+      
       // Check if we're in a local development environment
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        // Local development
-        var script = document.createElement('script');
         script.type = 'module';
         script.src = '/src/main.tsx';
-        script.onerror = handleLoadError;
-        document.body.appendChild(script);
       } else {
-        // Production environment
-        handleLoadError();
+        // In production, try to load the built file
+        script.src = '/admin/main.js';
       }
+      
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
