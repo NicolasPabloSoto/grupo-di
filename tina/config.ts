@@ -1,12 +1,10 @@
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
-  branch: process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main",
-  clientId: process.env.TINA_CLIENT_ID || null, // Opcional: usar variable de entorno si está disponible
-  token: process.env.TINA_TOKEN || null, // Opcional: usar variable de entorno si está disponible
+  branch: 'main',
   build: {
-    outputFolder: "admin",
-    publicFolder: "public",
+    outputFolder: 'admin',
+    publicFolder: 'public',
   },
   media: {
     tina: {
@@ -14,6 +12,7 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+
   schema: {
     collections: [
       {
@@ -56,4 +55,5 @@ export default defineConfig({
       },
     ],
   },
+  // Se eliminó el bloque admin.auth para evitar errores
 });
