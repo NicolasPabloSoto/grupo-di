@@ -1,28 +1,19 @@
 import { defineConfig } from "tinacms";
 
-const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
+const branch = "main"; // Puedes dejarlo fijo ya que no usas Tina Cloud
 
 export default defineConfig({
-
   branch,
- 
-
   build: {
     outputFolder: "admin",
     publicFolder: "public",
   },
-
   media: {
     tina: {
       mediaRoot: "",
       publicFolder: "public",
     },
   },
-
 
 
   schema: {
