@@ -1,24 +1,7 @@
-// import { defineConfig } from "tinacms";
-
-// export default defineConfig({
-//   branch: 'main',
-//   build: {
-//     outputFolder: 'admin',
-//     publicFolder: 'public',
-//   },
-//   media: {
-//     tina: {
-//       mediaRoot: "uploads",
-//       publicFolder: "public",
-//     },
-//   },
-
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main",
-  clientId: "dummy-client-id", // Valor ficticio para evitar errores
-  token: "dummy-token", // Valor ficticio para evitar errores
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -72,5 +55,9 @@ export default defineConfig({
       },
     ],
   },
-  // Se eliminó el bloque admin.auth para evitar errores
+  // Aquí es donde deshabilitamos Tina Cloud
+  cmsCallback: (cms) => {
+    cms.flags.set("use-graphql", false); // Desactiva el uso de Tina Cloud
+    return cms;
+  },
 });

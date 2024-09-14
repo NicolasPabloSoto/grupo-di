@@ -1,5 +1,5 @@
 ---
-title: Cómo no dejar que los libros te aplasten
+title: No dejes que los libros te aplasten
 description: >-
   El estrés en el estudio es un problema común que enfrentan muchos estudiantes.
   La presión por obtener buenas calificaciones, la carga de trabajo y la falta

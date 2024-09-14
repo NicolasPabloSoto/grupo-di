@@ -2,9 +2,7 @@
 
 ---
 
-<h4 style="" class="tituloSection"> Elige tu metodo de enseñanza </h4> <br>
-
-<div class="metodos">
+<div class="metodos"> 
     <div class="programasCont">
 
         <div class="programaBase programaUno">
@@ -12,7 +10,7 @@
                 <div class="infoTop">
                     <div class="infoTopIzq" style="flex: 8;">
                         <p class="etiqueta">Evaluación</p>
-                        <p class="titulo">Ayala</p>
+                        <p class="titulo">Alaya</p>
                     </div>
 
                     <div class="infoTopDer" style="flex: 2;">
@@ -107,10 +105,10 @@
                 </div>
 
                 <div class="infoBotones">
-                    <button class="botonPrograma">
+                    <a href="/alaya" class="botonPrograma"> 
                         <div class="verprogramaCont">
                             <p class="verprogramaText">Ver Programa</p>
-                            <i>
+                            <i class="flecha">
                                 <svg
                                     class="text-gray-800 dark:text-white"
                                     aria-hidden="true"
@@ -129,7 +127,7 @@
                                 </svg>
                             </i>
                         </div>
-                    </button>
+                    </a href="/alaya">
                 </div>
             </div>
         </div>
@@ -212,10 +210,10 @@
                     class="infoBotones"
                     style="background-color: var(--color-pitagoras);"
                 >
-                    <button class="botonPrograma">
+                    <a href="/Pitagoras" class="botonPrograma">
                         <div class="verprogramaCont">
                             <p class="verprogramaText">Ver Programa</p>
-                            <i>
+                            <i class="flecha">
                                 <svg
                                     class="text-gray-800 dark:text-white"
                                     aria-hidden="true"
@@ -234,7 +232,7 @@
                                 </svg>
                             </i>
                         </div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -346,10 +344,10 @@
                     class="infoBotones"
                     style="background-color: var(--color-gestion);"
                 >
-                    <button class="botonPrograma">
+                    <a href="#" class="botonPrograma">
                         <div class="verprogramaCont">
                             <p class="verprogramaText">Ver Programa</p>
-                            <i>
+                            <i class="flecha">
                                 <svg
                                     class="text-gray-800 dark:text-white"
                                     aria-hidden="true"
@@ -368,7 +366,7 @@
                                 </svg>
                             </i>
                         </div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -415,7 +413,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 1.5em;
+        border-radius: 12px;
         background-color: #ececf6;
         flex: 30%;
     }
@@ -427,7 +425,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: start;
-        border-radius: 1.5em;
+        border-radius: 12px;
         -background-color: cyan;
     }
 
@@ -459,7 +457,7 @@
         justify-content: start;
         align-items: end;
         background-color: var(--color-ayala);
-        border-radius: 1.5em 1.5em 0 0;
+        border-radius: 12px 12px 0 0;
         margin-bottom: 30px;
     }
 
@@ -606,7 +604,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        border-radius: 0 0 1.5em 1.5em;
+        border-radius: 0 0 12px 12px;
         background-color: var(--color-ayala);
     }
 
@@ -631,9 +629,17 @@
         gap: 0.5em;
         align-items: center;
         -background-color: blueviolet;
-        transform: translate(-110px);
+        transform: translate(-160px);
         transition: all ease-in-out 0.3s;
     }
+
+    a{
+        text-decoration: none;
+    }
+
+   .flecha{
+    padding-top: 10px;
+   }
 
     .verprogramaText {
         font-size: 1.2em;
@@ -642,6 +648,7 @@
         padding: 0;
         margin: 0;
         padding-bottom: 2px;
+        text-decoration: none!important;
     }
 
     .proximamente{
@@ -649,7 +656,7 @@
         width: 100%;
         height: 100%;
         z-index: 3;
-        border-radius: 1.5rem;
+        border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -664,6 +671,7 @@
         border-bottom: 2px solid white;
         color: white;
         transform: rotate(-30deg);
+        text-align: center;
         text-shadow: rgba(255, 247, 0, 0.5) 1px 0 40px;
     }
 </style>

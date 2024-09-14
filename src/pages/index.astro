@@ -57,11 +57,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</div>
 
 			<h3 class="titulosHome">Explora lo que tus profesores comparten</h3> 
-
 			<div class="blogEntradas">
 				<Enlaceblog />
 			</div>
 
+			<h3 style="" class="titulosHome"> Elige tu metodo de enseñanza </h3>
 			<div class="metodos" id="metodos">
 				<Programas />
 			</div>
@@ -101,18 +101,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				</div>
 				
 			</div>
-	
-			<div class="mapa">
-				<div class="mapaEsp">
-					<div class="mapaText">
-						<p class="mapaSlogan">Visítanos junto a tu empresa y vive una experiencia de aprendizaje a través de nuestros equipo de profesores en nuestro Campus</p>
-						<p class="mapaDire">Estado 10, Oficina 1602, Santiago de Chile</p>
-					</div>
-					<div class="mapaGoogle">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl" class="googleMap" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			
+			<div class="mapaColor">
+				<div class="mapa">
+					<div class="mapaEsp">
+						<div class="mapaText">
+							<p class="mapaSlogan">Visítanos junto a tu empresa y vive una experiencia de aprendizaje a través de nuestros equipo de profesores en nuestro Campus</p>
+							<p class="mapaDire">Estado 10, Oficina 1602, Santiago de Chile</p>
+						</div>
+						<div class="mapaGoogle">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl" class="googleMap" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</main>
 		<Footer />
 	</body>
@@ -268,7 +271,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		justify-content: start;
 		align-items: center;
 		-background-color: black;
-		margin-top: 120px; 
+		margin-top: 30px; 
 	}
 
 
@@ -301,6 +304,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		border-bottom: 1px solid rgba(38, 35, 35, 0.2);
 	}
 
+	.mapaColor{
+		width: 100%;
+		height: fit-content;
+		padding: 30px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(126, 121, 121, 0.05);
+	}
+
 	.mapa{
 		position: relative;
 		width: 96%;
@@ -310,7 +323,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
-		-background-color: gray;
 		margin-top: 5px; 
 		margin-bottom: 150px;
 		-background-color: red;
