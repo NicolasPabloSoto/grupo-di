@@ -1,0 +1,5 @@
+{
+    "watch": ["src/content/blog/*"],
+    "ext": "md",
+    "exec": "node server.js"
+  }

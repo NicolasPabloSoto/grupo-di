@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -16,6 +15,8 @@
     "@astrojs/sitemap": "^3.1.6",
     "@tinacms/auth": "^1.0.6",
     "astro": "^4.15.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tinacms": "^2.2.1",

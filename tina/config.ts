@@ -1,18 +1,19 @@
-import { defineConfig } from "tinacms";
+import { defineConfig } from 'tinacms';
 
 export default defineConfig({
-  branch: process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main",
+  branch: 'main', // El branch en tu repo de GitHub
+  clientId: null,  // Si no usas Tina Cloud, deja esto en null
+  token: null,     // Si no usas Tina Cloud, deja esto en null
   build: {
-    outputFolder: "admin",
-    publicFolder: "public",
+    outputFolder: "admin",  // Dónde genera los archivos TinaCMS
+    publicFolder: "public", // Ruta de los archivos estáticos
   },
   media: {
     tina: {
-      mediaRoot: "uploads",
+      mediaRoot: "uploads",  // Ruta para los archivos subidos (imágenes, etc.)
       publicFolder: "public",
     },
   },
-
   schema: {
     collections: [
       {
@@ -54,10 +55,5 @@ export default defineConfig({
         ],
       },
     ],
-  },
-  // Aquí es donde deshabilitamos Tina Cloud
-  cmsCallback: (cms) => {
-    cms.flags.set("use-graphql", false); // Desactiva el uso de Tina Cloud
-    return cms;
   },
 });
