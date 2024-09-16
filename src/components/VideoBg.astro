@@ -7,7 +7,7 @@
     <div class="capaLuz"></div>
     <div class="capaSombra"></div>
     <div class="contVideo">
-        <video class="videoHome" width="" height="" autoplay muted controls loop>
+        <video class="videoHome" width="" height="" autoplay muted controls loop preload="none">
             <source src="/videos_test.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video>
@@ -56,6 +56,10 @@
     .videoHome{
         width: 100%;
         height: auto;
+    }
+
+    video::-webkit-media-controls{
+        display: none !important;
     }
 
     @media (min-width: 1025px) and (max-width: 1280px){
