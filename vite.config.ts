@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   build: {
-    outDir: 'public/admin',
+    outDir: 'dist/admin',
     emptyOutDir: true,
     rollupOptions: {
-      input: './src/main.tsx',  // Compilar desde src/main.tsx
+      input: './src/main.tsx',
     },
   },
   server: {

@@ -17,10 +17,12 @@
     "astro": "^4.15.1",
     "cors": "^2.8.5",
     "express": "^4.21.0",
+    "motion": "^10.18.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tinacms": "^2.2.1",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.6.3",

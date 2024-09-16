@@ -10,7 +10,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "uploads",  // Ruta para los archivos subidos (imágenes, etc.)
+      mediaRoot: "",  // Ruta para los archivos subidos (imágenes, etc.)
       publicFolder: "public",
     },
   },

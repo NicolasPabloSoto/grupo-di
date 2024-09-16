@@ -1,0 +1,377 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
+// import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<input type="checkbox" id="check">
+
+        <label for="check" class="checkbtn">
+			<i class="fas fa-bars">
+				<svg
+					class="w-[40px] h-[40px] text-gray-800 dark:text-white"
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					fill="none"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-width="2.2"
+						d="M5 7h14M5 12h14M5 17h14"></path>
+				</svg>
+			</i>
+		</label>
+
+		<a href="/" class="logoHome">
+			<GrupoIsotipo width={100} height={32} fill="white" className="" />
+		</a>
+
+		<ul class="menuCont">
+			<li><HeaderLink class="linkMenu" href="/">Home</HeaderLink></li>
+
+			<div class="dropdown">
+				<button class="dropbtn">Programas &#x25BE; </button>
+				<div class="dropdown-content">
+					<li> 
+						<HeaderLink class="linkSubMenu" href="/alaya"
+							>Alaya</HeaderLink>
+					</li>
+					<li>
+						<HeaderLink class="linkSubMenu" href="/Pitagoras"
+							>Pitágoras</HeaderLink>
+					</li>
+					<li>
+						<HeaderLink class="linkSubMenu" href="/gestion"
+							>Gestión</HeaderLink>
+					</li>
+					
+				</div>
+			</div>
+
+			<li><HeaderLink class="linkMenu" href="/blog">Blog</HeaderLink></li>
+			<li>
+				<HeaderLink class="linkMenu" href="/equipo">Equipo</HeaderLink>
+			</li>
+			<li>
+				<a href="https://campus.grupodi.cl/" target="_blank" class="linkMenu" style="display: inline-block;">Campus DI</a>
+			</li>
+		</ul>
+
+		<div class="social-links">
+			<a class="btnContacto" href="#formulario">Contáctanos</a> 
+		</div>
+
+	</nav>
+</header>
+
+<style>
+	.isotipo {
+		color: red;
+	}
+
+	header {
+		margin: 0;
+		padding: 0 5em;
+		-background-color: #443fdce4; 
+		box-shadow: 0 2px 8px rgba(var(--black), 40%);
+		z-index: 50;
+		position: relative;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+
+	.logoHome {
+		height: 32px;
+		text-decoration: none;
+		padding: 0 0;
+		border-bottom: none;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.menuCont {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	nav .linkMenu {
+		padding: 1em 0.5em;
+		color: rgba(255, 255, 255, 0.8);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+
+	nav .linkMenu:hover {
+		color: rgba(255, 255, 255, 1);
+	}
+
+	nav .linkMenu.active {
+		text-decoration: none;
+		border-bottom-color: yellow;
+		color: white;
+	}
+
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+
+	.btnContacto {
+		padding: 0.2em 1em;
+		border: 2px solid white;
+		border-radius: 2em;
+		background-color: rgba(255, 255, 255, 0);
+		font-size: 18px;
+		line-height: 1.7;
+		color: white;
+		transition: all ease-in-out 0.3s;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.btnContacto:hover {
+		background-color: #4CAF50;
+		color: white;
+		border: 1px solid transparent;
+		box-shadow: 0 0px 10px rgba(var(--black), 50%);
+	}
+
+	.checkbtn {
+		font-size: 30px;
+		color: white;
+		cursor: pointer;
+		display: none;
+	}
+	
+	#check {
+		display: none;
+	}
+
+
+
+	.dropdown {
+		float: left;
+		position: relative;
+		display: inline-block;
+		padding: 1em 0.5em;
+		color: white;
+		border-bottom: 4px solid transparent;
+	}
+
+	.dropbtn {
+		background-color: transparent;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 18px;
+		border: none;
+		cursor: pointer;
+	}
+
+	.dropdown:hover{
+		border-bottom: 4px solid transparent;
+		color: rgba(255, 255, 255, 1);
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	.dropdown:hover .dropbtn {
+		background-color: transparent;
+		color: white;
+		font-size: 18px;
+		border: none;
+		cursor: pointer;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 78px;
+		-background-color: #f9f9f9;
+		min-width: 140px;
+		box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+		z-index: 1;
+		background-color: #443fdce4;
+	}
+
+	.dropdown-content .linkSubMenu {
+		color: white;
+		/* padding: 12px 16px; */
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+		display: block;
+		text-align: center;
+		padding: 4px 0px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.dropdown-content .linkSubMenu.linkMenu.active{
+		color: yellow;
+	}
+
+	.dropdown-content .linkSubMenu:hover {
+		font-weight: bold;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		
+		header{
+			padding: 0 1em;
+		}
+
+		nav .linkMenu{
+			font-size: 0.75em;
+			padding: 1.7em 0.5em;
+		}
+
+		li{
+
+		}
+
+		.dropbtn{
+			font-size: 0.7em;
+		}
+
+		.dropdown:hover .dropbtn{
+			font-size: 0.7em;
+		}
+
+		.dropdown-content{
+			min-width: 100px;
+		}
+
+		.dropdown-content{
+			font-size: 0.7em;
+		}
+
+		.btnContacto {
+			padding: 0.2em 1em;
+			font-size: 0.8em;
+			line-height: 1.7;
+		}
+
+	}
+
+	@media (max-width: 767px) {
+		.social-links {
+			display: none;
+		}
+
+		header {
+			padding: 0.5em 1em;
+			background: var(--color-base);
+		}
+
+		.menuCont {
+			position: fixed;
+			top: 68px;
+			right: -100%;
+			background-color: #443fdcd6;
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s;
+		}
+
+		li {
+			-background-color: red;
+			padding: 0px 0px;
+			width: 100%;
+			height: fit-content;
+		}
+
+		nav .linkMenu{
+			font-size: 1.2em;
+			padding: 10px 0;
+			width: 100%;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			height: fit-content;
+			text-align: center;
+		}
+
+		.checkbtn {
+			display: block;
+			order: 1;
+			margin-right: 20px;
+		}
+
+		.dropdown {
+			height: fit-content;
+			width: 100%;
+			position: relative;
+			display: inline-block;
+			-padding: 10px 0;
+			-background-color: red;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			text-align: center;
+		}
+
+		.dropbtn {
+			background-color: transparent;
+			color: white;
+			font-size: 1.2em;
+			border: none;
+			cursor: pointer;
+		}
+
+		.dropdown:hover .dropbtn{
+			font-size: 1.2em;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: relative;
+			right: 0;
+			top: 20px;
+			min-width: 100%;
+			box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+			z-index: 0;
+			background-color: #443fdce4;
+		}
+
+		.dropdown-content .linkSubMenu {
+			color: white;
+			/* padding: 12px 16px; */
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			display: block;
+			text-align: center;
+			padding: 4px 0px;
+			font-size: 1.1em;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		}
+
+		#check:checked ~ .menuCont {
+			right: 0;
+		}
+	}
+</style>

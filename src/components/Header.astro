@@ -36,7 +36,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 			<li><HeaderLink class="linkMenu" href="/">Home</HeaderLink></li>
 
 			<div class="dropdown">
-				<button class="dropbtn">Programas &#x2BC6; </button>
+				<button class="dropbtn">Programas &#x25BE; </button>
 				<div class="dropdown-content">
 					<li> 
 						<HeaderLink class="linkSubMenu" href="/alaya"
@@ -77,8 +77,8 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 	header {
 		margin: 0;
-		padding: 0 4em;
-		background-color: #443fdce4;
+		padding: 0 5em;
+		background-color: #443fdce4; 
 		box-shadow: 0 2px 8px rgba(var(--black), 40%);
 		z-index: 50;
 		position: relative;
@@ -118,9 +118,13 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 	nav .linkMenu {
 		padding: 1em 0.5em;
-		color: white;
+		color: rgba(255, 255, 255, 0.8);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+	}
+
+	nav .linkMenu:hover {
+		color: rgba(255, 255, 255, 1);
 	}
 
 	nav .linkMenu.active {
@@ -136,9 +140,9 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 	.btnContacto {
 		padding: 0.2em 1em;
-		border: 1px solid white;
-		border-radius: 1em;
-		background-color: transparent;
+		border: 2px solid white;
+		border-radius: 2em;
+		background-color: rgba(255, 255, 255, 0);
 		font-size: 18px;
 		line-height: 1.7;
 		color: white;
@@ -148,8 +152,8 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	.btnContacto:hover {
-		background-color: white;
-		color: var(--color-base);
+		background-color: #4CAF50;
+		color: white;
 		border: 1px solid transparent;
 		box-shadow: 0 0px 10px rgba(var(--black), 50%);
 	}
@@ -178,7 +182,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 	.dropbtn {
 		background-color: transparent;
-		color: white;
+		color: rgba(255, 255, 255, 0.8);
 		font-size: 18px;
 		border: none;
 		cursor: pointer;
@@ -186,6 +190,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 	.dropdown:hover{
 		border-bottom: 4px solid transparent;
+		color: rgba(255, 255, 255, 1);
 	}
 
 	.dropdown:hover .dropdown-content {
@@ -230,7 +235,6 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	.dropdown-content .linkSubMenu:hover {
-		-background-color: #f1f1f1;
 		font-weight: bold;
 	}
 

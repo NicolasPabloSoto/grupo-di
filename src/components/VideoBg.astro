@@ -1,0 +1,111 @@
+---
+
+---
+
+
+<div class="bgHome">
+    <div class="capaLuz"></div>
+    <div class="capaSombra"></div>
+    <div class="contVideo">
+        <video class="videoHome" width="" height="" autoplay muted controls loop>
+            <source src="../../src/images/videos_test.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+    </div>
+</div>
+
+<style>
+
+    .bgHome{
+        width: 100%;
+        height: 100%;
+        -background-color: red;
+    }
+
+    .capaSombra{
+        width: 100%;
+        height: 100%;
+        position: absolute; 
+        z-index: 2;
+        left: 0;
+        top: 0;
+        background: rgb(0,0,0);
+        background: linear-gradient(110deg, rgba(69,63,220,0.95) 0%, rgba(69,63,220,0.95) 30%, rgba(0,0,0,0) 100%);
+    }
+
+    .capaLuz{
+        width: 100%;
+        height: 100%;
+        position: absolute; 
+        z-index: 3;
+        left: 0;
+        top: 0;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(245,245,247,1) 10%, rgba(245,245,247,0.3) 20%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 100%);
+    }
+
+    .contVideo{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .videoHome{
+        width: 100%;
+        height: auto;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1280px){
+        .contVideo{
+            width: 100%;
+            height: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .videoHome{
+        width: auto;
+        height: 850px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px){
+        .contVideo{
+            width: 100%;
+            height: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .videoHome{
+        width: auto;
+        height: 850px;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+
+        .contVideo{
+            width: 100%;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .videoHome{
+        width: auto;
+        height: 800px;
+        }
+
+    } 
+
+</style> 

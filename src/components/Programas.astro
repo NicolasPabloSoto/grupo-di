@@ -104,28 +104,10 @@
                     </details>
                 </div>
 
-                <div class="infoBotones">
-                    <a href="/alaya" class="botonPrograma"> 
+                <div class="infoBotones alaya">
+                    <a href="/alaya" class="botonPrograma">
                         <div class="verprogramaCont">
-                            <p class="verprogramaText">Ver Programa</p>
-                            <i class="flecha">
-                                <svg
-                                    class="text-gray-800 dark:text-white"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="60"
-                                    height="60"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.6"
-                                        d="M19 12H5m14 0-4 4m4-4-4-4"></path>
-                                </svg>
-                            </i>
+                            <p class="verprogramaText"> &#x2B9E; Ver Programa</p>
                         </div>
                     </a href="/alaya">
                 </div>
@@ -206,31 +188,10 @@
                     </details>
                 </div>
 
-                <div
-                    class="infoBotones"
-                    style="background-color: var(--color-pitagoras);"
-                >
+                <div class="infoBotones pitagoras">
                     <a href="/Pitagoras" class="botonPrograma">
                         <div class="verprogramaCont">
-                            <p class="verprogramaText">Ver Programa</p>
-                            <i class="flecha">
-                                <svg
-                                    class="text-gray-800 dark:text-white"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="60"
-                                    height="60"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.6"
-                                        d="M19 12H5m14 0-4 4m4-4-4-4"></path>
-                                </svg>
-                            </i>
+                            <p class="verprogramaText"> &#x2B9E; Ver Programa</p>
                         </div>
                     </a>
                 </div>
@@ -239,7 +200,7 @@
 
         <div class="programaBase programaUno">
             <div class="proximamente"><h4 class="textProximamente">Próximamente</h4></div>
-            <div class="baseMargen">
+            <div class="baseMargen" style="filter: blur(2px)">
                 <div
                     class="infoTop"
                     style="background-color: var(--color-gestion);"
@@ -346,25 +307,7 @@
                 >
                     <a href="#" class="botonPrograma">
                         <div class="verprogramaCont">
-                            <p class="verprogramaText">Ver Programa</p>
-                            <i class="flecha">
-                                <svg
-                                    class="text-gray-800 dark:text-white"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="60"
-                                    height="60"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.6"
-                                        d="M19 12H5m14 0-4 4m4-4-4-4"></path>
-                                </svg>
-                            </i>
+                            <p class="verprogramaText"> &#x2B9E; Ver Programa</p>
                         </div>
                     </a>
                 </div>
@@ -414,7 +357,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 12px;
-        background-color: #ececf6;
+        background-color: white;
         flex: 30%;
     }
     
@@ -432,7 +375,7 @@
     .programaUno {
         transform: scale(1);
         translate: 0 0;
-        box-shadow: var(--box-shadow-inicial);
+        box-shadow: var(--box-shadow); 
         transition: all ease-in-out 0.3s;
     }
 
@@ -545,14 +488,14 @@
         width: 100%;
         font-size: 20px;
         font-weight: 500;
-        color: rgb(68, 65, 65);
+        color: rgb(121, 115, 115);
         cursor: pointer;
         position: relative;
-        border-top: 1px solid gray;
+        border-top: 1px solid rgb(179, 173, 173);
     }
 
     .sumLines {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid rgb(179, 173, 173);
     }
 
     summary::marker {
@@ -593,13 +536,13 @@
         text-align: justify;
         text-wrap: wrap;
         letter-spacing: -0.02em;
-        color: rgb(68, 65, 65);
+        color: rgb(128, 122, 122);
         -background-color: red;
     }
 
     .infoBotones {
         width: 100%;
-        height: 80px;
+        height: 70px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -608,8 +551,16 @@
         background-color: var(--color-ayala);
     }
 
+    .alaya{
+        background-color: #00b4a2cd;
+    }
+    
+    .pitagoras{
+        background-color: #e0bf3abf;
+    }
+
     .botonPrograma:hover > .verprogramaCont {
-        transform: translate(20px);
+        transform: translate(50%);
     }
 
     .botonPrograma {
@@ -623,13 +574,13 @@
     }
 
     .verprogramaCont {
-        height: 40px;
+        height: 50px;
         display: flex;
         flex-direction: row;
         gap: 0.5em;
         align-items: center;
         -background-color: blueviolet;
-        transform: translate(-160px);
+        transform: translate(10%);
         transition: all ease-in-out 0.3s;
     }
 
@@ -637,13 +588,9 @@
         text-decoration: none;
     }
 
-   .flecha{
-    padding-top: 10px;
-   }
-
     .verprogramaText {
         font-size: 1.2em;
-        font-weight: 600;
+        font-weight: 500;
         color: white;
         padding: 0;
         margin: 0;
@@ -660,18 +607,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(47, 48, 57, 0.95);
+        background-color: rgba(47, 48, 57, 0.4);
     }
 
     .textProximamente{
-        font-size: 2em;
-        font-weight: bold;
+        font-size: 1em;
+        font-weight: 500;
         display: inline-block;
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
         color: white;
-        transform: rotate(-30deg);
         text-align: center;
         text-shadow: rgba(255, 247, 0, 0.5) 1px 0 40px;
+        background-color: rgba(255, 12, 12, 0.5);
+    }
+
+    @media (min-width: 320px) and (max-width: 767px){
+        .textProximamente{
+            padding: 10px 0px;
+            width: 100%;
+            text-align: center;
+        }
     }
 </style>
