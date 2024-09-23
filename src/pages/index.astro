@@ -16,6 +16,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script src="../../src/Scroll-ani.js"></script>
+		<script src="../../src/UserAdmin.js"></script>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> 
 	</head>
 	<body>
 		<HeaderHome />
@@ -211,6 +213,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					</div>
 				</div>
 			</div>
+
+			<div><button onclick="netlifyIdentity.open()">Login with Netlify Identity</button></div>
 		</main>
 		<Footer />
 	</body>
@@ -978,3 +982,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 }
  
 </style>
+
