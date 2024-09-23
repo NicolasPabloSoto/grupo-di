@@ -8,6 +8,7 @@ import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
 import Formulario from "../components/Formulario";
+import LoginButton from "../../src/LoginButton.tsx";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -16,7 +17,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script src="../../src/Scroll-ani.js"></script>
-		<script src="../../src/UserAdmin.js"></script>
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> 
 	</head>
 	<body>
@@ -214,7 +214,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				</div>
 			</div>
 
-			<div><button onclick="netlifyIdentity.open()">Login with Netlify Identity</button></div>
+			<div class="identity">
+				<LoginButton />
+    			<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+			</div>
+			
 		</main>
 		<Footer />
 	</body>
