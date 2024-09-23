@@ -3,15 +3,20 @@ backend:
   branch: main
   identity_url: https://grupo-di.netlify.app/.netlify/identity
   gateway_url: https://grupo-di.netlify.app/.netlify/git
-  repo: NicolasPabloSoto/grupo-di  # Este es tu repositorio en GitHub
+  repo: NicolasPabloSoto/grupo-di  # Reemplaza con tu repositorio correcto
 
-media_folder: "public/uploads"  # Donde se guardarán los archivos de media en Netlify CMS
-public_folder: "/uploads"  # La URL pública de los archivos
+media_folder: "public/uploads"  # Carpeta donde se almacenan las imágenes subidas
+public_folder: "/uploads"  # Carpeta pública para acceder a las imágenes
+
+media_library:
+  name: uploadcare  # Si prefieres usar Uploadcare, pero puede ser local
+  config:
+    public_key: your_public_key  # Puedes dejarlo si es local
 
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "src/content/blog"  # Carpeta donde están los posts en Markdown
+    folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
     fields:
