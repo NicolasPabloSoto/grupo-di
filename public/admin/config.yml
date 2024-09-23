@@ -3,15 +3,15 @@ backend:
   branch: main
   identity_url: https://grupo-di.netlify.app/.netlify/identity
   gateway_url: https://grupo-di.netlify.app/.netlify/git
-  repo: https://github.com/NicolasPabloSoto/grupo-di
+  repo: NicolasPabloSoto/grupo-di  # Este es tu repositorio en GitHub
 
-media_folder: "public/uploads" # Carpeta donde se guardan los archivos multimedia
-public_folder: "/uploads"
+media_folder: "public/uploads"  # Donde se guardarán los archivos de media en Netlify CMS
+public_folder: "/uploads"  # La URL pública de los archivos
 
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "src/content/blog"
+    folder: "src/content/blog"  # Carpeta donde están los posts en Markdown
     create: true
     slug: "{{slug}}"
     fields:
