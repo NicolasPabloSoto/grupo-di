@@ -2,7 +2,8 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
+ [[redirects]]
+  from = "/#invite_token=:token"
+  to = "/admin/#invite_token=:token"
   status = 200
+  force = true
