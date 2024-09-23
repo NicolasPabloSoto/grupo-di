@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # O el branch principal que uses en tu repositorio
+  identity_url: https://<tu-proyecto>.netlify.app/.netlify/identity
+  gateway_url: https://<tu-proyecto>.netlify.app/.netlify/git
+  repo: tu-usuario/tu-repo # Reemplaza con tu nombre de usuario y nombre de repo en GitHub o GitLab
+
+media_folder: "public/uploads" # Carpeta donde se guardan los archivos multimedia
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
