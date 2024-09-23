@@ -15,8 +15,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<script src="../../src/Scroll-ani.js"></script>
+		
+	</head>
 
+	<body>
 		<script>import { useEffect } from 'react';
 
 			const NetlifyIdentityWidget = () => {
@@ -38,9 +40,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			
 			export default NetlifyIdentityWidget;
 			</script>
-
-	</head>
-	<body>
 		<HeaderHome />
 
 		<main>
