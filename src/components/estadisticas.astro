@@ -3,6 +3,7 @@
 ---
 
 
+
 <div class="datosEmpresa">
 
     <div class="contdatos">
@@ -32,7 +33,10 @@
             </div>
         </div>
         <div class="numDatos">
-            <p class="numeroText">10+</p>
+            <div class="odometro">
+                <p class="numeroText" id="counterTres"></p>
+                <h4>&#43;</h4>
+            </div> 
             <p class="bajadaText">Profesores o Instructores</p>
         </div>
     </div>
@@ -68,7 +72,10 @@
             </div>
         </div>
         <div class="numDatos">
-            <p class="numeroText">60+</p>
+            <div class="odometro">
+                <p class="numeroText" id="counterDos"></p>
+                <h4>&#43;</h4>
+            </div> 
             <p class="bajadaText">Empresas Capacitadas</p>
         </div>
     </div>
@@ -103,12 +110,48 @@
             </div>
         </div>
         <div class="numDatos">
-            <p class="numeroText">201+</p>
+            <div class="odometro">
+                <p class="numeroText" id="counter"></p>
+                <h4>&#43;</h4>
+            </div> 
             <p class="bajadaText">Personas Capacitadas</p>
+
         </div>
     </div>
 
 </div>
+
+
+
+<script>
+    function animateValue(id: string, start: number, end: number, duration: number) {
+  const obj = document.getElementById(id);
+  if (!obj) return;
+
+  let startTime: number | null = null;
+
+  function step(timestamp: number) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const currentValue = Math.floor(progress * (end - start) + start);
+
+    obj.textContent = currentValue.toString(); // Aseguramos que textContent reciba string
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+animateValue("counter", 100, 201, 3000); // Animación de 0 a 100 en 5 segundos
+animateValue("counterDos", 100, 60, 3000); // Animación de 0 a 100 en 5 segundos
+animateValue("counterTres", 100, 10, 2000); // Animación de 0 a 100 en 5 segundos
+
+</script>
+
+
 
 <style>
 
@@ -123,39 +166,60 @@
     }
 
     .contdatos{
-        width: 100%;
+        width: fit-content;
         height: 100%;
         -background-color: yellow;
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
         gap: 1em;
         flex: calc(33.3% - 2rem);
     }
 
+    .odometro{
+        width: fit-content;
+        height: fit-content;
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .datosIcon{
-        width: 100%;
+        width: fit-content;
         height: 100%;
         -background-color:yellow;
     }
 
     .numDatos{
-        width: 100%;
+        width: fit-content;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         -background-color: rgba(255, 255, 255, 0.7);
     }
 
     .numeroText{
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 3em;
-        font-weight: 500;
+        font-size: 3.5em;
+        font-weight: 600;
         letter-spacing: -0.01em;
         margin: 0;
         padding: 0;
         line-height:initial;
         color: var(--color-base);
+        width: fit-content;
+        height: fit-content;
     }
 
+    h4{
+        width: fit-content;
+        float: left;
+        color: var(--color-base);
+        font-size: 2em;
+    }    
     .bajadaText{
         text-wrap: wrap;
         font-size: 0.7em;
@@ -164,11 +228,12 @@
         line-height:initial;
         color: rgb(68, 68, 78);
         margin-top: -5px;
+        text-align: center;
     }
 
     .datosIcon{
         position: relative;
-        width:100%;
+        width: fit-content;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -202,13 +267,13 @@
 
     @media (min-width: 768px) and (max-width: 1024px) {
         .contdatos{
-            gap: 0em;
+            gap: 1em;
         }
 
         
         .datosIcon{
             position: relative;
-            width:100%;
+            width:fit-content;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -284,3 +349,4 @@
     
 
 </style>
+
