@@ -1,5 +1,5 @@
 ---
-title: "Visualización de Datos: El Nuevo Lenguaje Universal"
+title: "Visualización de Datos: El Lenguaje Natural"
 description: La importancia de la visualización para comprender grandes cantidades de datos.
 posted: 2024-09-14T03:00:00.000Z
 heroImage: https://res.cloudinary.com/dgwem7alo/image/upload/v1727186665/pexels-tima-miroshnichenko-7567222_bi6exs.jpg
