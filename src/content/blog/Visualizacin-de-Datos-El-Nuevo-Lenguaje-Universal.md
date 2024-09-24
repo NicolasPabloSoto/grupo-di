@@ -1,10 +1,8 @@
 ---
-title: 'Visualización de Datos: El Nuevo Lenguaje Universal'
-description: >-
-  La importancia de la visualización para comprender grandes cantidades de
-  datos.
+title: "Visualización de Datos: El Nuevo Lenguaje Universal"
+description: La importancia de la visualización para comprender grandes cantidades de datos.
 posted: 2024-09-14T03:00:00.000Z
-heroImage: /pexels-tima-miroshnichenko-7567222.jpg
+heroImage: https://res.cloudinary.com/dgwem7alo/image/upload/v1727186665/pexels-tima-miroshnichenko-7567222_bi6exs.jpg
 ---
 
 En un mundo donde los datos crecen exponencialmente, la visualización de datos se ha convertido en una herramienta indispensable. La capacidad de transformar números y estadísticas complejas en gráficos atractivos y comprensibles facilita la toma de decisiones informadas en todos los niveles de una organización. Ya no se trata solo de analizar datos; se trata de comunicarlos de manera efectiva.
