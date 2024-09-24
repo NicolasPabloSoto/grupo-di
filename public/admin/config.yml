@@ -8,12 +8,12 @@ backend:
 media_folder: "public/uploads"  # Carpeta donde se almacenan las imágenes subidas
 public_folder: "/uploads"  # Carpeta pública para acceder a las imágenes
 
-# media_library:
-#   name: "file-system"  # Nombre para indicar que se usa el sistema de archivos local
-#   config:
-#     media_folder: "public/uploads"  # Carpeta donde se almacenarán las imágenes
-#     public_folder: "/uploads"       # URL pública de las imágenes
-
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dgwem7alo  # Reemplaza con el nombre de tu cuenta de Cloudinary
+    api_key: 224732336461627         
+    api_secret: aVJmKJMWrNqmjnBxhH2jy_rVMck   # Reemplaza con tu API secret de Cloudinary
 
 collections:
   - name: "posts"
