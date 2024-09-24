@@ -9,9 +9,11 @@ media_folder: "public/uploads"  # Carpeta donde se almacenan las imágenes subid
 public_folder: "/uploads"  # Carpeta pública para acceder a las imágenes
 
 media_library:
-  name: uploadcare  # Si prefieres usar Uploadcare, pero puede ser local
+  name: "file-system"  # Nombre para indicar que se usa el sistema de archivos local
   config:
-    public_key: your_public_key  # Puedes dejarlo si es local
+    media_folder: "public/uploads"  # Carpeta donde se almacenarán las imágenes
+    public_folder: "/uploads"       # URL pública de las imágenes
+
 
 collections:
   - name: "posts"
