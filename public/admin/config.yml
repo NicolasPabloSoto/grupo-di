@@ -23,6 +23,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - { label: "Date", name: "posted", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Image", name: "heroImage", widget: "image" }
