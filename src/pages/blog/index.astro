@@ -40,10 +40,10 @@ const truncateContent = (content: string, maxLength: number): string => {
 								<a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<div class="contenidoTexto">
-										<h4 class="title">{post.data.title}</h4>
 										<p class="date">
 											<FormattedDate date={post.data.posted || new Date()} />
 										</p>
+										<h4 class="title">{post.data.title}</h4>
 										<p class="contenido">
 											{truncateContent(post.data.description || '', 200)}
 										</p>
@@ -146,12 +146,12 @@ const truncateContent = (content: string, maxLength: number): string => {
 
 	ul li:first-child img {
 		height: auto;
-		width: calc(65% - 2rem);
-		flex: calc(65% - 2rem);
+		width: calc(60% - 2rem);
+		flex: calc(60% - 2rem);
 	}
 
 	ul li:first-child .contenidoTexto{
-		flex: calc(35% - 2rem);
+		flex: calc(40% - 2rem);
 		text-align: left;
 	}
 

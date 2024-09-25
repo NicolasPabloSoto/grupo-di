@@ -18,6 +18,7 @@ const { title = 'Default Title', description = 'Default Description', posted, up
 		<Header />
 		<main>
 			<article class="contNoticias">
+				<div class="backBotom"><a href="/blog" class="botomVolver">&#xab; Volver a la Sección</a></div>
 				<div class="cabecera">
 					<div class="contInfoBLog">
 						<div class="date">
@@ -26,7 +27,7 @@ const { title = 'Default Title', description = 'Default Description', posted, up
 								updatedDate && (
 									<div class="last-updated-on">
 										Last updated on <FormattedDate date={updatedDate} />
-									</div>
+									</div> 
 								)
 							}
 						</div>
@@ -62,11 +63,34 @@ const { title = 'Default Title', description = 'Default Description', posted, up
 		-background-color: gray;
 	}
 
+	.backBotom{
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+	}
+
+	.botomVolver{
+		width: fit-content;
+		font-size: 0.8em;
+		font-weight: bold;
+		letter-spacing: -0.05em;
+		color: rgb(92, 84, 84);
+		text-decoration: none;
+		margin-top: 40px;
+	}
+
+	.botomVolver:hover{
+		color: var(--color-base);
+		text-decoration: underline;
+	}
+
 	.cabecera{
 		width: 100%;
 		height: fit-content;
 		position: relative;
-		margin-top: 50px;
+		margin-top: 25px;
 		-background-color: yellow;
 	}
 

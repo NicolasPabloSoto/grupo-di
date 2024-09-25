@@ -22,8 +22,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Date", name: "posted", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "heroImage", widget: "image" }
+      - { label: "Titulo del Post", name: "title", widget: "string" }
+      - { label: "Descripcion Post", name: "description", widget: "text", required: true }
+      - { label: "Fecha", name: "posted", widget: "datetime" }
+      - { label: "Cuerpo del Post", name: "body", widget: "markdown" }
+      - { label: "Imagen Cabecera", name: "heroImage", widget: "image" }
