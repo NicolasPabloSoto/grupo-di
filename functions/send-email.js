@@ -16,8 +16,8 @@ exports.handler = async function(event, context) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER, // Usa variables de entorno para proteger credenciales
-      pass: process.env.EMAIL_PASS  // Usa variables de entorno para proteger credenciales
+      user: process.env.EMAIL_USER,  // Tu correo
+      pass: process.env.EMAIL_PASS   // La contraseña de aplicación (token)
     }
   });
 
