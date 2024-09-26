@@ -78,7 +78,7 @@ const FormSubmit: React.FC = () => {
         placeholder="+569 6523251"
         required
       />
-      <p className="textFormulario esp">Qué tienes en Mente:</p>
+      <p className="textFormulario esp">Qué tienes en mente:</p>
       <textarea
         name="asunto"
         value={formData.asunto}
@@ -94,7 +94,8 @@ const FormSubmit: React.FC = () => {
         value="ENVIAR"
         className="subFormEnviar"
       />
-    </form>
+  </form>
+
   );
 };
 
