@@ -8,6 +8,8 @@ import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { useState } from "react";
+import FormSubmit from '../components/FormSubmit';
 ---
 
 <!doctype html>
@@ -119,60 +121,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<div class="ubicacion">
 				<div class="ubicacionEsp">
 					<div class="mailContacto">
-						<form 
-							name="contact" 
-							method="POST" 
-							data-netlify="true"
-							id="contact-form"
-							action="/.netlify/functions/send-email"
-							class="formContenedor"
-						>
-							<p class="textFormulario">Nombre:</p>
-							<input
-								type="text"
-								name="nombre"
-								id="nombre"
-								class="textArea"
-								placeholder="Martina Enrione"
-								required
-							/>
-							<p class="textFormulario">Correo:</p>
-							<input
-								type="email"
-								name="correo"
-								id="email"
-								class="textArea"
-								placeholder="m.enrione@gmail.com"
-								required
-							/>
-							<p class="textFormulario">Empresa:</p>
-							<input
-								type="text"
-								name="empresa"
-								id="empresa"
-								class="textArea"
-								placeholder="Urbanica"
-								required
-							/>
-							<p class="textFormulario">Número de Contacto:</p>
-							<input
-								type="tel"
-								name="telefono"
-								id="telefono"
-								class="textArea"
-								placeholder="+569 6523251"
-								required
-							/>
-							<p class="textFormulario esp">Qué tienes en Mente:</p>
-							<textarea name="asunto" class="textMensaje" id="" cols="30" rows="10" required
-							></textarea>
-							<input
-								type="submit"
-								name="submit"
-								value="ENVIAR"
-								class="subFormEnviar"
-							/>
-						</form> 
+						<FormSubmit />
 					</div>
 
 					<div class="mapaContacto">
@@ -1335,3 +1284,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 
 </style>
+
