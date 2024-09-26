@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './formSubmit.css'; // Importa la hoja de estilos aquí
+import './formSubmit.css';
 
 const FormSubmit: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -107,4 +107,4 @@ const FormSubmit: React.FC = () => {
   );
 };
 
-export default FormSubmit; 
+export default FormSubmit;
