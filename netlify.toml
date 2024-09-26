@@ -7,3 +7,7 @@
   from = "/#/*"
   to = "/admin/index.html"
   status = 200
+
+[build]
+  publish = "dist"
+  functions = "functions"  # Esto le dice a Netlify dónde encontrar las funciones
