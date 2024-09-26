@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import './formSubmit.css';
+import './formSubmit.css'; // Importa los estilos CSS
 
 const FormSubmit: React.FC = () => {
   const [formData, setFormData] = useState({
-    nombre: "",
-    correo: "",
-    empresa: "",
-    telefono: "",
-    asunto: "",
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    empresa: "", // Campo agregado
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -19,10 +19,9 @@ const FormSubmit: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Formulario enviado, datos:", formData);
-
+    
     try {
-      const response = await fetch("/.netlify/functions/send-email", {
+      const response = await fetch("../../.netlify/functions/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,17 +29,9 @@ const FormSubmit: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        console.error("Error en la respuesta del servidor:", response.statusText);
-        alert("Error en la respuesta del servidor");
-        return;
-      }
-
       const result = await response.json();
-      console.log("Respuesta del servidor:", result);
       alert(result.message);
     } catch (error) {
-      console.error("Error al enviar el formulario:", error);
       alert("Error al enviar el formulario");
     }
   };
@@ -50,8 +41,8 @@ const FormSubmit: React.FC = () => {
       <p className="textFormulario">Nombre:</p>
       <input
         type="text"
-        name="nombre"
-        value={formData.nombre}
+        name="name"
+        value={formData.name}
         onChange={handleChange}
         className="textArea"
         placeholder="Martina Enrione"
@@ -60,8 +51,8 @@ const FormSubmit: React.FC = () => {
       <p className="textFormulario">Correo:</p>
       <input
         type="email"
-        name="correo"
-        value={formData.correo}
+        name="email"
+        value={formData.email}
         onChange={handleChange}
         className="textArea"
         placeholder="m.enrione@gmail.com"
@@ -77,20 +68,18 @@ const FormSubmit: React.FC = () => {
         placeholder="Urbanica"
         required
       />
-      <p className="textFormulario">Número de Contacto:</p>
+      <p className="textFormulario">Asunto:</p>
       <input
-        type="tel"
-        name="telefono"
-        value={formData.telefono}
+        type="text"
+        name="subject"
+        value={formData.subject}
         onChange={handleChange}
         className="textArea"
-        placeholder="+569 6523251"
-        required
       />
-      <p className="textFormulario esp">Qué tienes en mente:</p>
+      <p className="textFormulario esp">Mensaje:</p>
       <textarea
-        name="asunto"
-        value={formData.asunto}
+        name="message"
+        value={formData.message}
         onChange={handleChange}
         className="textMensaje"
         cols={30}

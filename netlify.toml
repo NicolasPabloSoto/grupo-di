@@ -10,7 +10,7 @@
 
 [build]
   publish = "dist"
-  functions = "functions"  # Esto le dice a Netlify dónde encontrar las funciones
+  functions = "functions"
 
 [functions]
-  directory = "functions"
+  node_bundler = "esbuild"
