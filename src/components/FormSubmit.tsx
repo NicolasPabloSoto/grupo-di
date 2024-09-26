@@ -19,6 +19,7 @@ const FormSubmit: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Formulario enviado, datos:", formData);
 
     try {
       const response = await fetch("/.netlify/functions/send-email", {
@@ -29,9 +30,17 @@ const FormSubmit: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
+      if (!response.ok) {
+        console.error("Error en la respuesta del servidor:", response.statusText);
+        alert("Error en la respuesta del servidor");
+        return;
+      }
+
       const result = await response.json();
+      console.log("Respuesta del servidor:", result);
       alert(result.message);
     } catch (error) {
+      console.error("Error al enviar el formulario:", error);
       alert("Error al enviar el formulario");
     }
   };
@@ -94,9 +103,8 @@ const FormSubmit: React.FC = () => {
         value="ENVIAR"
         className="subFormEnviar"
       />
-  </form>
-
+    </form>
   );
 };
 
-export default FormSubmit;
+export default FormSubmit; 

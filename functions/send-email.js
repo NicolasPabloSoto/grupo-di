@@ -22,12 +22,12 @@ exports.handler = async function(event, context) {
   });
 
   try {
-    // Enviar el correo
+    // Enviar el correo, ajustando los nombres de los campos a los que envía el formulario
     let info = await transporter.sendMail({
       from: `"Formulario de Contacto" <${process.env.EMAIL_USER}>`,
       to: 'comunidad.grupodi@gmail.com', // Correo que recibirá las notificaciones
       subject: 'Nueva consulta desde grupodi.cl',
-      text: `Nombre: ${body.name}\nCorreo: ${body.email}\nMensaje: ${body.message}`
+      text: `Nombre: ${body.nombre}\nCorreo: ${body.correo}\nEmpresa: ${body.empresa}\nTeléfono: ${body.telefono}\nMensaje: ${body.asunto}`
     });
 
     return {
