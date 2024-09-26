@@ -1,8 +1,7 @@
 ---
-title: 'Inclusión en las Aulas: Un Reto Global'
-description: >-
-  El desafío de integrar a estudiantes de todas las capacidades en el sistema
-  educativo moderno.
+title: "Inclusión en las Aulas: Un Reto Mundial"
+description: El desafío de integrar a estudiantes de todas las capacidades en el
+  sistema educativo moderno.
 posted: 2024-09-12T03:00:00.000Z
 heroImage: /pexels-rdne-5756661.jpg
 ---
