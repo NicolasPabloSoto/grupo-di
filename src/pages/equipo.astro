@@ -11,15 +11,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />  
 	</head>
 	<body>
-		
+		  
 		<Header />  
 
 		<main>
 
 			<div class="contEquipo">
-				<div class="imgCabecera">
-					<h4 class="sloganEntrada">En grupo DI, nuestra misión es clara: ofrecer un servicio especializado y adaptativo que eleve las competencias laborales y construya relaciones de confianza</h4>
-				</div>
+				<div class="imgCabecera"></div>
+
+				<h4 class="sloganEntrada">En grupo DI, nuestra misión es clara: ofrecer un servicio especializado y adaptativo que eleve las competencias laborales y construya relaciones de confianza</h4>
 
 				<div class="contMision">
 					<div class="empresaText">
@@ -111,7 +111,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.imgCabecera{
 		width: 100%;
-		height: 550px;
+		height: 580px;
 		margin-top: 20px;
 		border-radius: 1rem;
 		display: flex;
@@ -121,20 +121,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
-		box-shadow: var(--box-shadow);
+		box-shadow: var(--box-shadow--inicial);
 	}
 
 	.sloganEntrada{
-		width: 90%;
+		width: 100%;
 		height: fit-content;
 		font-size: 2em;
 		font-weight: bold;
 		line-height: 1em;
 		text-wrap: wrap;
-		color: white;
-		text-shadow: rgba(55, 55, 54, 1) 1px 0 10px;
+		color: rgb(68, 65, 65);
+		text-shadow: rgba(55, 55, 54, 0.1) 1px 0 10px;
 		margin: 0 0;
-		padding-bottom: 1em; 
+		margin-top: 30px;
 	}
 
 	.contMision{
@@ -146,7 +146,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		justify-content: space-around;
         gap: 1rem;
 		-background-color: rgba(0, 0, 255, 0.183);
-		padding-top: 100px;
+		padding-top: 80px;
 	}
 
 	.empresaText{
@@ -257,7 +257,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		width: calc(100% - 140px - 2rem);
 	}
 
+	@media (min-width: 767px) and (max-width: 1024px){
+		.imgCabecera{
+			width: 100%;
+			height: 400px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+		}
+	}
+
 	@media (min-width: 481px) and (max-width: 767px){
+
+		.imgCabecera{
+			width: 100%;
+			height: 350px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+			background-color: red;
+		}
 
 		.sloganEntrada{
 			font-size: 1.6em;
@@ -370,6 +403,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			height: fit-content;
 			padding-bottom: 20px;
 			-background-color: white;
+		}
+
+		.imgCabecera{
+			width: 100%;
+			height: 250px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+			background-color: red;
 		}
 
 
