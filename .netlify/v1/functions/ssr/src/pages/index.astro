@@ -1,0 +1,1287 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import HeaderHome from "../components/HeaderHome.astro";
+import Footer from "../components/Footer.astro";
+import VideoBg from "../components/VideoBg.astro";
+import Estadisticas from "../components/estadisticas.astro";
+import Programas from "../components/Programas.astro";
+import Enlaceblog from "../components/Enlaceblog.astro";
+import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { useState } from "react";
+import FormSubmit from '../components/FormSubmit';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script src="../../src/Scroll-ani.js"></script> 
+	</head>
+ 
+	<body>
+		
+		<HeaderHome />
+
+		<main>
+			<div class="sliderHome">
+				<VideoBg /> 
+			</div>
+
+			<div class="contInfoHome">
+				<div class="contInfoIzq">
+					<GrupoLogotipo
+						width={60}
+						height={60}
+						fill="white"
+						class="iconoEmpresa"
+					/>
+					<p class="bajadaHome">CONSULTORIA Y CAPACITACIÓN</p>
+					<h1 class="sloganHome">
+						Capacitarse es Crecer, <br />
+						te ayudamos hacia <br />
+						nuevas fronteras. <br />
+					</h1>
+					<p class="textHome">
+						Bienvenidos a Grupo DI, Potenciamos tu crecimiento con
+						capacitación innovadora y metodologías adaptativas. <br
+						/>
+						<b>¡Comencemos!</b>
+					</p>
+
+					<div class="botonesHome">
+						<a class="botonEquipo" href="/equipo">
+							Conócenos</a
+						>
+						<a class="botonCursos" href="#metodos">Cursos</a>
+					</div>
+				</div>
+				<div class="contInfoDer" style=" flex: 50%;"></div>
+			</div>
+
+			<div class="datosNum">
+				<Estadisticas />
+			</div>
+
+			<div class="boxScroll"></div>
+
+			<div class="titulosSect" id="titulos">
+				<div class="titulosSectCont">
+					<h3 class="titulosHome">
+						Explora lo que tus <b class="destacador">profesores</b> comparten
+					</h3>
+					<p class="subtituloHome">
+						Conocé las ultimas noticias de nuestro campus además te
+						invitamos a conversar los temas que nuestros profesores
+						comparten
+					</p>
+				</div>
+			</div>
+
+			<div class="blogEntradas">
+				<Enlaceblog />
+			</div>
+
+			<div class="boxScroll" id="metodos"></div>
+
+			<div class="titulosSect">
+				<div class="titulosSectCont">
+					<h3 class="titulosHome">
+						Conoce nuestras <b class="destacador">áreas</b> de desarrollo
+					</h3>
+					<p class="subtituloHome">
+						Hemos desarrollado con nuestros mejores especialistas,
+						diferetes programas que ayuden a tu organización a
+						crecer y entregarles un valor a cada alumno
+					</p>
+				</div>
+			</div>
+
+			<div class="metodos">
+				<Programas />
+			</div>
+
+			<div class="boxScroll" id="formulario"></div>
+
+			<div class="titulosSect">
+				<div class="titulosSectCont">
+					<h3 class="titulosHome">
+						Hola! ¿En que podemos <b class="destacador">Ayudarte</b
+						>?
+					</h3>
+					<p class="subtituloHome">
+						Si tienes dudas de como implementar los cursos en
+						tu organización no dudes en preguntarnos, o si ya tienes
+						pensado que quieres hacer escríbenos, te estamos
+						esperando.
+					</p>
+				</div>
+			</div>
+
+			<div class="ubicacion">
+				<div class="ubicacionEsp">
+					<div class="mailContacto">
+						<FormSubmit />
+					</div>
+
+					<div class="mapaContacto">
+						<div class="mapaGoogle">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl"
+								class="googleMap"
+								width=""
+								height=""
+								style="border:0;"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+							></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="iconosUbicacion">
+				<div class="iconosUbiEsp">
+					<div class="botomRapido">
+						<svg
+							class="iconosContacto"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M12 2a7 7 0 0 0-7 7 3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V9a5 5 0 1 1 10 0v7.083A2.919 2.919 0 0 1 14.083 19H14a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a2 2 0 0 0 1.732-1h.351a4.917 4.917 0 0 0 4.83-4H19a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3 7 7 0 0 0-7-7Zm1.45 3.275a4 4 0 0 0-4.352.976 1 1 0 0 0 1.452 1.376 2.001 2.001 0 0 1 2.836-.067 1 1 0 1 0 1.386-1.442 4 4 0 0 0-1.321-.843Z"
+								clip-rule="evenodd"></path>
+						</svg>
+						<p class="textoRapido">
+							Si necesitas ayuda comercial, escribenos un mail a
+							la siguiente dirección y te brindaremos toda la
+							información que necesites: <br>
+							<a href="mailto:contacto@grupodi.cl" class="correoLink"
+							>contacto@grupodi.cl</a>
+						</p>
+						
+					</div>
+
+					<div class="botomRapido">
+						<svg
+							class="iconosContacto"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z"
+								clip-rule="evenodd"></path>
+						</svg>
+						<p class="textoRapido">
+							Si eres Alumno en nuestro campus y necesitas Ayuda,
+							escribenos un mail a la siguiente dirección y te
+							brindaremos el soporte que necesites: <br> 
+							<a href="capacitacion@grupodi.cl" class="correoLink"
+							>capacitacion@grupodi.cl</a>
+						</p>
+						
+					</div>
+					<div class="botomRapido">
+						<svg
+							class="iconosContacto"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z"
+								clip-rule="evenodd"></path>
+						</svg>
+						<p class="textoRapido">
+							Visítanos junto a tu empresa y vive una experiencia
+							de aprendizaje a través de nuestros equipo de
+							profesores en nuestro Campus <br>
+							<a
+							href="https://maps.app.goo.gl/qdeeN4PbUgJYC6v88"
+							target="_blank"
+							class="correoLink"
+							>Estado 10, Oficina 1602, Santiago de Chile</a>
+						</p>
+						
+					</div>
+				</div>
+			</div>
+
+			
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	header {
+		background-color: #443fdce4;
+	}
+	.contInfoHome {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		z-index: 10;
+		margin-top: 70px;
+		flex: 50%;
+	}
+
+	.iconoEmpresa {
+		filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.262));
+	}
+
+	.bajadaHome {
+		width: fit-content;
+		margin: 0px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		font-size: 0.7em;
+		color: white;
+		padding: 5px 10px 3px 10px;
+		border-radius: 10px;
+		background-color: var(--color-base);
+	}
+
+	.sloganHome {
+		margin: 0px;
+		margin-bottom: 20px;
+		margin-top: 10px;
+		line-height: 0.9em;
+		letter-spacing: -0.02em;
+		font-weight: 600;
+		color: white;
+		text-shadow: rgba(55, 55, 54, 0.5) 1px 0 10px;
+	}
+
+	.textHome {
+		margin-bottom: 40px;
+		width: 80%;
+		font-size: medium;
+		text-wrap: balance;
+		color: white;
+	}
+
+	.botonesHome {
+		width: 40%;
+		display: flex;
+		gap: 1em;
+	}
+
+	.botonEquipo {
+		height: 40px;
+		width: 100%;
+		border: none;
+		border-radius: 0.4em;
+		background-color: #007bff;
+		font-size: 1rem;
+		font-weight: 600;
+		color: white;
+		box-shadow:
+			rgba(65, 63, 63, 0.2) 0px 1px 2px 0px,
+			rgba(107, 109, 112, 0.05) 0px 2px 6px 2px;
+		transition: all ease-in-out 0.3s;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: scale(1);
+		text-decoration: none;
+	}
+
+	.botonEquipo:hover {
+		font-size: 1.05rem;
+		transform: scale(1.03);
+		box-shadow:
+			rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px,
+			rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px,
+			rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.botonCursos {
+		height: 40px;
+		width: 100%;
+		border: none;
+		border-radius: 0.4em;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #007bff;
+		background-color: var(--color-bg-azul);
+		box-shadow:
+			rgba(65, 63, 63, 0.2) 0px 1px 2px 0px,
+			rgba(107, 109, 112, 0.05) 0px 2px 6px 2px;
+		transition: all ease-in-out 0.3s;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		transform: scale(1);
+	}
+
+	.botonCursos:hover {
+		font-size: 1.05rem;
+		transform: scale(1.03);
+		box-shadow:
+			rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px,
+			rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px,
+			rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.sliderHome {
+		width: 100%;
+		height: fit-content;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+
+	.datosNum {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		border-radius: 1rem;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		margin-top: 100px;
+	}
+
+	.blogEntradas {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: gray;
+		margin-top: 20px;
+	}
+
+	.metodos {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: black;
+		margin-top: 30px;
+	}
+
+	.ubicacion {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: center;
+		justify-content: center;
+		align-items: center;
+		margin-top: 60px;
+		-background-color: black;
+	}
+
+	.ubicacionEsp {
+		position: relative;
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		-background-color: rgb(255, 83, 15);
+	}
+
+	.mailContacto {
+		flex: calc(50% - 0rem);
+		height: 550px;
+		border-radius: 12px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-bg-azul);
+		box-shadow: var(--box-shadow-inicial);
+	}
+
+	.mapaContacto {
+		flex: calc(50% - 0rem);
+		height: 550px;
+		border-radius: 12px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-bg-azul);
+		box-shadow: var(--box-shadow-inicial);
+	}
+
+	.iconosUbicacion {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 100px;
+		margin-bottom: 100px;
+		-background-color: red;
+	}
+
+	.iconosUbiEsp {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: row;
+		justify-content: center;
+		align-items: start;
+		gap: 2rem;
+		-background-color: rgb(238, 227, 16);
+	}
+
+	.botomRapido {
+		height: 100%;
+		width: 90%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: start;
+		padding-bottom: 20px;
+		border-radius: 12px;
+		gap: 1.5rem;
+		-background-color: gray;
+	}
+
+	.iconosContacto {
+		width: 60px;
+		height: 60px;
+		margin-bottom: 20px;
+		padding: 20px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+		background-color: #007bff;
+		/* var(--color-base-claro) */
+	}
+
+	.textoRapido {
+		width: 80%;
+		font-size: 0.8em;
+		font-weight: 400;
+		line-height: 1.3em;
+		text-wrap: wrap;
+		text-align: left;
+		margin-bottom: 20px;
+		color: rgb(113, 108, 108);
+	}
+
+	.correoLink {
+		font-size: 0.9em;
+		font-weight: 500;
+		line-height: 1.1em;
+		color: #6e80e4a9;
+	}
+
+	.correoLink:hover {
+		color: #007bff; 
+	}
+
+	.formulario {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		-background-color: gray;
+		margin-top: 200px;
+		margin-bottom: 100px;
+	}
+
+	.titulosSect {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
+
+	.titulosSectCont {
+		width: fit-content;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.titulosHome {
+		position: relative;
+		width: fit-content;
+		text-align: center;
+		color: rgb(5, 52, 77);
+		font-size: 2.3em;
+		line-height: 1em;
+		margin: 0 0;
+		margin-bottom: 10px;
+	}
+
+	.destacador {
+		color: var(--color-base);
+	}
+
+	.subtituloHome {
+		position: relative;
+		width: 80%;
+		max-width: 1280px;
+		height: fit-content;
+		text-align: center;
+		color: rgb(139 126 126);
+		font-size: 1em;
+		font-weight: 100;
+		line-height: 0.9em;
+	}
+
+	.mapaColor {
+		width: 100%;
+		height: fit-content;
+		padding: 30px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(126, 121, 121, 0.05);
+	}
+
+	.mapa {
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		margin-top: 5px;
+		margin-bottom: 150px;
+		-background-color: red;
+	}
+
+	.mapaEsp {
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 1rem;
+		-background-color: rgba(55, 55, 54, 0.5);
+	}
+
+	.mapaText {
+		flex: calc(50% - 1rem);
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: end;
+	}
+
+	.mapaGoogle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
+
+	.mapaSlogan {
+		text-align: right;
+		font-size: 1.6em;
+		font-weight: 500;
+		line-height: 1.1em;
+		text-wrap: balance;
+		color: rgb(98, 93, 93);
+		margin-bottom: 40px;
+	}
+
+	.mapaDire {
+		font-size: 0.9em;
+		font-weight: 500;
+		color: var(--color-base);
+		/* color: rgb(68, 65, 65); */
+	}
+
+	.googleMap {
+		height: 100%;
+		width: 100%;
+		border-radius: 1rem;
+	}
+
+	.boxScroll{
+		width: 100%;
+		height: 40px;
+		margin-top: 50px;
+		margin-bottom: 10px;
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		.titulosHome {
+		}
+
+		.bajadaHome {
+			font-size: 0.7em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 3em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 40%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+
+		.titulosSect {
+		margin-top: 50px;
+	}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.contInfoHome {
+			flex: 60%;
+		}
+		.bajadaHome {
+			font-size: 0.6em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 2.5em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 40%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+
+		.datosNum {
+			margin-bottom: 30px;
+		}
+
+		.metodos {
+			margin-top: 60px;
+		}
+
+		.formulario {
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+
+		.iconosUbiEsp {
+		flex-direction: column;
+		}
+
+		.titulosSect {
+			margin-top: 50px;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.contInfoHome {
+			justify-content: center;
+			align-items: center;
+			margin-top: 15px;
+		}
+
+		.bajadaHome {
+			font-size: 0.6em;
+			padding: 5px 12px 3px 12px;
+			border-radius: 8px;
+			text-wrap: wrap;
+		}
+
+		.sloganHome {
+			font-size: 2.2em;
+			line-height: 0.8em;
+			letter-spacing: -0.02em;
+			text-wrap: wrap;
+			color: white;
+		}
+
+		.textHome {
+			width: 100%;
+			font-size: medium;
+			text-wrap: balance;
+			line-height: 1em;
+			color: white;
+		}
+
+		.botonesHome {
+			width: 100%;
+			display: flex;
+			gap: 1em;
+		}
+
+		.botonEquipo {
+			height: 40px;
+			width: 100%;
+			border: none;
+			border-radius: 0.4em;
+			background-color: var(--color-base);
+			font-size: 1rem;
+			font-weight: 600;
+			color: white;
+			box-shadow: var(--box-shadow-inicial);
+			transition: all ease-in-out 0.3s;
+			cursor: pointer;
+			transform: scale(1);
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.datosNum {
+			margin-bottom: 20px;
+		}
+
+		.formulario {
+			height: fit-content; 
+			margin-top: 100px;
+			margin-bottom: 100px;
+		} 
+
+		.titulosHome {
+			font-size: 2em;
+			padding-bottom: 10px;
+		}
+
+		.mapaEsp {
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			-background-color: rgba(55, 55, 54, 0.5);
+		}
+
+		.mapaSlogan {
+			text-align: center;
+			font-size: 1.6em;
+			font-weight: 500;
+			line-height: 1.05em;
+			text-wrap: balance;
+			color: rgb(52, 50, 50);
+			margin-bottom: 40px;
+		}
+
+		.mapaDire {
+			width: 100%;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 500;
+			color: var(--color-base);
+		}
+
+		.titulosSect {
+			position: relative;
+			width: 96%;
+			max-width: 1280px;
+			height: fit-content;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+
+		.subtituloHome {
+			position: relative;
+			width: 96%;
+			max-width: 1280px;
+			height: fit-content;
+			text-align: center;
+			color: rgb(139 126 126);
+			font-size: 1em;
+			font-weight: 100;
+			line-height: 0.9em;
+		}
+
+		.metodos {
+			margin-top: 10px;
+		}
+
+		.ubicacion{
+			margin-top: 10px;
+		}
+
+		.ubicacionEsp {
+			position: relative;
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 3rem;
+			-background-color: rgb(255, 83, 15);
+		}
+
+		.mailContacto {
+			flex: calc(50% - 0rem);
+			height: 550px;
+			border-radius: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: var(--color-bg-azul);
+			box-shadow: var(--box-shadow-inicial);
+			padding: 40px 0px;
+		}
+
+		.mapaContacto {
+			flex: calc(50% - 0rem);
+			width: 90%;
+			border-radius: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: var(--color-bg-azul);
+			box-shadow: var(--box-shadow-inicial);
+		}
+
+		.mapaGoogle{
+			height: 500px;
+		}
+
+		.iconosUbiEsp{
+			flex-direction: column;
+		}
+
+		.botomRapido{
+			width: 100%;
+		}
+
+		.titulosSect {
+			margin-top: 50px;
+	}
+</style>
+
+<style>
+	/* Títulos y subtítulos deben empezar ocultos */
+.titulosHome, .subtituloHome {
+  opacity: 0;
+  transform: translateY(30px); /* Los elementos se desplazan hacia arriba al aparecer */
+  transition: opacity 1.4s ease-in-out, transform 1.4s ease-in-out;
+}
+
+/* Todos los demás divs mantienen sus estados iniciales */
+.datosNum{
+  opacity: 0;
+  transform: translateY(30px); /* Movimiento inicial desde abajo */
+}
+
+ .blogEntradas, .metodos, .ubicacion, .iconosUbicacion {
+  opacity: 0;
+  transform: translateY(20px); /* Movimiento inicial desde abajo */ 
+}
+.blogEntradas {
+  transform: translateX(-50px); /* Deslizar desde la izquierda */
+}
+.metodos {
+  transform: scale(0.6); /* Inicia pequeño */
+}
+
+.ubicacion {
+  opacity: 0;
+  transform: translateX(50px); /* Inicia desplazada hacia la derecha */
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.iconosUbicacion {
+  transform: translateY(50px); /* Rebote inicial desde abajo */
+}
+ 
+</style>
+
+<style>
+	.contForm {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contRapido {
+        flex: calc(50% - 1rem);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .contRapidoEsp {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .contEsptext {
+        width: 80%;
+        height: 80%;
+    }
+
+    h4 {
+        position: relative;
+        width: 100%;
+        font-size: 1.9em;
+        font-weight: bold;
+        color: rgb(68, 65, 65);
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .subForm {
+        font-size: 1.6em;
+        font-weight: 500;
+        line-height: 1.05em;
+        text-wrap: balance;
+        color: rgb(52, 50, 50);
+        margin-bottom: 40px; 
+    }
+
+    .textForm {
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1em;
+        color: rgb(68, 65, 65);
+        margin-bottom: 0px;
+    }
+
+    .correoLink {
+        font-size: 0.9em;
+        font-weight: 600;
+        line-height: 1.1em;
+        color: rgb(42, 58, 107);
+    }
+
+    .formulario {
+        height: 600px;
+        flex: calc(50% - 1rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formCont {
+        width: 95%;
+        height: 94%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.5rem;
+        background-color: var(--color-bg-azul);
+        box-shadow: var(--box-shadow);
+    }
+
+    .formContEsp {
+        width: 90%;
+        height: 90%;
+    }
+
+    .textFormulario {
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1em;
+        color: rgb(126, 121, 121);
+        padding-left: 0.5em;
+    }
+
+    .esp {
+        margin-top: 5px;
+    }
+
+	.formContenedor{
+		width: 90%;
+		height: 90%;
+	}
+
+    .textArea {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid rgb(118, 113, 113);
+        margin-bottom: 10px;
+        background-color: transparent;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+
+    .textArea:focus {
+        outline: none;
+        color: rgb(112, 107, 107);
+    }
+
+    .textArea::placeholder {
+        color: rgb(163, 153, 153);
+    }
+
+    .textMensaje {
+        resize: none;
+        border: none;
+        min-height: 50px;
+        max-height: 100px;
+        border-radius: 0.5rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .subFormEnviar {
+        width: 100%;
+        height: 40px;
+        color: white;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        box-shadow: var(--box-shadow--inicial);
+        background-color: var(--color-base);
+        transition: all ease-in-out 0.3s;
+    }
+
+    .subFormEnviar {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      .subFormEnviar:hover {
+        background-color: #45a049;
+      }
+
+    .subFormEnviar:hover {
+        background-color: rgb(29, 133, 236);
+        box-shadow: var(--box-shadow);
+    }
+
+    #success {
+        position: relative;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 500;
+        color: rgb(41, 147, 174);
+        width: 100%;
+        height: 34px;
+        border-radius: 0.5rem;
+        -background-color: rgba(22, 203, 106, 0.5);
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    hr {
+        border-top: 1px solid rgb(118, 113, 113);
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        h4 {
+            font-size: 1.9em;
+            margin-bottom: 20px;
+        }
+
+        .contEsptext{
+            width: 90%;
+        }
+
+        .subForm {
+            font-size: 1.4em;
+            font-weight: 500;
+            line-height: 1.05em;
+            margin-bottom: 30px; 
+        }
+
+        .textForm {
+            font-size: 0.8em;
+            line-height: 1em;
+            margin-bottom: 0px;
+        }
+
+        .correoLink {
+            font-size: 0.9em;
+            font-weight: 600;
+            line-height: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .textFormulario{
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        .textArea{
+            height: 30px;
+        }
+
+       .textMensaje {
+            min-height: 50px;
+            max-height: 90px; 
+            margin-bottom: 10px;
+        }
+
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        .contForm {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+        .contRapido {
+            flex: calc(100% - 2rem);
+            height: fit-content;
+        }
+
+        .contRapidoEsp{
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contEsptext{
+            width: 90%;
+        }
+
+        h4{
+            text-align: left;
+            width: fit-content;
+            font-size: 2em;
+        }
+        .formulario{
+            height: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .formCont{
+            height: fit-content;
+            padding: 30px 0;
+        }
+
+        form{
+            height: fit-content;
+        }
+
+        h4{
+            line-height: 1em;
+        }
+    }
+
+
+</style>
+

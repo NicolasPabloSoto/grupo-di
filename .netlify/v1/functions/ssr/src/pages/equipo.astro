@@ -1,0 +1,427 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="es"> 
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />  
+	</head>
+	<body>
+		  
+		<Header />  
+
+		<main>
+
+			<div class="contEquipo">
+				<div class="imgCabecera"></div>
+
+				<h4 class="sloganEntrada">En grupo DI, nuestra misión es clara: ofrecer un servicio especializado y adaptativo que eleve las competencias laborales y construya relaciones de confianza</h4>
+
+				<div class="contMision">
+					<div class="empresaText">
+						<p class="tituloMision"><i>
+								<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+									<path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z" clip-rule="evenodd"/>
+								</svg>
+							</i>
+						Quienes Somos</p>
+
+						<p class="textoMision">En GRUPO DI somos un equipo de profesionales movilizados por la filosofía de entregar un servicio cercano, eficiente y especializado en cada una de nuestras intervenciones, con el compromiso de generar las mejores experiencias a todas las personas.</p>
+					</div>
+
+					<div class="empresaText">
+						<p class="tituloMision"><i>
+								<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+									<path fill-rule="evenodd" d="M5 9a7 7 0 1 1 8 6.93V21a1 1 0 1 1-2 0v-5.07A7.001 7.001 0 0 1 5 9Zm5.94-1.06A1.5 1.5 0 0 1 12 7.5a1 1 0 1 0 0-2A3.5 3.5 0 0 0 8.5 9a1 1 0 0 0 2 0c0-.398.158-.78.44-1.06Z" clip-rule="evenodd"/>
+							  	</svg>									
+							</i>
+							Misión</p>
+
+						<p class="textoMision">Somos un Organismo Técnico de Capacitación orientado a mejorar las competencias laborales de los trabajadores utilizando distintas soluciones metodológicas adaptativas e innovadoras orientadas al aprendizaje continuo.</p>
+					</div>
+
+					<div class="empresaText">
+						<p class="tituloMision"><i>
+								<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="33" height="30" fill="currentColor" viewBox="0 0 24 24">
+									<path fill-rule="evenodd" d="M4.998 7.78C6.729 6.345 9.198 5 12 5c2.802 0 5.27 1.345 7.002 2.78a12.713 12.713 0 0 1 2.096 2.183c.253.344.465.682.618.997.14.286.284.658.284 1.04s-.145.754-.284 1.04a6.6 6.6 0 0 1-.618.997 12.712 12.712 0 0 1-2.096 2.183C17.271 17.655 14.802 19 12 19c-2.802 0-5.27-1.345-7.002-2.78a12.712 12.712 0 0 1-2.096-2.183 6.6 6.6 0 0 1-.618-.997C2.144 12.754 2 12.382 2 12s.145-.754.284-1.04c.153-.315.365-.653.618-.997A12.714 12.714 0 0 1 4.998 7.78ZM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/>
+								</svg>							  
+							</i>
+							Visión</p>
+
+						<p class="textoMision">Ser un Organismo Técnico de Capacitación líder en el mercado, siempre a la vanguardia en herramientas de aprendizaje continuo.</p>
+					</div>
+
+					<div class="empresaText">
+						<p class="tituloMision"><i>
+								<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+									<path fill-rule="evenodd" d="M14 4.182A4.136 4.136 0 0 1 16.9 3c1.087 0 2.13.425 2.899 1.182A4.01 4.01 0 0 1 21 7.037c0 1.068-.43 2.092-1.194 2.849L18.5 11.214l-5.8-5.71 1.287-1.31.012-.012Zm-2.717 2.763L6.186 12.13l2.175 2.141 5.063-5.218-2.141-2.108Zm-6.25 6.886-1.98 5.849a.992.992 0 0 0 .245 1.026 1.03 1.03 0 0 0 1.043.242L10.282 19l-5.25-5.168Zm6.954 4.01 5.096-5.186-2.218-2.183-5.063 5.218 2.185 2.15Z" clip-rule="evenodd"/>
+								</svg>
+							</i>
+							Cultura</p>
+
+						<p class="textoMision">La experiencia en la relación con los clientes a lo largo de nuestra trayectoria nos motiva a mantenernos atentos a cada proceso, lo cual nos lleva a convertirnos en partners de confianza, consolidando lazos en nuestras relaciones.</p>
+					</div>
+
+					<div class="empresaText">
+						<p class="tituloMision"><i>
+									<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+										<path fill-rule="evenodd" d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z" clip-rule="evenodd"/>
+									</svg>
+							</i>
+							Política de calidad</p>
+
+						<p class="textoMision">Desarrollar una gestión integral de negocio alineada con nuestra visión, misión y planificación estratégica, manteniendo índices de calidad que se adapten a los cambios del entorno, a través del cumplimiento de las normas legales y reglamentarias, que nos permita entregar a nuestros clientes y partes interesadas servicios y productos profesionalmente diseñados, pertinentes, sustentables económicamente, que satisfagan plenamente sus necesidades y expectativas de capacitación.</p>
+					</div>
+
+					
+				</div>
+
+				<div class="contCerti">
+					<div class="certificacionUno">
+						<div class="certLogo"></div>
+						<p class="certTextos">Buscamos la mejora continua de nuestros procesos a través del cumplimiento de la norma chilena 2728:2015, lo anterior se refleja en los tres objetivos que describimos a continuación:</p>
+					</div>
+					<div class="certificacionDos">
+						<p class="certTextos"><b>&#187;</b> Lograr la satisfacción y expectativas de nuestros clientes a través del cumplimiento oportuno del material de apoyo, insumos y equipos comprometidos que afecten el servicio de capacitación.</p>
+						<p class="certTextos"><b>&#187;</b> Mantener un equipo de proveedores críticos acorde con las necesidades del cliente, atendiendo a nuestra obligación permanente con la mejora continua y cumplimiento de los requisitos del organismo regulador SENCE.</p>
+						<p class="certTextos"><b>&#187;</b> Buscar permanentemente la mejora continua del proceso único del sistema de gestión de calidad “llamado servicio de capacitación”.</p>
+					</div>
+				</div>
+			</div>
+			
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+
+
+	.contEquipo{
+		position: relative;
+		width: 96%;
+		max-width: 1280px;
+		height: fit-content;
+		-background-color: red;
+	}
+
+	.imgCabecera{
+		width: 100%;
+		height: 580px;
+		margin-top: 20px;
+		border-radius: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: end;
+		background: url(../images/equipo.jpg); 
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		box-shadow: var(--box-shadow--inicial);
+	}
+
+	.sloganEntrada{
+		width: 100%;
+		height: fit-content;
+		font-size: 2em;
+		font-weight: bold;
+		line-height: 1em;
+		text-wrap: wrap;
+		color: rgb(68, 65, 65);
+		text-shadow: rgba(55, 55, 54, 0.1) 1px 0 10px;
+		margin: 0 0;
+		margin-top: 30px;
+	}
+
+	.contMision{
+		width: 100%;
+		height: fit-content;
+		display: flex;
+        flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-around;
+        gap: 1rem;
+		-background-color: rgba(0, 0, 255, 0.183);
+		padding-top: 80px;
+	}
+
+	.empresaText{
+		width: 100%;
+		max-width: calc(33.3% - 1rem);
+		min-width: 350px;
+		height: fit-content;
+		padding-bottom: 20px;
+		-background-color: white;
+	}
+
+	.tituloMision{
+		font-size: 1.3em;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		vertical-align: sub;
+		border-bottom: 1px solid #443fdc59;
+		color: rgb(81, 78, 78);
+		padding-bottom: 10px;
+	}
+
+	.textoMision{
+		margin-top: 10px;
+		font-size: 0.85em;
+		font-weight: 500;
+		line-height: 1.3em;
+		text-wrap: wrap;
+		padding-left: 20px;
+		padding-right: 20px;
+		color: rgb(68, 65, 65);
+	}
+
+	.empresaText:last-child{
+		 max-width: calc(66.6% - 1rem);
+	}
+
+	i{
+		vertical-align: sub;
+		color: #443fdcb0;
+	}
+
+	p{
+		margin: 0;
+		padding: 0;
+		line-height: normal;
+	}
+
+	.contCerti{
+		width: 100%;
+		height: fit-content;
+		display: flex;
+        flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-around;
+        gap: 1rem;
+		-background-color: red;
+		margin-bottom: 200px;
+		margin-top: 100px;
+	}
+
+	.certificacionUno{
+		width: 100%;
+		max-width: calc(50% - 1rem);
+		min-width: 1px;
+		height: fit-content;
+		padding-bottom: 20px;
+		border-right: 1px solid #443fdc59;
+		-background-color: white;
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+		justify-content: start;
+		gap: 1rem;
+	}
+	
+	.certificacionDos{
+		width: 100%;
+		max-width: calc(50% - 2rem);
+		min-width: 1px;
+		height: fit-content;
+		padding-bottom: 20px;
+		-background-color: white;
+	}
+	
+
+	.certLogo{
+		width: 130px;
+		height: 180px;
+		background:url(../images/certificacion_nch2728.svg);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		border-radius: 1rem;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	}
+
+	.certTextos{
+		margin-top: 10px;
+		font-size: 0.8em;
+		font-weight: 500;
+		line-height: 1.3em;
+		text-wrap: wrap;
+		padding-right: 20px;
+		color: rgb(59, 56, 56);
+	}
+
+	.certificacionUno:first-child .certTextos{
+		width: calc(100% - 140px - 2rem);
+	}
+
+	@media (min-width: 767px) and (max-width: 1024px){
+		.imgCabecera{
+			width: 100%;
+			height: 400px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+		}
+	}
+
+	@media (min-width: 481px) and (max-width: 767px){
+
+		.imgCabecera{
+			width: 100%;
+			height: 350px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+			background-color: red;
+		}
+
+		.sloganEntrada{
+			font-size: 1.6em;
+		}
+
+		.contMision{
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-around;
+			gap: 1rem;
+			-background-color: rgba(0, 0, 255, 0.183);
+			padding-top: 100px;
+		}
+
+		.empresaText{
+			width: 100%;
+			max-width: calc(50% - 1rem);
+			min-width: calc(50% - 1rem);
+			height: fit-content;
+			padding-bottom: 20px;
+			-background-color: white;
+		}
+
+		.empresaText:last-child{
+			max-width: calc(100% - 1rem);
+		}
+
+		.certificacionUno{
+			width: 100% !important;
+			max-width: calc(50% - 1rem);
+			min-width: 1px;
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+		}
+
+		.certificacionUno:first-child .certTextos{
+			width: 90%;
+			font-size: 0.9em;
+			line-height: 1.8em;
+		}
+
+	}
+
+	@media (min-width: 0px) and (max-width: 480px){
+		.sloganEntrada{
+			font-size: 1.4em;
+		}
+
+		.empresaText{
+			width: 100%;
+			max-width: calc(100% - 1rem);
+			min-width: calc(100% - 1rem);
+		}
+
+		.empresaText:last-child{
+			max-width: calc(100% - 1rem);
+		}
+
+		.contCerti{
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: space-around;
+			gap: 1rem;
+		}
+
+		.certificacionUno{
+			width: 100% !important;
+			max-width: calc(100% - 1rem);
+			min-width: 1px;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-right: none;
+		}
+
+		.certificacionUno:first-child .certTextos{
+			width: 100%;
+			font-size: 0.9em;
+			line-height: 1.8em;
+			padding: 0;
+			margin: 0;
+			width: 90%;
+		}
+
+		.certificacionDos{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-right: none;
+		}
+
+
+		.certTextos{
+			padding: 0;
+			width: 90%;
+		}
+
+		.certificacionDos{
+			width: 100%;
+			max-width: calc(100% - 2rem);
+			min-width: 1px;
+			height: fit-content;
+			padding-bottom: 20px;
+			-background-color: white;
+		}
+
+		.imgCabecera{
+			width: 100%;
+			height: 250px;
+			margin-top: 20px;
+			border-radius: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			background: url(../images/equipo.jpg); 
+			background-position: top;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: var(--box-shadow--inicial);
+			background-color: red;
+		}
+
+
+	}
+
+</style> 
