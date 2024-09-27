@@ -58,7 +58,7 @@ const $$Formulario = createComponent(async ($$result, $$props, $$slots) => {
               },
               body: JSON.stringify({ name, surname, email, tel, message, subject }),
             });
-            then((res) => {
+            await((res) => {
             if (!res.ok) {
                 throw new Error(res.status)
             }
