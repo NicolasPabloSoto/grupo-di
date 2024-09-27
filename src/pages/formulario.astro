@@ -1,3 +1,6 @@
+---
+
+---
 <form id="form" onsubmit="event => event.preventDefault();return false">
     <div class="columns">
       <fieldset>
@@ -71,7 +74,7 @@
 
         const sendmail = async () => {
         const { name, surname, email, tel, message, subject } = getFormData()
-        const data = await fetch('/api/sendmail.json', {
+        const data = await fetch('src/pages/api/sendmail.json.ts', { 
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
