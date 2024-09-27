@@ -23,7 +23,7 @@ const post = async ({ request }) => {
       )}</div>`;
       let mailTransporter = nodemailer.createTransport({
         host,
-        port: 587,
+        port: 465,
         secure: false,
         auth: {
           user: emailTo,
