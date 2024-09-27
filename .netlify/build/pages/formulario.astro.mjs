@@ -47,7 +47,7 @@ const $$Formulario = createComponent(async ($$result, $$props, $$slots) => {
   const sendmail = async () => {
     try {
       const { name, surname, email, tel, message, subject } = getFormData();
-      const response = await fetch('/.netlify/functions/send-email', {
+      const response = await fetch('/.netlify/functions/send-email.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const $$Formulario = createComponent(async ($$result, $$props, $$slots) => {
   const sendmail = async () => {
     try {
       const { name, surname, email, tel, message, subject } = getFormData();
-      const response = await fetch('/.netlify/functions/send-email', {
+      const response = await fetch('/.netlify/functions/send-email.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
