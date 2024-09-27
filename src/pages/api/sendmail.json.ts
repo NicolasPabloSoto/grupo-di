@@ -17,7 +17,7 @@ export const post: APIRoute = async ({ request }) => {
     const tel = formData.tel
     const subject = formData.subject
     const message = `${formData.message}
-    ----------------------------------------------------------------------
+    ---------------------------------------------------------------------- 
     From: ${name} ${surname} • email: ${email} • tel: ${tel}
     `
     const html = `<div style="margin: 20px auto;font-family: Helvetica, Verdana, sans-serif">${message.replace(
