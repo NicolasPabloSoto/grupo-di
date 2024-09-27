@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.5.1",
+    "@types/nodemailer": "^6.4.16",
     "vite": "^5.4.5"
   }
 }
