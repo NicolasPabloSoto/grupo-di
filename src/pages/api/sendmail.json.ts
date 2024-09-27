@@ -46,11 +46,11 @@ export const post: APIRoute = async ({ request }) => {
 
     let mailresult
     try {
-      mailresult = await mailTransporter.sendMail(mailDetails)
+      let mailresult = await mailTransporter.sendMail(mailDetails); // Usar await en lugar de callback
+      console.log('Message sent: %s', mailresult.messageId);
     } catch (error) {
-      console.log('******* Error: ', error)
+      console.log('******* Error: ', error); // Manejo de errores
     }
-    console.log('Message sent: %s', mailresult?.messageId)
 
     // return endpoint response
     return new Response(JSON.stringify(mailDetails), {

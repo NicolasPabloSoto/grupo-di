@@ -36,13 +36,12 @@ const post = async ({ request }) => {
       text: message,
       html
     };
-    let mailresult;
     try {
-      mailresult = await mailTransporter.sendMail(mailDetails);
+      let mailresult2 = await mailTransporter.sendMail(mailDetails);
+      console.log("Message sent: %s", mailresult2.messageId);
     } catch (error) {
       console.log("******* Error: ", error);
     }
-    console.log("Message sent: %s", mailresult?.messageId);
     return new Response(JSON.stringify(mailDetails), {
       status: 200
     });
