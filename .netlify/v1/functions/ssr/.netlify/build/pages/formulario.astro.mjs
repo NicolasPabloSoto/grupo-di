@@ -51,14 +51,14 @@ const $$Formulario = createComponent(async ($$result, $$props, $$slots) => {
 
         const sendmail = async () => {
         const { name, surname, email, tel, message, subject } = getFormData()
-        const data = await fetch('/api/sendmail.json', { 
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, surname, email, tel, message, subject }),
-        })
-            .then((res) => {
+        const data = await fetch('/.netlify/functions/sendmail', { // Cambia '/api/sendmail.json' por esta ruta
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ name, surname, email, tel, message, subject }),
+            });
+            then((res) => {
             if (!res.ok) {
                 throw new Error(res.status)
             }
