@@ -12,7 +12,7 @@ exports.handler = async function(event) {
 
   try {
     await client.sendAsync({
-      text: `Nombre: ${name} ${surname}\nCorreo: ${email}\nTeléfono: ${tel}\nMensaje: ${message}`,
+      text: `Nombre: ${name} ${surname}\nCorreo: ${email}\nTeléfono: ${tel}\nMensaje: ${message}`, 
       from: process.env.SENDINBLUE_SENDER,
       to: 'comunidad.grupodi@gmail.com',
       subject: subject || 'Nueva consulta',
