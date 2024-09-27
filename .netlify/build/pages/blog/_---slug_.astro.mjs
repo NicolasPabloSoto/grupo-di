@@ -1,6 +1,6 @@
 import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, e as renderHead, b as addAttribute, f as renderSlot } from '../../chunks/astro/server_LTQd25l2.mjs';
 import 'kleur/colors';
-import { $ as $$FormattedDate, g as getCollection } from '../../chunks/FormattedDate_CMe1h6G6.mjs';
+import { $ as $$FormattedDate, g as getCollection } from '../../chunks/FormattedDate_z5oedv_n.mjs';
 import { $ as $$BaseHead, a as $$Footer } from '../../chunks/Footer_CookHhA5.mjs';
 import { $ as $$Header } from '../../chunks/Header_D9yedW5O.mjs';
 /* empty css                                     */
