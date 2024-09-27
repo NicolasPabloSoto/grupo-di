@@ -8,8 +8,8 @@ import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Formulario from "../components/formulario.astro";
 import { useState } from "react";
-import FormSubmit from '../components/FormSubmit';
 ---
 
 <!doctype html>
@@ -121,7 +121,7 @@ import FormSubmit from '../components/FormSubmit';
 			<div class="ubicacion">
 				<div class="ubicacionEsp">
 					<div class="mailContacto">
-						<FormSubmit />
+						<Formulario />
 					</div>
 
 					<div class="mapaContacto">
@@ -421,13 +421,13 @@ import FormSubmit from '../components/FormSubmit';
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 3rem;
+		gap: 2rem;
 		-background-color: rgb(255, 83, 15);
 	}
 
 	.mailContacto {
 		flex: calc(50% - 0rem);
-		height: 550px;
+		height: 600px;
 		border-radius: 12px;
 		display: flex;
 		justify-content: center;
@@ -438,7 +438,7 @@ import FormSubmit from '../components/FormSubmit';
 
 	.mapaContacto {
 		flex: calc(50% - 0rem);
-		height: 550px;
+		height: 600px;
 		border-radius: 12px;
 		display: flex;
 		justify-content: center;
@@ -932,6 +932,7 @@ import FormSubmit from '../components/FormSubmit';
 			background-color: var(--color-bg-azul);
 			box-shadow: var(--box-shadow-inicial);
 			padding: 40px 0px;
+			width: 90%;
 		}
 
 		.mapaContacto {

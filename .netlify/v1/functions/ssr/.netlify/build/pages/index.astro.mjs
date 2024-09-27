@@ -3,10 +3,9 @@ import 'kleur/colors';
 import { b as $$GrupoIsotipo, c as $$HeaderLink, $ as $$BaseHead, a as $$Footer } from '../chunks/Footer_CookHhA5.mjs';
 /* empty css                                 */
 import 'clsx';
-import { g as getCollection, $ as $$FormattedDate } from '../chunks/FormattedDate_CMe1h6G6.mjs';
+import { g as getCollection, $ as $$FormattedDate } from '../chunks/FormattedDate_D2lKaG2f.mjs';
 import { S as SITE_TITLE, a as SITE_DESCRIPTION } from '../chunks/consts_DN_y46k3.mjs';
-import { jsxs, jsx } from 'react/jsx-runtime.js';
-import { useState } from 'react';
+import { $ as $$Formulario } from '../chunks/formulario_Dm3Fyruh.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$HeaderHome = createComponent(($$result, $$props, $$slots) => {
@@ -207,113 +206,6 @@ const $$GrupoLogotipo = createComponent(($$result, $$props, $$slots) => {
 		C282.6,134.8,297,148.9,297,166.4z"></path> </g> </svg>`;
 }, "C:/blog-template/public/GrupoLogotipo.astro", void 0);
 
-const FormSubmit = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    empresa: ""
-    // Campo agregado
-  });
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("../../.netlify/functions/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-      const result = await response.json();
-      alert(result.message);
-    } catch (error) {
-      alert("Error al enviar el formulario");
-    }
-  };
-  return /* @__PURE__ */ jsxs("form", { id: "contact-form", onSubmit: handleSubmit, className: "formContenedor", children: [
-    /* @__PURE__ */ jsx("p", { className: "textFormulario", children: "Nombre:" }),
-    /* @__PURE__ */ jsx(
-      "input",
-      {
-        type: "text",
-        name: "name",
-        value: formData.name,
-        onChange: handleChange,
-        className: "textArea",
-        placeholder: "Martina Enrione",
-        required: true
-      }
-    ),
-    /* @__PURE__ */ jsx("p", { className: "textFormulario", children: "Correo:" }),
-    /* @__PURE__ */ jsx(
-      "input",
-      {
-        type: "email",
-        name: "email",
-        value: formData.email,
-        onChange: handleChange,
-        className: "textArea",
-        placeholder: "m.enrione@gmail.com",
-        required: true
-      }
-    ),
-    /* @__PURE__ */ jsx("p", { className: "textFormulario", children: "Empresa:" }),
-    /* @__PURE__ */ jsx(
-      "input",
-      {
-        type: "text",
-        name: "empresa",
-        value: formData.empresa,
-        onChange: handleChange,
-        className: "textArea",
-        placeholder: "Urbanica",
-        required: true
-      }
-    ),
-    /* @__PURE__ */ jsx("p", { className: "textFormulario", children: "Asunto:" }),
-    /* @__PURE__ */ jsx(
-      "input",
-      {
-        type: "text",
-        name: "subject",
-        value: formData.subject,
-        onChange: handleChange,
-        className: "textArea"
-      }
-    ),
-    /* @__PURE__ */ jsx("p", { className: "textFormulario esp", children: "Mensaje:" }),
-    /* @__PURE__ */ jsx(
-      "textarea",
-      {
-        name: "message",
-        value: formData.message,
-        onChange: handleChange,
-        className: "textMensaje",
-        cols: 30,
-        rows: 10,
-        required: true
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "input",
-      {
-        type: "submit",
-        name: "submit",
-        value: "ENVIAR",
-        className: "subFormEnviar"
-      }
-    )
-  ] });
-};
-
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<html lang="es" data-astro-cid-j7pv25f6> <head>${renderComponent($$result, "BaseHead", $$BaseHead, { "title": SITE_TITLE, "description": SITE_DESCRIPTION, "data-astro-cid-j7pv25f6": true })}${renderHead()}</head> <body data-astro-cid-j7pv25f6> ${renderComponent($$result, "HeaderHome", $$HeaderHome, { "data-astro-cid-j7pv25f6": true })} <main data-astro-cid-j7pv25f6> <div class="sliderHome" data-astro-cid-j7pv25f6> ${renderComponent($$result, "VideoBg", $$VideoBg, { "data-astro-cid-j7pv25f6": true })} </div> <div class="contInfoHome" data-astro-cid-j7pv25f6> <div class="contInfoIzq" data-astro-cid-j7pv25f6> ${renderComponent($$result, "GrupoLogotipo", $$GrupoLogotipo, { "width": 60, "height": 60, "fill": "white", "class": "iconoEmpresa", "data-astro-cid-j7pv25f6": true })} <p class="bajadaHome" data-astro-cid-j7pv25f6>CONSULTORIA Y CAPACITACIÓN</p> <h1 class="sloganHome" data-astro-cid-j7pv25f6>
 Capacitarse es Crecer, <br data-astro-cid-j7pv25f6>
@@ -340,7 +232,7 @@ Si tienes dudas de como implementar los cursos en
 						tu organización no dudes en preguntarnos, o si ya tienes
 						pensado que quieres hacer escríbenos, te estamos
 						esperando.
-</p> </div> </div> <div class="ubicacion" data-astro-cid-j7pv25f6> <div class="ubicacionEsp" data-astro-cid-j7pv25f6> <div class="mailContacto" data-astro-cid-j7pv25f6> ${renderComponent($$result, "FormSubmit", FormSubmit, { "data-astro-cid-j7pv25f6": true })} </div> <div class="mapaContacto" data-astro-cid-j7pv25f6> <div class="mapaGoogle" data-astro-cid-j7pv25f6> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl" class="googleMap" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-astro-cid-j7pv25f6></iframe> </div> </div> </div> </div> <div class="iconosUbicacion" data-astro-cid-j7pv25f6> <div class="iconosUbiEsp" data-astro-cid-j7pv25f6> <div class="botomRapido" data-astro-cid-j7pv25f6> <svg class="iconosContacto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-j7pv25f6> <path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7 3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V9a5 5 0 1 1 10 0v7.083A2.919 2.919 0 0 1 14.083 19H14a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a2 2 0 0 0 1.732-1h.351a4.917 4.917 0 0 0 4.83-4H19a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3 7 7 0 0 0-7-7Zm1.45 3.275a4 4 0 0 0-4.352.976 1 1 0 0 0 1.452 1.376 2.001 2.001 0 0 1 2.836-.067 1 1 0 1 0 1.386-1.442 4 4 0 0 0-1.321-.843Z" clip-rule="evenodd" data-astro-cid-j7pv25f6></path> </svg> <p class="textoRapido" data-astro-cid-j7pv25f6>
+</p> </div> </div> <div class="ubicacion" data-astro-cid-j7pv25f6> <div class="ubicacionEsp" data-astro-cid-j7pv25f6> <div class="mailContacto" data-astro-cid-j7pv25f6> ${renderComponent($$result, "Formulario", $$Formulario, { "data-astro-cid-j7pv25f6": true })} </div> <div class="mapaContacto" data-astro-cid-j7pv25f6> <div class="mapaGoogle" data-astro-cid-j7pv25f6> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.234902271473!2d-70.64870854757903!3d-33.44318607960599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5cc6a1d8de1%3A0x41196cd1f2a5688d!2sEstado%2010!5e0!3m2!1ses-419!2scl!4v1726065327811!5m2!1ses-419!2scl" class="googleMap" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-astro-cid-j7pv25f6></iframe> </div> </div> </div> </div> <div class="iconosUbicacion" data-astro-cid-j7pv25f6> <div class="iconosUbiEsp" data-astro-cid-j7pv25f6> <div class="botomRapido" data-astro-cid-j7pv25f6> <svg class="iconosContacto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-j7pv25f6> <path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7 3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V9a5 5 0 1 1 10 0v7.083A2.919 2.919 0 0 1 14.083 19H14a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a2 2 0 0 0 1.732-1h.351a4.917 4.917 0 0 0 4.83-4H19a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3 7 7 0 0 0-7-7Zm1.45 3.275a4 4 0 0 0-4.352.976 1 1 0 0 0 1.452 1.376 2.001 2.001 0 0 1 2.836-.067 1 1 0 1 0 1.386-1.442 4 4 0 0 0-1.321-.843Z" clip-rule="evenodd" data-astro-cid-j7pv25f6></path> </svg> <p class="textoRapido" data-astro-cid-j7pv25f6>
 Si necesitas ayuda comercial, escribenos un mail a
 							la siguiente dirección y te brindaremos toda la
 							información que necesites: <br data-astro-cid-j7pv25f6> <a href="mailto:contacto@grupodi.cl" class="correoLink" data-astro-cid-j7pv25f6>contacto@grupodi.cl</a> </p> </div> <div class="botomRapido" data-astro-cid-j7pv25f6> <svg class="iconosContacto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-j7pv25f6> <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd" data-astro-cid-j7pv25f6></path> </svg> <p class="textoRapido" data-astro-cid-j7pv25f6>
