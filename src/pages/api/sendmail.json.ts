@@ -98,6 +98,8 @@ export const post: APIRoute = async ({ request }) => {
         },
       });
 
+      
+
       let mailDetails = {
         from: email,
         to: emailTo,

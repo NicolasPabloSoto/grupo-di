@@ -1,9 +1,9 @@
 import nodemailer from 'nodemailer';
 export { renderers } from '../../renderers.mjs';
 
-const emailTo = "comunidad.grupodi@gmail.com";
-const emailToPass = "sjqwihksbqzlwlrd";
-const host = "smtp.gmail.com";
+const emailTo = undefined                     ;
+const emailToPass = undefined                    ;
+const host = undefined                    ;
 const post = async ({ request }) => {
   if (request.headers.get("Content-Type") === "application/json") {
     try {

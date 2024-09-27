@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_CvSoi7hX.mjs';
-import { manifest } from './manifest_DU3Vuo1H.mjs';
+import { manifest } from './manifest_DO5PpXC1.mjs';
 import { onRequest } from './_noop-middleware.mjs';
 import { createExports } from '@astrojs/netlify/ssr-function.js';
 
@@ -34,7 +34,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "11c5b857-5ee0-4289-9ab1-1da7dd76f20f"
+    "middlewareSecret": "ab823b17-9046-49ce-84bf-fdb528efd2fb"
 };
 const _exports = createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;
