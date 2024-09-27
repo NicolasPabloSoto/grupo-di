@@ -3,7 +3,7 @@ import 'kleur/colors';
 import { b as $$GrupoIsotipo, c as $$HeaderLink, $ as $$BaseHead, a as $$Footer } from '../chunks/Footer_CookHhA5.mjs';
 /* empty css                                 */
 import 'clsx';
-import { g as getCollection, $ as $$FormattedDate } from '../chunks/FormattedDate_CMe1h6G6.mjs';
+import { g as getCollection, $ as $$FormattedDate } from '../chunks/FormattedDate_DZmcQb-k.mjs';
 import { S as SITE_TITLE, a as SITE_DESCRIPTION } from '../chunks/consts_DN_y46k3.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime.js';
 import { useState } from 'react';

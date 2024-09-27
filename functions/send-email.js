@@ -1,32 +1,31 @@
-const nodemailer = require('nodemailer');
+import { SMTPClient } from 'emailjs';
 
-exports.handler = async function(event, context) {
-  const { name, email, subject, message, empresa } = JSON.parse(event.body);
+exports.handler = async function(event) {
+  const { name, surname, email, tel, message, subject } = JSON.parse(event.body);
 
-  let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
-    }
+  const client = new SMTPClient({
+    user: process.env.SENDINBLUE_USER,
+    password: process.env.SENDINBLUE_PASS,
+    host: 'smtp-relay.sendinblue.com',
+    ssl: true,
   });
 
   try {
-    await transporter.sendMail({
-      from: `"Formulario" <${process.env.EMAIL_USER}>`,
+    await client.sendAsync({
+      text: `Nombre: ${name} ${surname}\nCorreo: ${email}\nTeléfono: ${tel}\nMensaje: ${message}`,
+      from: process.env.SENDINBLUE_SENDER,
       to: 'comunidad.grupodi@gmail.com',
       subject: subject || 'Nueva consulta',
-      text: `Nombre: ${name}\nCorreo: ${email}\nEmpresa: ${empresa}\nMensaje: ${message}`
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Email enviado correctamente' })
+      body: JSON.stringify({ message: 'Email enviado correctamente' }),
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Error enviando el correo', error: error.message })
+      body: JSON.stringify({ message: 'Error enviando el correo', error: error.message }),
     };
   }
 };
