@@ -7,9 +7,7 @@ import Estadisticas from "../components/estadisticas.astro";
 import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import GrupoLogotipo from "../../public/GrupoLogotipo.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Formulario from "../components/formulario.astro";
-import { useState } from "react";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"; 
 ---
 
 <!doctype html>
@@ -30,22 +28,15 @@ import { useState } from "react";
 
 			<div class="contInfoHome">
 				<div class="contInfoIzq">
-					<GrupoLogotipo
-						width={60}
-						height={60}
-						fill="white"
-						class="iconoEmpresa"
-					/>
+					
 					<p class="bajadaHome">CONSULTORIA Y CAPACITACIÓN</p>
 					<h1 class="sloganHome">
-						Capacitarse es Crecer, <br />
-						te ayudamos hacia <br />
-						nuevas fronteras. <br />
+						Transformamos Personas y Organizaciones,<br>
+						Impulsando el Futuro <br>
+						con Innovación y Cercanía.
 					</h1>
 					<p class="textHome">
-						Bienvenidos a Grupo DI, Potenciamos tu crecimiento con
-						capacitación innovadora y metodologías adaptativas. <br
-						/>
+						Bienvenidos a Grupo DI, donde te acompañamos en cada paso para lograr un crecimiento exitoso.<br>
 						<b>¡Comencemos!</b>
 					</p>
 
@@ -53,7 +44,7 @@ import { useState } from "react";
 						<a class="botonEquipo" href="/equipo">
 							Conócenos</a
 						>
-						<a class="botonCursos" href="#metodos">Cursos</a>
+						<a class="botonCursos" href="#metodos">Programas</a>
 					</div>
 				</div>
 				<div class="contInfoDer" style=" flex: 50%;"></div>
@@ -68,12 +59,10 @@ import { useState } from "react";
 			<div class="titulosSect" id="titulos">
 				<div class="titulosSectCont">
 					<h3 class="titulosHome">
-						Explora lo que tus <b class="destacador">profesores</b> comparten
+						Descubre lo que está pasando en <b class="destacador">Grupo DI</b>
 					</h3>
 					<p class="subtituloHome">
-						Conocé las ultimas noticias de nuestro campus además te
-						invitamos a conversar los temas que nuestros profesores
-						comparten
+						Noticias, novedades y conversaciones inspiradoras de nuestros expertos y más. ¡Sumérgete en nuestras actividades y comparte con nosotros lo que más te apasiona!
 					</p>
 				</div>
 			</div>
@@ -87,12 +76,10 @@ import { useState } from "react";
 			<div class="titulosSect">
 				<div class="titulosSectCont">
 					<h3 class="titulosHome">
-						Conoce nuestras <b class="destacador">áreas</b> de desarrollo
+						Explora nuestros programas <b class="destacador">diseñados por expertos</b> para impulsar el crecimiento de tu organización
 					</h3>
 					<p class="subtituloHome">
-						Hemos desarrollado con nuestros mejores especialistas,
-						diferetes programas que ayuden a tu organización a
-						crecer y entregarles un valor a cada alumno
+						Conoce cómo cada área de desarrollo puede generar valor y transformar el potencial de tus equipos.
 					</p>
 				</div>
 			</div>
@@ -106,14 +93,10 @@ import { useState } from "react";
 			<div class="titulosSect">
 				<div class="titulosSectCont">
 					<h3 class="titulosHome">
-						Hola! ¿En que podemos <b class="destacador">Ayudarte</b
-						>?
+						¡Estamos aquí <b class="destacador">para ayudarte</b>!
 					</h3>
 					<p class="subtituloHome">
-						Si tienes dudas de como implementar los cursos en
-						tu organización no dudes en preguntarnos, o si ya tienes
-						pensado que quieres hacer escríbenos, te estamos
-						esperando.
+						Si tienes preguntas sobre cómo implementar nuestros programas en tu organización o ya sabes lo que necesitas, no dudes en contactarnos. ¡Hablemos y trabajemos juntos!
 					</p>
 				</div>
 			</div>
@@ -121,7 +104,59 @@ import { useState } from "react";
 			<div class="ubicacion">
 				<div class="ubicacionEsp">
 					<div class="mailContacto">
-						<Formulario />
+						<form 
+							name="contact" 
+							method="POST" 
+							data-netlify="true"
+							id="promoForm"
+							class="formContenedor"
+						>
+							<p class="textFormulario">Nombre:</p>
+							<input
+								type="text"
+								name="nombre"
+								id="nombre"
+								class="textArea"
+								placeholder="Martina Enrione"
+								required
+							/>
+							<p class="textFormulario">Correo:</p>
+							<input
+								type="email"
+								name="correo"
+								id="email"
+								class="textArea"
+								placeholder="m.enrione@gmail.com"
+								required
+							/>
+							<p class="textFormulario">Empresa:</p>
+							<input
+								type="text"
+								name="empresa"
+								id="empresa"
+								class="textArea"
+								placeholder="Urbanica"
+								required
+							/>
+							<p class="textFormulario">Número de Contacto:</p>
+							<input
+								type="tel"
+								name="telefono"
+								id="telefono"
+								class="textArea"
+								placeholder="+569 6523251"
+								required
+							/>
+							<p class="textFormulario esp">Qué tienes en Mente:</p>
+							<textarea name="asunto" class="textMensaje" id="" cols="30" rows="10" required
+							></textarea>
+							<input
+								type="submit"
+								name="submit"
+								value="ENVIAR"
+								class="subFormEnviar"
+							/>
+						</form> 
 					</div>
 
 					<div class="mapaContacto">
@@ -159,11 +194,7 @@ import { useState } from "react";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							Si necesitas ayuda comercial, escribenos un mail a
-							la siguiente dirección y te brindaremos toda la
-							información que necesites: <br>
-							<a href="mailto:contacto@grupodi.cl" class="correoLink"
-							>contacto@grupodi.cl</a>
+							<b>Para Asesoría Comercial:</b> <br> ¿Tienes consultas comerciales o buscas más información sobre nuestros servicios? ¡Estamos aquí para ayudarte! Escríbenos a <a href="mailto:contacto@grupodi.cl" class="correoLink">contacto@grupodi.cl</a> y te responderemos con todo lo que necesitas saber.
 						</p>
 						
 					</div>
@@ -184,11 +215,7 @@ import { useState } from "react";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							Si eres Alumno en nuestro campus y necesitas Ayuda,
-							escribenos un mail a la siguiente dirección y te
-							brindaremos el soporte que necesites: <br> 
-							<a href="capacitacion@grupodi.cl" class="correoLink"
-							>capacitacion@grupodi.cl</a>
+							<b>Para Soporte a Actividades:</b> <br> ¿Eres participante de nuestras actividades y necesitas asistencia? ¡No te preocupes! Escríbenos a <a href="capacitacion@grupodi.cl" class="correoLink">capacitacion@grupodi.cl</a>, y nuestro equipo estará listo para brindarte el soporte que necesitas.
 						</p>
 						
 					</div>
@@ -208,14 +235,14 @@ import { useState } from "react";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							Visítanos junto a tu empresa y vive una experiencia
-							de aprendizaje a través de nuestros equipo de
-							profesores en nuestro Campus <br>
+							<b>Para visitas a nuestras oficinas:</b> <br> "Ven con tu equipo y vive una experiencia de aprendizaje única junto a nuestros expertos. Visítanos en 
 							<a
 							href="https://maps.app.goo.gl/qdeeN4PbUgJYC6v88"
 							target="_blank"
 							class="correoLink"
 							>Estado 10, Oficina 1602, Santiago de Chile</a>
+
+							y descubre todo lo que podemos acompañarte.
 						</p>
 						
 					</div>
@@ -229,9 +256,8 @@ import { useState } from "react";
 </html>
 
 <style>
-	header {
-		background-color: #443fdce4;
-	}
+
+
 	.contInfoHome {
 		position: relative;
 		width: 96%;
@@ -244,27 +270,26 @@ import { useState } from "react";
 		flex: 50%;
 	}
 
-	.iconoEmpresa {
-		filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.262));
-	}
-
 	.bajadaHome {
 		width: fit-content;
 		margin: 0px;
 		margin-bottom: 20px;
 		margin-top: 20px;
 		font-size: 0.7em;
-		color: white;
-		padding: 5px 10px 3px 10px;
-		border-radius: 10px;
-		background-color: var(--color-base);
+		font-weight: 600;
+		color: var(--color-base);
+		background-color: rgba(0, 0, 0, 0.12);
+		padding: 5px 15px 3px 15px;
+		border-radius: 20px;
+		margin-top: 50px;
 	}
 
 	.sloganHome {
+		font-size: 2.5em;
 		margin: 0px;
 		margin-bottom: 20px;
 		margin-top: 10px;
-		line-height: 0.9em;
+		line-height: 1em;
 		letter-spacing: -0.02em;
 		font-weight: 600;
 		color: white;
@@ -290,7 +315,7 @@ import { useState } from "react";
 		width: 100%;
 		border: none;
 		border-radius: 0.4em;
-		background-color: #007bff;
+		background-color: var(--color-base);
 		font-size: 1rem;
 		font-weight: 600;
 		color: white;
@@ -325,7 +350,7 @@ import { useState } from "react";
 		border-radius: 0.4em;
 		font-size: 1rem;
 		font-weight: 600;
-		color: #007bff;
+		color: rgba(var(--color-base-num), 1);
 		background-color: var(--color-bg-azul);
 		box-shadow:
 			rgba(65, 63, 63, 0.2) 0px 1px 2px 0px,
@@ -367,11 +392,10 @@ import { useState } from "react";
 		border-radius: 1rem;
 		z-index: 10;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 20px;
-		margin-top: 100px;
+		margin-top: 60px;
 	}
 
 	.blogEntradas {
@@ -421,13 +445,13 @@ import { useState } from "react";
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 2rem;
+		gap: 3rem;
 		-background-color: rgb(255, 83, 15);
 	}
 
 	.mailContacto {
 		flex: calc(50% - 0rem);
-		height: 600px;
+		height: 550px;
 		border-radius: 12px;
 		display: flex;
 		justify-content: center;
@@ -438,7 +462,7 @@ import { useState } from "react";
 
 	.mapaContacto {
 		flex: calc(50% - 0rem);
-		height: 600px;
+		height: 550px;
 		border-radius: 12px;
 		display: flex;
 		justify-content: center;
@@ -492,13 +516,13 @@ import { useState } from "react";
 		color: white;
 		border-radius: 12px;
 		box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-		background-color: #007bff;
+		background-color: rgba(var(--color-base-num), 1);
 		/* var(--color-base-claro) */
 	}
 
 	.textoRapido {
 		width: 80%;
-		font-size: 0.8em;
+		font-size: 0.75em;
 		font-weight: 400;
 		line-height: 1.3em;
 		text-wrap: wrap;
@@ -541,7 +565,7 @@ import { useState } from "react";
 		justify-content: center;
 		align-items: center;
 		margin-top: 50px;
-		margin-bottom: 30px;
+		margin-bottom: 30px; 
 	}
 
 	.titulosSectCont {
@@ -557,11 +581,11 @@ import { useState } from "react";
 		position: relative;
 		width: fit-content;
 		text-align: center;
-		color: rgb(5, 52, 77);
+		color: rgb(113, 108, 108);
 		font-size: 2.3em;
 		line-height: 1em;
 		margin: 0 0;
-		margin-bottom: 10px;
+		margin-bottom: 25px;
 	}
 
 	.destacador {
@@ -574,10 +598,10 @@ import { useState } from "react";
 		max-width: 1280px;
 		height: fit-content;
 		text-align: center;
-		color: rgb(139 126 126);
+		color: rgb(129, 117, 117);
 		font-size: 1em;
-		font-weight: 100;
-		line-height: 0.9em;
+		font-weight: 400;
+		line-height: 1.1em; 
 	}
 
 	.mapaColor {
@@ -837,6 +861,7 @@ import { useState } from "react";
 
 	@media (min-width: 320px) and (max-width: 767px) {
 		.datosNum {
+			margin-top: 70px;
 			margin-bottom: 20px;
 		}
 
@@ -847,7 +872,7 @@ import { useState } from "react";
 		} 
 
 		.titulosHome {
-			font-size: 2em;
+			font-size: 1.6em;
 			padding-bottom: 10px;
 		}
 
@@ -898,7 +923,7 @@ import { useState } from "react";
 			text-align: center;
 			color: rgb(139 126 126);
 			font-size: 1em;
-			font-weight: 100;
+			font-weight: 400;
 			line-height: 0.9em;
 		}
 
@@ -932,7 +957,6 @@ import { useState } from "react";
 			background-color: var(--color-bg-azul);
 			box-shadow: var(--box-shadow-inicial);
 			padding: 40px 0px;
-			width: 90%;
 		}
 
 		.mapaContacto {
@@ -960,6 +984,7 @@ import { useState } from "react";
 
 		.titulosSect {
 			margin-top: 50px;
+	}
 	}
 </style>
 
@@ -1285,4 +1310,3 @@ import { useState } from "react";
 
 
 </style>
-

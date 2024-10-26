@@ -1,14 +1,19 @@
 
 :root {
-	--color-base: #453fdc;
+
+	--color-base: rgb(226, 102, 43);
+	--color-base-num: 226, 102, 43;
+	/* --color-base: rgb(24, 137, 199); */
 	--color-base-claro: #6E80E4;
 	--color-bg2: #f0eef5;
 	--color-bg-base: #f5f5f7;
 	--color-bg-cont: #ececf6;
 	--color-bg-azul: #ececf6;
 	--color-ayala: #00b4a3; 
+	--color-ayala-rgb: 0, 180, 163;
 	--color-pitagoras: #e0bf3a; 
-	--color-gestion: #ff3e3e;
+	--color-pitagoras-rgb: 224, 191, 58;
+	--color-gestion: rgb(203, 185, 185);	
 	--accent: #2337ff; 
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -42,7 +47,8 @@ html{
 }
 
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: "Montserrat", sans-serif;
+  	font-optical-sizing: auto;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -63,7 +69,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--color-bg-base);
 }
 
 h1,
@@ -154,20 +159,4 @@ hr {
 	}
 }
  
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
-}
+

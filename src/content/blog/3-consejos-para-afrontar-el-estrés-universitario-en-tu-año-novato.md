@@ -1,5 +1,5 @@
 ---
-title: 3 Ayudas para afrontar el estrés universitario en tu año novato
+title: 3 Consejos para afrontar el estrés universitario en tu año novato
 description: En los últimos años, se ha observado un deterioro en la salud
   mental de los jóvenes universitarios. Depresión, ansiedad, estrés, e insomnio
   son algunas de las problemáticas que nos afectan como grupo, según lo

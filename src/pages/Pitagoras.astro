@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/HeaderHome.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -15,13 +15,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />  
 
 		<main>
-
+            <div class="menuBg"></div>
             <div class="contenidoCont">
 
                 <div class="programaCont">
                     <div class="programaContEsp">
+                        <div class="logoContain">
+                            <h4 class="nombreCurso">Pitágoras</h4>
+                            <div class="logotipoCurso"></div>
+                        </div>
+
                         <p class="etiqueta">Tecnología</p>
-                        <h4 class="nombreCurso">Pitágoras</h4>
                         <h3 class="bajadaCurso">Programa de formarción de profesionales capacitados en el manejo y análisis de grandes volúmenes de datos.</h3>
                     </div> 
                 </div>
@@ -32,10 +36,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                         <div class="resumenInfo">
                             <p class="promoCurso">Ultimas <b>Inscripciones</b></p>
                             <p class="titulo">Curso dirigido a profesionales y técnicos que se desempeñen en los distintos roles y tareas del establecimiento educativo.</p>
-                            <p class="subtitulo">• Objetivos</p>
-                            <p class="parrafo">Generar espacios de aprendizaje y crecimiento, desde la atención plena, que permitan tanto a las personas, organizaciones y agrupaciones, poner en práctica habilidades humanas para generar transformaciones positivas hacia una cultura social y emocionalmente saludable.</p>
-                            <p class="subtitulo">• Resultados:</p>
-                            <p class="parrafo">Los procesos de aprendizajes basados en la práctica de la consciencia plena y la andragogía se proponen desde una mirada holística del ser humano con enfoque integrativo, donde confluyen distintas áreas para ampliar la percepción de nuestras posibilidades y potencialidades</p>
                             <div class="regalosCont">
 
                                 <i class="iconRegalos">
@@ -59,15 +59,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
                         <div class="resumenImg">
                             <div class="imagenEntrada"></div>
-                            <a href="#" class="botomPdf"> 
-                               
-                                    <svg class="iconoRegalo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
-                                      </svg>
-                                      
-                           
-                                <p>Descargar Ficha del Curso</p>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -413,37 +404,76 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 
+    .menuBg{
+        width: 100%;
+        height: 90px;
+        position: absolute; 
+        z-index: -1; 
+        top: 0;
+        background: linear-gradient(90deg, rgba(116,26,128,0.9) 0%, rgba(62,47,138,0.9) 100%);
+    }
+
     .contenidoCont{
         width: 100%;
         height: fit-content;
-        padding-bottom: 133px;
-        background-color: white;
+        padding-bottom: 100px;
+        /* background-color: white; */
     }
 
     .programaCont{
         width: 100%;
-        height: 300px;
+        height: fit-content;
+        margin-top: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: whitesmoke;
+        background: url(/pexels-tima-miroshnichenko-7567222.jpg);
+        background-position: center;
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        /* background-color: rgba(var(--color-ayala-rgb), 0.95); */
+        background-color: rgba(226, 199, 39, 0.95);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -25px 20px -20px inset;
     }
 
     .programaContEsp{
+        width: 100%;
         max-width: 1024px;
-        height: 80%;
+        height: fit-content;
+        padding-bottom: 20px;
         -background-color: rgba(0, 0, 0, 0.2);
     }
 
     .etiqueta{
-        width: fit-content;
-        font-size: 0.5em;
-        font-weight: 600;
-        padding: 3px 10px;
-        color: white;
+        width: 100%;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: 500;
+        font-style: italic;
+        /* padding: 3px 10px; */
+        color: rgba(255, 255, 255, 0.5);
         border-radius: 1rem;
-        background-color: var(--color-pitagoras);
-        margin-bottom: 15px;
+        /* background-color: white; */
+        margin-top: 50px;
+        margin-bottom: 5px;
+    }
+
+    .logoContain{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .logotipoCurso{
+        width: 100px;
+        height: 100px;
+        background: url(/pitagoras_logo_white.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .nombreCurso{
@@ -451,18 +481,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         font-weight: bolder;
         line-height: 1em;
         letter-spacing: -0.01em;
-        color: rgb(54, 50, 50);
+        /* color: rgb(54, 50, 50); */
+        color: rgb(255, 255, 255);
         margin-bottom: 15px;
+        margin-top: 5px;
     }
     
     .bajadaCurso{
         width: 100%;
-        font-size: 2.2em;
+        text-align: center;
+        font-size: clamp(0.5rem, 5vw, 2.1rem);
         font-weight: 600;
-        line-height: 1em;
+        line-height: 1.05em;
         letter-spacing: -0.01em;
-        text-wrap: pretty;
-        color: rgb(54, 50, 50);
+        text-wrap: wrap;
+        /* color: rgb(54, 50, 50); */
+        color: rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+        margin-bottom: 40px;
     }
 
     p{
@@ -471,14 +508,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         font-size: medium;
     }
 
+
     .resumenCont{
         width: 100%;
-        height: 540px;
+        height: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--color-bg-azul);
+        padding: 40px 0px;
+        background-color: white;
     }
+
 
     .resumenContEsp{
         max-width: 1024px;
@@ -568,7 +608,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     .imagenEntrada{
         width: 100%;
         height: 369px;
-        background: url(../../public/pexels-tima-miroshnichenko-7567222.jpg);
+        background: url(/pexels-tima-miroshnichenko-7567222.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -615,7 +655,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         justify-content: center;
         align-items: center;
         background-color: white;
-        padding-top: 30px
+        padding-top: 30px;
+        margin-bottom: 60px;
     }
 
     .infoContEsp{
@@ -688,32 +729,52 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
-        margin-top: 60px;
-        margin-bottom:60px
+        padding-top: 60px;
+        padding-bottom:60px;
+        margin-bottom: 20px;
+
+        background: url(/pexels-tima-miroshnichenko-7567222.jpg);
+        background-position: center 75%;
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        /* background-color: rgba(var(--color-ayala-rgb), 0.95); */
+        background-color: rgba(255, 255, 255, 0.8);
     }
 
     .contEntradaEsp{
-        width: 100%;
+        width: 94%;
         max-width: 1024px;
         height: 100%;
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icoCont{
+        font-size: 0.8em;
+        color: var(--color-base-claro);
     }
 
     .tituloContenidos{
-        font-size: 1.8em;
+        font-size: clamp(2.4rem, 5vw, 2.8rem);
         font-weight: 600;
         color: var(--color-base-claro);
         padding-bottom: 5px;
+        text-align: center;
     }
 
     .bajadaContenidos{
-        font-size: 0.9em;
+        width: 75%;
+        text-align: center;
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
         font-weight: 500;
-        padding-left: 5px;
-        letter-spacing: -0.01em; 
-        color: rgb(255, 255, 255);
-        padding: 5px 20px;
-        background-color: var(--color-base-claro);
+        padding-left: 25px;
+        line-height: 0.95em;
+        letter-spacing: 0em; 
+        color: rgb(105, 101, 101);
     }
 
 

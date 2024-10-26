@@ -1,5 +1,3 @@
-Enlaceblog.astro
-
 ---
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -9,7 +7,7 @@ const posts = (await getCollection("blog"))
     .sort((a, b) => {
         const dateA = a.data.posted || a.data.pubDate;
         const dateB = b.data.posted || b.data.pubDate;
-        return (dateB?.valueOf() || 0) - (dateA?.valueOf() || 0);
+        return (dateB?.valueOf() || 0) - (dateA?.valueOf() || 0); 
     })
     .slice(0, 2); // rescata los 2 más recientes
 
@@ -29,6 +27,13 @@ const truncateContent = (content: string, maxLength: number): string => {
             {
                 posts.map((post: BlogPost) => (
                     <div class="blogEntrada">
+                        
+                        <div class="imgContainer">
+                            <div class="dataImg">
+                                <img class="imgBlog" src={post.data.heroImage} alt="" />
+                            </div>
+                        </div>
+
                         <div class="dataText">
                             <p class="fecha">
                                 <FormattedDate
@@ -36,19 +41,21 @@ const truncateContent = (content: string, maxLength: number): string => {
                                 />
                             </p>
                             <p class="titulo">{post.data.title}</p>
+
                             <p class="contenido">
-                                {truncateContent(post.body, 200)}
+                                {truncateContent(post.data.description || '', 150)} 
                             </p>
-                            <a href={`/blog/${post.slug}/`}>
-                                <p>Seguir Leyendo</p>
-                            </a>
+                             
                         </div>
 
-                        <div class="imgContainer">
-                            <div class="dataImg">
-                                <img class="imgBlog" src={post.data.heroImage} alt="" />
-                            </div>
+                        <div class="botomDown">
+                                <a href={`/blog/${post.slug}/`}>
+                                    <i class="bi bi-arrow-right-circle arrow"></i>
+                                    <p>Seguir Leyendo</p> 
+                                </a>
                         </div>
+
+
                     </div>
                 ))
             }
@@ -57,8 +64,10 @@ const truncateContent = (content: string, maxLength: number): string => {
 </div>
 
 <style>
+
     a {
     }
+
     .containerBlog {
         width: 100%;
         height: fit-content;
@@ -73,39 +82,36 @@ const truncateContent = (content: string, maxLength: number): string => {
         width: 98%;
         height: fit-content;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
         -background-color: blue;
     }
 
     .noticiasBlog {
         position: relative;
-        flex: 100%;
         height: fit-content;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
         gap: 2rem;
+        -background-color: yellow;
     } 
 
     .blogEntrada {
-        flex: calc(50% - 1rem);
+        width: calc(40% - 1rem);
+        height: fit-content;
         position: relative;
         display: flex;
-        border-radius: 1rem;
-        flex-wrap: wrap;
-        gap: 2rem;
-        border-radius: 1rem;
-        overflow: hidden;
-        background-color:  #ececf6a4;
+        flex-direction: column;
+        border-radius: 12px;
+        gap: 1rem;
+        background-color: var(--color-bg-azul);
         box-shadow: rgba(65, 63, 63, 0.05) 0px 1px 2px 2px, rgba(107, 109, 112, 0.01) 0px 2px 6px 4px;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         transform: scale(1);
         transition: all ease-in-out 0.3s;
-        height: fit-content;
-        padding-bottom: 0px;
     } 
 
     .blogEntrada:hover{
@@ -113,12 +119,13 @@ const truncateContent = (content: string, maxLength: number): string => {
     }
 
     .dataText {
+        width: 94%;
         height: fit-content;
-        flex: calc(100% - 260px - 1.5rem);
         -background-color: rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: start;
     }
 
     .fecha {
@@ -128,9 +135,9 @@ const truncateContent = (content: string, maxLength: number): string => {
         text-align: left;
         margin: 0;
         padding: 0;
-        color: rgb(111, 106, 106);
+        color: rgb(77, 74, 74);
         padding-top: 5px;
-        padding-left: 20px;
+        margin-bottom: 10px;
     }
     
     .titulo {
@@ -143,8 +150,8 @@ const truncateContent = (content: string, maxLength: number): string => {
         text-align: left;
         margin: 0;
         padding: 0;
-        color: rgb(48, 46, 46);
-        padding-left: 20px;
+        /* color: rgb(48, 46, 46); */
+        color: var(--color-base);
         text-decoration: none;
         margin-bottom: 10px;
     }
@@ -152,65 +159,111 @@ const truncateContent = (content: string, maxLength: number): string => {
     .contenido {
         width: 90%;
         float: left;
-        font-size: 0.6em;
+        font-size: 0.7em;
         font-weight: 500;
         line-height: 1em;
-        padding-left: 20px;
         color: rgb(68, 65, 65);
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+    }
+
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: rgb(210, 199, 199);
     }
 
     p {
         margin: 0;
     }
 
+    .botomDown{
+        position: absolute;
+        top: 280px;
+        right: 0;
+        width: 40%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        border-radius: 1em 0 0 1em; 
+        padding-left: 20px;
+        transform: translateX(0px);
+        background-color: var(--color-base);
+        z-index: 1;
+        transition: all ease-in 0.15s;
+    }
+
+    .blogEntrada:hover > .botomDown{
+        transform: translateX(10px);
+    }
+
     a {
-        display: inline-block;
-        width: fit-content;
-        height: 20px;
-        font-size: 0.7em;
+        width: 100%;
+        height: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        font-size:  0.8em;
         font-weight: 500;
         line-height: 1em;
         text-align: left;
         margin: 0;
         padding: 0;
         color: white;
-        padding-left: 20px;
         text-decoration: none;
-        padding: 9px 25px 4px 25px;
-        border-radius: 1rem;
-        background-color: #007bff;
-        margin-left: 20px;
+        transition: all 0.3s ease-in-out;
+        -background-color: #26c610;
     }
 
+     a:hover {
+        width: 100%;
+        font-weight: 600;
+        color: white;
+     }
+
+     a:hover > .arrow{
+        color: white;
+     }
+
+     .arrow{
+        color: white;
+        font-size: 1.2em;
+        margin-right: 10px;
+     }
+
     .imgContainer{
-        flex: calc(260px - 1.5rem);
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         height: fit-content;
         width: 100%;
+        -background-color: gray;
     }
 
     .dataImg {
-        height: 200px;
-        width: 200px;
+        height: 300px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        border-radius: 1rem;
-        -background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 12px 12px 0px 0px;
+        -background-color: orangered;
     }
 
     .imgBlog {
         height: auto;
-        width: 400px;
-        position: relative;
-        max-width: inherit;
+        width: 600px;
+        max-width: 150%;
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
+
+        a{  
+            width: 100%;
+            font-size: 0.6em;
+        }
 
         .noticiasBlog {
             position: relative;
@@ -249,10 +302,10 @@ const truncateContent = (content: string, maxLength: number): string => {
 
         .blogEntrada {
             height: fit-content;
-            flex: calc(50% - 1rem);
+            width: 100%;
             position: relative;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             border-radius: 1rem;
             flex-wrap: wrap;
             gap: 2rem;
@@ -270,6 +323,7 @@ const truncateContent = (content: string, maxLength: number): string => {
         .dataImg {
             flex: 180px;
             height: 240px;
+            width: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -285,7 +339,6 @@ const truncateContent = (content: string, maxLength: number): string => {
             font-size: 0.6em;
             font-weight: 700;
             padding-top: 5px;
-            padding-left: 20px;
         }
         
         .titulo {
@@ -294,7 +347,6 @@ const truncateContent = (content: string, maxLength: number): string => {
             line-height: 1em;
             text-align: left;
             color: rgb(48, 46, 46);
-            padding-left: 20px;
             margin-bottom: 10px;
         }
 
@@ -311,22 +363,24 @@ const truncateContent = (content: string, maxLength: number): string => {
         }
 
         a {
-            display: inline-block;
-            width: fit-content;
-            height: 18px;
-            font-size: 0.6em;
-            font-weight: 500;
-            line-height: 1em;
-            text-align: left;
-            margin: 0;
-            padding: 0;
-            color: white;
+           
+        }
+
+        .botomDown{
+            position: absolute;
+            top: 220px;
+            right: 0;
+            width: 40%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            border-radius: 1em 0 0 1em; 
             padding-left: 20px;
-            text-decoration: none;
-            padding: 9px 25px 4px 25px;
-            border-radius: 0.9rem;
+            transform: translateX(0px);
             background-color: var(--color-base);
-            margin-left: 20px;
+            z-index: 1;
+            transition: all ease-in 0.15s;
         }
     }
 

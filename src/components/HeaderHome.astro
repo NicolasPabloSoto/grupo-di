@@ -4,7 +4,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 // import { SITE_TITLE } from '../consts';
 ---
 
-<header>
+<header id="navegador" class="navStyle">
 	<nav>
 		<input type="checkbox" id="check">
 
@@ -29,7 +29,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		</label>
 
 		<a href="/" class="logoHome">
-			<GrupoIsotipo width={100} height={32} fill="white" className="" />
+			<div class="logotipoMenu"></div>
 		</a>
 
 		<ul class="menuCont">
@@ -46,10 +46,10 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 						<HeaderLink class="linkSubMenu" href="/Pitagoras"
 							>Pitágoras</HeaderLink>
 					</li>
-					<li>
+					<!-- <li>
 						<HeaderLink class="linkSubMenu" href="/gestion"
 							>Gestión</HeaderLink>
-					</li>
+					</li> -->
 					
 				</div>
 			</div>
@@ -58,17 +58,12 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 			<li>
 				<HeaderLink class="linkMenu" href="/equipo">Equipo</HeaderLink>
 			</li>
-			<li>
-				<a href="/admin/index.html" target="_blank" class="linkMenu" style="display: inline-block;">Test</a> 
-			</li>
 		</ul>
 
 		<div class="social-links">
+			<a class="btnActividades" href="#formulario">Actividades</a> 
 			<a class="btnCampus" href="#" target="_blank">
-				<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-					<path d="M17 20v-5h2v6.988H3V15h1.98v5H17Z"/>
-					<path d="m6.84 14.522 8.73 1.825.369-1.755-8.73-1.825-.369 1.755Zm1.155-4.323 8.083 3.764.739-1.617-8.083-3.787-.739 1.64Zm3.372-5.481L10.235 6.08l6.859 5.704 1.132-1.362-6.859-5.704ZM15.57 17H6.655v2h8.915v-2ZM12.861 3.111l6.193 6.415 1.414-1.415-6.43-6.177-1.177 1.177Z"/>
-				</svg>
+				<i class="bi bi-opencollective iconFoo"></i>
 				&nbsp;Campus DI				  
 			</a> 
 			<a class="btnContacto" href="#formulario">Contáctanos</a> 
@@ -78,18 +73,43 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 </header>
 
 <style>
-	.isotipo {
-		color: red;
-	}
 
-	header {
-		margin: 0;
-		padding: 0 5em;
-		-background-color: #443fdce4; 
+	
+	.navStyle {
+		width: 100%;
+		height: 75px;
 		box-shadow: 0 2px 8px rgba(var(--black), 40%);
 		z-index: 50;
-		position: relative;
+		position: sticky;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
+
+	.navStyleBg{
+		width: 100%;
+		height: 75px;
+		box-shadow: 0 2px 8px rgba(var(--black), 40%);
+		z-index: 50;
+		position: sticky;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(90deg, rgba(116,26,128,0.9) 0%, rgba(62,47,138,0.9) 100%);
+	}
+
+	.logotipoMenu{
+		width: 130px;
+		height: 62px;
+		background: url("/grupo-di-logo.svg");
+		background-size: contain;	
+		background-repeat: no-repeat;
+		background-position: center;
+		-background-color: red;
+	}
+
 
 	h2 {
 		margin: 0;
@@ -102,13 +122,16 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	.logoHome {
-		height: 32px;
+		height: fit-content;
 		text-decoration: none;
 		padding: 0 0;
 		border-bottom: none;
 	}
 
 	nav {
+		height: 100%;
+		width: 94%;
+		max-width: 1440px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -146,17 +169,18 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	.btnContacto {
-		padding: 0.2em 1em;
+		height: fit-content;
+		padding: 0.1em calc(1em - 2px);
 		border: 2px solid white;
 		border-radius: 2em;
 		background-color: rgba(255, 255, 255, 0);
-		font-size: 18px;
+		font-size: 0.8em;
 		line-height: 1.7;
 		color: white;
-		transition: all ease-in-out 0.15s;
 		cursor: pointer;
 		text-decoration: none;
 		line-height: 1.7em;
+		transition: all ease-in-out 0.15s;
 	}
 
 	.btnContacto:hover {
@@ -167,11 +191,11 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 	
 	.btnCampus {
+		height: fit-content;
 		padding: 0.2em 1em;
-		border: 2px solid rgba(255, 255, 255, 0);
 		border-radius: 2em;
 		background-color: var(--color-base);
-		font-size: 18px;
+		font-size: 0.8em;
 		line-height: 1.7;
 		color: white;
 		transition: all ease-in-out 0.15s;
@@ -182,9 +206,32 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	.btnCampus:hover {
-		background-color: #4CAF50;
+		background-color: #ff9800;
 		color: white;
 		border: 1px solid transparent;
+		box-shadow: 0 0px 10px rgba(var(--black), 50%);
+	}
+
+	.btnActividades {
+		height: fit-content;
+		padding: 0.1em calc(1em - 2px);
+		border: 2px solid white;
+		border-radius: 2em;
+		background-color: rgba(255, 255, 255, 0);
+		font-size: 0.8em;
+		line-height: 1.7;
+		color: white;
+		cursor: pointer;
+		text-decoration: none;
+		line-height: 1.7em;
+		margin-right: 1em;
+		transition: all ease-in-out 0.15s;
+	}
+
+	.btnContactoActividades:hover {
+		background-color: #4CAF50; 
+		color: white;
+		border: 2px solid transparent;
 		box-shadow: 0 0px 10px rgba(var(--black), 50%);
 	}
 
@@ -199,8 +246,6 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		display: none;
 	}
 
-
-
 	.dropdown {
 		float: left;
 		position: relative;
@@ -213,7 +258,8 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	.dropbtn {
 		background-color: transparent;
 		color: rgba(255, 255, 255, 0.8);
-		font-size: 18px;
+		font-size: 20px;
+		letter-spacing: 0.05em;
 		border: none;
 		cursor: pointer;
 	}
@@ -240,12 +286,12 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 78px;
+		top: 76px;
 		-background-color: #f9f9f9;
 		min-width: 140px;
 		box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 		z-index: 1;
-		background-color: #443fdce4;
+		background-color: rgba(113, 55, 143, 1);
 	}
 
 	.dropdown-content .linkSubMenu {
@@ -314,21 +360,22 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 
 		header {
 			padding: 0.5em 1em;
-			background: var(--color-base);
+			background: linear-gradient(90deg, rgba(116,26,128,0.9) 0%, rgba(62,47,138,0.9) 100%);
 		}
 
 		.menuCont {
 			position: fixed;
-			top: 68px;
+			top: 93px;
 			right: -100%;
-			background-color: #443fdcd6;
+			background: linear-gradient(180deg, rgba(67, 40, 114, 0.9) 0%, rgba(62,47,138,0.9) 60%, rgba(255, 255, 255, 0) 100%);
 			width: 100%;
-			height: fit-content;
+			height: 70%;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			justify-content: start;
+			align-items: start;
 			transition: all 0.3s;
+			padding-bottom: 50px;
 		}
 
 		li {
@@ -384,7 +431,7 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 			min-width: 100%;
 			box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 			z-index: 0;
-			background-color: #443fdce4;
+			background-color: rgba(0, 0, 0, 0.8);
 		}
 
 		.dropdown-content .linkSubMenu {
@@ -405,3 +452,38 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		}
 	}
 </style>
+
+
+<script>
+	// Definimos un tipo para el elemento que queremos modificar
+	type ScrollElement = HTMLElement;
+
+	// Función principal con tipos estrictos
+	const handleScroll = (): void => {
+		// Obtenemos el elemento de manera segura
+		const element: ScrollElement | null = document.getElementById("navegador");
+		
+		// Verificamos que el elemento existe
+		if (!element) {
+			console.warn("Elemento con ID 'navegador' no encontrado");
+			return;
+		}
+
+		// Obtenemos el scroll actual con seguridad de tipos
+		const scrollTop: number = document.documentElement.scrollTop || 0;
+
+		// Aplicamos la clase basada en la posición del scroll
+		if (scrollTop > 50) {
+			element.className = "navStyleBg";
+		} else {
+			element.className = "navStyle";
+		}
+	};
+
+	// Asignamos el evento con tipo de evento correcto
+	window.onscroll = handleScroll;
+
+	// También podríamos usar addEventListener con manejo de tipos
+	// window.addEventListener('scroll', handleScroll);
+</script>
+	
