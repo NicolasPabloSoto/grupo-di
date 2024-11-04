@@ -1,0 +1,217 @@
+---
+declare global {
+  var emailjs: any;
+}
+---
+
+<form id="form" class="formContenedor"> 
+  <div class="field">
+    <label for="nombre" class="textFormulario">Nombre</label>
+    <input class="textArea" type="text" name="nombre" id="nombre" required />
+  </div>
+
+  <div class="field">
+    <label for="correo" class="textFormulario">Correo</label>
+    <input class="textArea" type="email" name="correo" id="correo" required />
+  </div>
+
+  <div class="field">
+    <label for="empresa" class="textFormulario">Empresa</label>
+    <input class="textArea" type="text" name="empresa" id="empresa" required />
+  </div>
+
+  <div class="field">
+    <label for="telefono" class="textFormulario">Teléfono</label>
+    <input class="textArea" type="tel" name="telefono" id="telefono" required />
+  </div>
+
+  <div class="field">
+    <label for="asunto" class="textFormulario">Asunto</label>
+    <input class="textArea" type="text" name="asunto" id="asunto" required />
+  </div>
+
+  <div class="field">
+    <label for="message" class="textFormulario">Que tienes en mente</label>
+    <textarea name="message" id="message" class="textMensaje" required></textarea>
+  </div>
+
+  <!-- Campo honeypot oculto para atrapar bots -->
+  <div class="field" style="display:none;">
+    <label for="honeypot" class="textFormulario">Honeypot</label>
+    <input type="text" name="honeypot" id="honeypot" class="textArea" />
+  </div>
+
+  <button class="subFormEnviar" type="submit" id="button">Enviar Correo</button>
+</form>
+
+<script>
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  script.onload = () => {
+    emailjs.init('tQTAfEODwubnhIHcb');
+  };
+  document.body.appendChild(script);
+
+  const btn = document.getElementById('button');
+  const form = document.getElementById('form') as HTMLFormElement;
+  const honeypot = document.getElementById('honeypot') as HTMLInputElement;
+  
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Verificamos si el campo honeypot está vacío (debe estar vacío si es un humano)
+      if (honeypot && honeypot.value !== '') {
+        alert('Bot detectado. No se enviará el formulario.');
+        return; // No se envía el formulario si se llena el honeypot
+      }
+
+      if (btn) btn.textContent = 'Enviando...';
+
+      const serviceID = 'default_service';
+      const templateID = 'templateDI_8o7rgi8';
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          if (btn) btn.textContent = 'Enviar Correo';
+          alert('Enviado con éxito!');
+          form.reset();  // Limpiar el formulario después de enviar el correo
+        }, (err: Error) => {
+          if (btn) btn.textContent = 'Enviar Correo';
+          alert(JSON.stringify(err));
+        });
+    });
+  }
+</script>
+
+
+<style>
+
+    .formContenedor{
+		width: 90%;
+		height: 90%;
+	}
+
+    .textFormulario {
+        width: 100%;
+        font-size: 0.8em;
+        font-weight: 500;
+        line-height: 1em;
+        color: rgb(122, 116, 116);
+        padding-left: 0.5em;
+    }
+
+    .textArea {
+        width: 100%;
+        height: 20px;
+        border: none;
+        border-bottom: 1px solid rgba(118, 113, 113,0.3);
+        background-color: transparent;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+
+    .textArea:focus {
+        outline: none;
+        color: rgb(102, 98, 98);
+    }
+
+    .textArea::placeholder {
+        color: rgb(163, 153, 153);
+    }
+
+    .textMensaje {
+        resize: none;
+        border: none;
+        height: 90px;
+        border-radius: 0.5rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .subFormEnviar {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+      
+      .subFormEnviar:hover {
+        background-color: #45a049;
+      }
+
+    .subFormEnviar:hover {
+        background-color: rgb(29, 133, 236);
+        box-shadow: var(--box-shadow);
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        h4 {
+            font-size: 1.9em;
+            margin-bottom: 20px;
+        }
+
+        .contEsptext{
+            width: 90%;
+        }
+
+        .subForm {
+            font-size: 1.4em;
+            font-weight: 500;
+            line-height: 1.05em;
+            margin-bottom: 30px; 
+        }
+
+        .textForm {
+            font-size: 0.9em;
+            line-height: 1em;
+            margin-bottom: 0px;
+        }
+
+        .correoLink {
+            font-size: 0.9em;
+            font-weight: 600;
+            line-height: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .textFormulario{
+            font-size: 0.8em;
+        }
+
+        .textArea{
+            height: 30px;
+        }
+
+       .textMensaje {
+            min-height: 50px;
+            max-height: 90px; 
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        .textMensaje {
+            height: 120px;
+        }
+
+        .textFormulario {
+        width: 100%;
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1em;
+        color: rgb(126, 121, 121);
+        padding-left: 0.5em;
+    }
+    }
