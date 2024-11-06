@@ -7,43 +7,41 @@ import Estadisticas from "../components/estadisticas.astro";
 import Programas from "../components/Programas.astro";
 import Enlaceblog from "../components/Enlaceblog.astro";
 import FormularioHome from "../components/FormularioHome.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"; 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<script src="../../src/Scroll-ani.js"></script> 
+		<script src="../../src/Scroll-ani.js"></script>
 	</head>
- 
+
 	<body>
-		
 		<HeaderHome />
 
 		<main>
+
 			<div class="sliderHome">
-				<VideoBg /> 
+				<VideoBg />
 			</div>
 
 			<div class="contInfoHome">
 				<div class="contInfoIzq">
-					
 					<p class="bajadaHome">CONSULTORIA Y CAPACITACIÓN</p>
 					<h1 class="sloganHome">
-						Transformamos Personas y Organizaciones,<br>
-						Impulsando el Futuro <br>
+						Transformamos Personas y Organizaciones,<br />
+						Impulsando el Futuro <br />
 						con Innovación y Cercanía.
 					</h1>
 					<p class="textHome">
-						Bienvenidos a Grupo DI, donde te acompañamos en cada paso para lograr un crecimiento exitoso.<br>
+						Bienvenidos a Grupo DI, donde te acompañamos en cada
+						paso para lograr un crecimiento exitoso.<br />
 						<b>¡Comencemos!</b>
 					</p>
 
 					<div class="botonesHome">
-						<a class="botonEquipo" href="/equipo">
-							Conócenos</a
-						>
+						<a class="botonEquipo" href="/equipo"> Conócenos</a>
 						<a class="botonCursos" href="#metodos">Programas</a>
 					</div>
 				</div>
@@ -59,10 +57,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<div class="titulosSect" id="titulos">
 				<div class="titulosSectCont">
 					<h3 class="titulosHome">
-						Descubre lo que está pasando en <b class="destacador">Grupo DI</b>
+						Descubre lo que está pasando en <b class="destacador"
+							>Grupo DI</b
+						>
 					</h3>
 					<p class="subtituloHome">
-						Noticias, novedades y conversaciones inspiradoras de nuestros expertos y más. ¡Sumérgete en nuestras actividades y comparte con nosotros lo que más te apasiona!
+						Noticias, novedades y conversaciones inspiradoras de
+						nuestros expertos y más. ¡Sumérgete en nuestras
+						actividades y comparte con nosotros lo que más te
+						apasiona!
 					</p>
 				</div>
 			</div>
@@ -76,10 +79,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<div class="titulosSect">
 				<div class="titulosSectCont">
 					<h3 class="titulosHome">
-						Explora nuestros programas <b class="destacador">diseñados por expertos</b> para impulsar el crecimiento de tu organización
+						Explora nuestros programas <b class="destacador"
+							>diseñados por expertos</b
+						> para impulsar el crecimiento de tu organización
 					</h3>
 					<p class="subtituloHome">
-						Conoce cómo cada área de desarrollo puede generar valor y transformar el potencial de tus equipos.
+						Conoce cómo cada área de desarrollo puede generar valor
+						y transformar el potencial de tus equipos.
 					</p>
 				</div>
 			</div>
@@ -96,7 +102,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 						¡Estamos aquí <b class="destacador">para ayudarte</b>!
 					</h3>
 					<p class="subtituloHome">
-						Si tienes preguntas sobre cómo implementar nuestros programas en tu organización o ya sabes lo que necesitas, no dudes en contactarnos. ¡Hablemos y trabajemos juntos!
+						Si tienes preguntas sobre cómo implementar nuestros
+						programas en tu organización o ya sabes lo que
+						necesitas, no dudes en contactarnos. ¡Hablemos y
+						trabajemos juntos!
 					</p>
 				</div>
 			</div>
@@ -142,9 +151,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							<b>Para Asesoría Comercial:</b> <br> ¿Tienes consultas comerciales o buscas más información sobre nuestros servicios? ¡Estamos aquí para ayudarte! Escríbenos a <a href="mailto:contacto@grupodi.cl" class="correoLink">contacto@grupodi.cl</a> y te responderemos con todo lo que necesitas saber.
+							<b>Para Asesoría Comercial:</b>
+							<br /> ¿Tienes consultas comerciales o buscas más información
+							sobre nuestros servicios? ¡Estamos aquí para ayudarte!
+							Escríbenos a <a
+								href="mailto:contacto@grupodi.cl"
+								class="correoLink">contacto@grupodi.cl</a
+							> y te responderemos con todo lo que necesitas saber.
 						</p>
-						
 					</div>
 
 					<div class="botomRapido">
@@ -163,9 +177,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							<b>Para Soporte a Actividades:</b> <br> ¿Eres participante de nuestras actividades y necesitas asistencia? ¡No te preocupes! Escríbenos a <a href="capacitacion@grupodi.cl" class="correoLink">capacitacion@grupodi.cl</a>, y nuestro equipo estará listo para brindarte el soporte que necesitas.
+							<b>Para Soporte a Actividades:</b>
+							<br /> ¿Eres participante de nuestras actividades y necesitas
+							asistencia? ¡No te preocupes! Escríbenos a <a
+								href="capacitacion@grupodi.cl"
+								class="correoLink">capacitacion@grupodi.cl</a
+							>, y nuestro equipo estará listo para brindarte el
+							soporte que necesitas.
 						</p>
-						
 					</div>
 					<div class="botomRapido">
 						<svg
@@ -183,29 +202,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 								clip-rule="evenodd"></path>
 						</svg>
 						<p class="textoRapido">
-							<b>Para visitas a nuestras oficinas:</b> <br> "Ven con tu equipo y vive una experiencia de aprendizaje única junto a nuestros expertos. Visítanos en 
+							<b>Para visitas a nuestras oficinas:</b>
+							<br /> "Ven con tu equipo y vive una experiencia de aprendizaje
+							única junto a nuestros expertos. Visítanos en
 							<a
-							href="https://maps.app.goo.gl/qdeeN4PbUgJYC6v88"
-							target="_blank"
-							class="correoLink"
-							>Estado 10, Oficina 1602, Santiago de Chile</a>
+								href="https://maps.app.goo.gl/qdeeN4PbUgJYC6v88"
+								target="_blank"
+								class="correoLink"
+								>Estado 10, Oficina 1602, Santiago de Chile</a
+							>
 
 							y descubre todo lo que podemos acompañarte.
 						</p>
-						
 					</div>
 				</div>
 			</div>
-
-			
 		</main>
 		<Footer />
 	</body>
 </html>
 
+
 <style>
-
-
+	
 	.contInfoHome {
 		position: relative;
 		width: 96%;
@@ -487,7 +506,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	}
 
 	.correoLink:hover {
-		color: #007bff; 
+		color: #007bff;
 	}
 
 	.formulario {
@@ -513,7 +532,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		justify-content: center;
 		align-items: center;
 		margin-top: 50px;
-		margin-bottom: 30px; 
+		margin-bottom: 30px;
 	}
 
 	.titulosSectCont {
@@ -549,7 +568,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		color: rgb(129, 117, 117);
 		font-size: 1em;
 		font-weight: 400;
-		line-height: 1.1em; 
+		line-height: 1.1em;
 	}
 
 	.mapaColor {
@@ -624,13 +643,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		border-radius: 1rem;
 	}
 
-	.boxScroll{
+	.boxScroll {
 		width: 100%;
 		height: 40px;
 		margin-top: 50px;
 		margin-bottom: 10px;
 		background-color: rgba(0, 0, 0, 0);
 	}
+
+	
 
 	@media (min-width: 1025px) and (max-width: 1280px) {
 		.titulosHome {
@@ -681,8 +702,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 
 		.titulosSect {
-		margin-top: 50px;
-	}
+			margin-top: 50px;
+		}
 	}
 
 	@media (min-width: 768px) and (max-width: 1024px) {
@@ -747,7 +768,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 
 		.iconosUbiEsp {
-		flex-direction: column;
+			flex-direction: column;
 		}
 
 		.titulosSect {
@@ -814,10 +835,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 
 		.formulario {
-			height: fit-content; 
+			height: fit-content;
 			margin-top: 100px;
 			margin-bottom: 100px;
-		} 
+		}
 
 		.titulosHome {
 			font-size: 1.6em;
@@ -879,7 +900,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			margin-top: 10px;
 		}
 
-		.ubicacion{
+		.ubicacion {
 			margin-top: 10px;
 		}
 
@@ -918,343 +939,349 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			box-shadow: var(--box-shadow-inicial);
 		}
 
-		.mapaGoogle{
+		.mapaGoogle {
 			height: 500px;
 		}
 
-		.iconosUbiEsp{
+		.iconosUbiEsp {
 			flex-direction: column;
 		}
 
-		.botomRapido{
+		.botomRapido {
 			width: 100%;
 		}
 
 		.titulosSect {
 			margin-top: 50px;
-	}
+		}
 	}
 </style>
 
 <style>
 	/* Títulos y subtítulos deben empezar ocultos */
-.titulosHome, .subtituloHome {
-  opacity: 0;
-  transform: translateY(30px); /* Los elementos se desplazan hacia arriba al aparecer */
-  transition: opacity 1.4s ease-in-out, transform 1.4s ease-in-out;
-}
+	.titulosHome,
+	.subtituloHome {
+		opacity: 0;
+		transform: translateY(
+			30px
+		); /* Los elementos se desplazan hacia arriba al aparecer */
+		transition:
+			opacity 1.4s ease-in-out,
+			transform 1.4s ease-in-out;
+	}
 
-/* Todos los demás divs mantienen sus estados iniciales */
-.datosNum{
-  opacity: 0;
-  transform: translateY(30px); /* Movimiento inicial desde abajo */
-}
+	/* Todos los demás divs mantienen sus estados iniciales */
+	.datosNum {
+		opacity: 0;
+		transform: translateY(30px); /* Movimiento inicial desde abajo */
+	}
 
- .blogEntradas, .metodos, .ubicacion, .iconosUbicacion {
-  opacity: 0;
-  transform: translateY(20px); /* Movimiento inicial desde abajo */ 
-}
-.blogEntradas {
-  transform: translateX(-50px); /* Deslizar desde la izquierda */
-}
-.metodos {
-  transform: scale(0.6); /* Inicia pequeño */
-}
+	.blogEntradas,
+	.metodos,
+	.ubicacion,
+	.iconosUbicacion {
+		opacity: 0;
+		transform: translateY(20px); /* Movimiento inicial desde abajo */
+	}
+	.blogEntradas {
+		transform: translateX(-50px); /* Deslizar desde la izquierda */
+	}
+	.metodos {
+		transform: scale(0.6); /* Inicia pequeño */
+	}
 
-.ubicacion {
-  opacity: 0;
-  transform: translateX(50px); /* Inicia desplazada hacia la derecha */
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-}
+	.ubicacion {
+		opacity: 0;
+		transform: translateX(50px); /* Inicia desplazada hacia la derecha */
+		transition:
+			opacity 1.5s ease-in-out,
+			transform 1.5s ease-in-out;
+	}
 
-.iconosUbicacion {
-  transform: translateY(50px); /* Rebote inicial desde abajo */
-}
- 
+	.iconosUbicacion {
+		transform: translateY(50px); /* Rebote inicial desde abajo */
+	}
 </style>
 
 <style>
 	.contForm {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
 
-    .contRapido {
-        flex: calc(50% - 1rem);
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
+	.contRapido {
+		flex: calc(50% - 1rem);
+		display: flex;
+		justify-content: start;
+		align-items: center;
+	}
 
-    .contRapidoEsp {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: start;
-    }
+	.contRapidoEsp {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: start;
+	}
 
-    .contEsptext {
-        width: 80%;
-        height: 80%;
-    }
+	.contEsptext {
+		width: 80%;
+		height: 80%;
+	}
 
-    h4 {
-        position: relative;
-        width: 100%;
-        font-size: 1.9em;
-        font-weight: bold;
-        color: rgb(68, 65, 65);
-        text-align: left;
-        margin-bottom: 20px;
-    }
+	h4 {
+		position: relative;
+		width: 100%;
+		font-size: 1.9em;
+		font-weight: bold;
+		color: rgb(68, 65, 65);
+		text-align: left;
+		margin-bottom: 20px;
+	}
 
-    .subForm {
-        font-size: 1.6em;
-        font-weight: 500;
-        line-height: 1.05em;
-        text-wrap: balance;
-        color: rgb(52, 50, 50);
-        margin-bottom: 40px; 
-    }
+	.subForm {
+		font-size: 1.6em;
+		font-weight: 500;
+		line-height: 1.05em;
+		text-wrap: balance;
+		color: rgb(52, 50, 50);
+		margin-bottom: 40px;
+	}
 
-    .textForm {
-        font-size: 0.9em;
-        font-weight: 400;
-        line-height: 1em;
-        color: rgb(68, 65, 65);
-        margin-bottom: 0px;
-    }
+	.textForm {
+		font-size: 0.9em;
+		font-weight: 400;
+		line-height: 1em;
+		color: rgb(68, 65, 65);
+		margin-bottom: 0px;
+	}
 
-    .correoLink {
-        font-size: 0.9em;
-        font-weight: 600;
-        line-height: 1.1em;
-        color: rgb(42, 58, 107);
-    }
+	.correoLink {
+		font-size: 0.9em;
+		font-weight: 600;
+		line-height: 1.1em;
+		color: rgb(42, 58, 107);
+	}
 
-    .formulario {
-        height: 600px;
-        flex: calc(50% - 1rem);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.formulario {
+		height: 600px;
+		flex: calc(50% - 1rem);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-    .formCont {
-        width: 95%;
-        height: 94%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1.5rem;
-        background-color: var(--color-bg-azul);
-        box-shadow: var(--box-shadow);
-    }
+	.formCont {
+		width: 95%;
+		height: 94%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1.5rem;
+		background-color: var(--color-bg-azul);
+		box-shadow: var(--box-shadow);
+	}
 
-    .formContEsp {
-        width: 90%;
-        height: 90%;
-    }
-
-    .textFormulario {
-        font-size: 0.9em;
-        font-weight: 400;
-        line-height: 1em;
-        color: rgb(126, 121, 121);
-        padding-left: 0.5em;
-    }
-
-    .esp {
-        margin-top: 5px;
-    }
-
-	.formContenedor{
+	.formContEsp {
 		width: 90%;
 		height: 90%;
 	}
 
-    .textArea {
-        width: 100%;
-        height: 40px;
-        border: none;
-        border-bottom: 1px solid rgb(118, 113, 113);
-        margin-bottom: 10px;
-        background-color: transparent;
-        padding: 0px 20px;
-        box-sizing: border-box;
-    }
+	.textFormulario {
+		font-size: 0.9em;
+		font-weight: 400;
+		line-height: 1em;
+		color: rgb(126, 121, 121);
+		padding-left: 0.5em;
+	}
 
-    .textArea:focus {
-        outline: none;
-        color: rgb(112, 107, 107);
-    }
+	.esp {
+		margin-top: 5px;
+	}
 
-    .textArea::placeholder {
-        color: rgb(163, 153, 153);
-    }
+	.formContenedor {
+		width: 90%;
+		height: 90%;
+	}
 
-    .textMensaje {
-        resize: none;
-        border: none;
-        min-height: 50px;
-        max-height: 100px;
-        border-radius: 0.5rem;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
+	.textArea {
+		width: 100%;
+		height: 40px;
+		border: none;
+		border-bottom: 1px solid rgb(118, 113, 113);
+		margin-bottom: 10px;
+		background-color: transparent;
+		padding: 0px 20px;
+		box-sizing: border-box;
+	}
 
-    .subFormEnviar {
-        width: 100%;
-        height: 40px;
-        color: white;
-        font-size: medium;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 0.5rem;
-        box-shadow: var(--box-shadow--inicial);
-        background-color: var(--color-base);
-        transition: all ease-in-out 0.3s;
-    }
+	.textArea:focus {
+		outline: none;
+		color: rgb(112, 107, 107);
+	}
 
-    .subFormEnviar {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      
-      .subFormEnviar:hover {
-        background-color: #45a049;
-      }
+	.textArea::placeholder {
+		color: rgb(163, 153, 153);
+	}
 
-    .subFormEnviar:hover {
-        background-color: rgb(29, 133, 236);
-        box-shadow: var(--box-shadow);
-    }
+	.textMensaje {
+		resize: none;
+		border: none;
+		min-height: 50px;
+		max-height: 100px;
+		border-radius: 0.5rem;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		background-color: rgba(255, 255, 255, 0.3);
+	}
 
-    #success {
-        position: relative;
-        text-align: center;
-        font-size: 1em;
-        font-weight: 500;
-        color: rgb(41, 147, 174);
-        width: 100%;
-        height: 34px;
-        border-radius: 0.5rem;
-        -background-color: rgba(22, 203, 106, 0.5);
-    }
+	.subFormEnviar {
+		width: 100%;
+		height: 40px;
+		color: white;
+		font-size: medium;
+		font-weight: bold;
+		cursor: pointer;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow--inicial);
+		background-color: var(--color-base);
+		transition: all ease-in-out 0.3s;
+	}
 
-    p {
-        padding: 0;
-        margin: 0;
-    }
+	.subFormEnviar {
+		background-color: #4caf50;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 16px;
+	}
 
-    hr {
-        border-top: 1px solid rgb(118, 113, 113);
-    }
+	.subFormEnviar:hover {
+		background-color: #45a049;
+	}
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-        h4 {
-            font-size: 1.9em;
-            margin-bottom: 20px;
-        }
+	.subFormEnviar:hover {
+		background-color: rgb(29, 133, 236);
+		box-shadow: var(--box-shadow);
+	}
 
-        .contEsptext{
-            width: 90%;
-        }
+	#success {
+		position: relative;
+		text-align: center;
+		font-size: 1em;
+		font-weight: 500;
+		color: rgb(41, 147, 174);
+		width: 100%;
+		height: 34px;
+		border-radius: 0.5rem;
+		-background-color: rgba(22, 203, 106, 0.5);
+	}
 
-        .subForm {
-            font-size: 1.4em;
-            font-weight: 500;
-            line-height: 1.05em;
-            margin-bottom: 30px; 
-        }
+	p {
+		padding: 0;
+		margin: 0;
+	}
 
-        .textForm {
-            font-size: 0.8em;
-            line-height: 1em;
-            margin-bottom: 0px;
-        }
+	hr {
+		border-top: 1px solid rgb(118, 113, 113);
+	}
 
-        .correoLink {
-            font-size: 0.9em;
-            font-weight: 600;
-            line-height: 1.1em;
-            margin-bottom: 20px;
-        }
+	@media (min-width: 768px) and (max-width: 1024px) {
+		h4 {
+			font-size: 1.9em;
+			margin-bottom: 20px;
+		}
 
-        .textFormulario{
-            font-size: 0.7em;
-            font-weight: bold;
-        }
+		.contEsptext {
+			width: 90%;
+		}
 
-        .textArea{
-            height: 30px;
-        }
+		.subForm {
+			font-size: 1.4em;
+			font-weight: 500;
+			line-height: 1.05em;
+			margin-bottom: 30px;
+		}
 
-       .textMensaje {
-            min-height: 50px;
-            max-height: 90px; 
-            margin-bottom: 10px;
-        }
+		.textForm {
+			font-size: 0.8em;
+			line-height: 1em;
+			margin-bottom: 0px;
+		}
 
-    }
+		.correoLink {
+			font-size: 0.9em;
+			font-weight: 600;
+			line-height: 1.1em;
+			margin-bottom: 20px;
+		}
 
-    @media (min-width: 320px) and (max-width: 767px) {
-        .contForm {
-            width: 100%;
-            height: fit-content;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
-        }
-        .contRapido {
-            flex: calc(100% - 2rem);
-            height: fit-content;
-        }
+		.textFormulario {
+			font-size: 0.7em;
+			font-weight: bold;
+		}
 
-        .contRapidoEsp{
-            justify-content: center;
-            align-items: center;
-        }
+		.textArea {
+			height: 30px;
+		}
 
-        .contEsptext{
-            width: 90%;
-        }
+		.textMensaje {
+			min-height: 50px;
+			max-height: 90px;
+			margin-bottom: 10px;
+		}
+	}
 
-        h4{
-            text-align: left;
-            width: fit-content;
-            font-size: 2em;
-        }
-        .formulario{
-            height: fit-content;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+	@media (min-width: 320px) and (max-width: 767px) {
+		.contForm {
+			width: 100%;
+			height: fit-content;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 4rem;
+		}
+		.contRapido {
+			flex: calc(100% - 2rem);
+			height: fit-content;
+		}
 
-        .formCont{
-            height: fit-content;
-            padding: 30px 0;
-        }
+		.contRapidoEsp {
+			justify-content: center;
+			align-items: center;
+		}
 
-        form{
-            height: fit-content;
-        }
+		.contEsptext {
+			width: 90%;
+		}
 
-        h4{
-            line-height: 1em;
-        }
-    }
+		h4 {
+			text-align: left;
+			width: fit-content;
+			font-size: 2em;
+		}
+		.formulario {
+			height: fit-content;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
 
+		.formCont {
+			height: fit-content;
+			padding: 30px 0;
+		}
 
+		form {
+			height: fit-content;
+		}
+
+		h4 {
+			line-height: 1em;
+		}
+	}
 </style>

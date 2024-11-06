@@ -1,10 +1,36 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
-// import { SITE_TITLE } from '../consts';
+import FormularioActividad from "../components/FormularioActividades.astro";
+
 ---
 
 <header id="navegador" class="navStyle">
+
+
+	<div class="formShow" id="formAct">
+		<div class="formAct" >
+			<div class="formActEsp">
+				<div class="cabeceraFormAct">
+
+					<div class="iconCloseForm" id="closeForm">
+						<i class="bi bi-x-circle circleClose"></i>
+					</div>
+
+					<p class="etiquetaFormAct">
+						<i class="bi bi-opencollective iconFoo"></i> Alumnos DI
+					</p>
+
+					<p class="tituloFormAct">
+						Formulario de Inscripción para Actividades
+					</p>
+				</div>
+				<div class="formActContainer">
+					<FormularioActividad />
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<nav>
 		<input type="checkbox" id="check">
 
@@ -61,7 +87,8 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		</ul>
 
 		<div class="social-links">
-			<a class="btnActividades" href="#">Actividades</a> 
+			
+			<div class="btnActividades" id="formShow">Actividades</div> 
 
 			<a class="btnCampus" href="https://campus.grupodi.cl/" target="_blank">
 				<i class="bi bi-opencollective iconFoo"></i>
@@ -73,7 +100,170 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	</nav>
 </header>
 
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Obtenemos los elementos del DOM
+		const formElement = document.getElementById("formAct");
+		const showButton = document.getElementById("formShow");
+		const closeButton = document.getElementById("closeForm");
+
+		// Verificamos que todos los elementos existan
+		if (!formElement || !showButton || !closeButton) {
+			console.error("No se encontraron todos los elementos necesarios");
+			return;
+		}
+
+		// Aseguramos que los elementos son del tipo correcto
+		if (formElement instanceof HTMLElement && 
+			showButton instanceof HTMLElement && 
+			closeButton instanceof HTMLElement) {
+
+			// Establecemos el estado inicial del formulario
+			formElement.style.display = "none";
+
+			// Función para mostrar el formulario
+			const showForm = () => {
+				formElement.style.display = "block"; // o "flex" dependiendo de tu CSS
+			};
+
+			// Función para ocultar el formulario
+			const hideForm = () => {
+				formElement.style.display = "none";
+			};
+
+			// Agregamos los event listeners
+			showButton.addEventListener("click", showForm);
+			closeButton.addEventListener("click", hideForm);
+		}
+	});
+
+</script>
+
+
 <style>
+
+.formShow{
+		position: absolute;
+		z-index: 100;
+		right: 2%;
+		top: 80px;
+		width: 350px;
+		height: 600px;
+		display: none;
+		transition: all ease-in-out 0.6s;
+	}
+
+	.formAct {
+		height: 600px;
+		display: flex;
+		border-radius: 12px;
+		justify-content: center;
+		align-items: center;
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+			rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+		background-color: rgba(255, 255, 255, 1);
+	}
+
+	.formActEsp {
+		width: 90%;
+		height: 94%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* background-color: rgba(255, 0, 0, 0.15); */
+	}
+
+	.cabeceraFormAct {
+		width: 100%;
+		height: fit-content;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+		margin-bottom: 10px;
+		border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	}
+
+	.formActContainer {
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+		border-radius: 12px;
+		/* border: solid 1px rgba(0, 0, 0, 0.1); */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(107, 109, 112, 0.05);
+	}
+
+	.iconCloseForm {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		-background-color: #007bff;
+	}
+
+	.circleClose {
+		color: rgb(126, 121, 121);
+		font-size: 1.8em;
+	}
+
+	.iconCloseForm:hover .circleClose {
+		color: rgb(181, 77, 77);
+		font-size: 1.8em;
+	}
+
+	.etiquetaFormAct {
+		font-size: 0.8em;
+		font-weight: 500;
+		padding: 2px 15px;
+		border-radius: 2em;
+		color: white;
+		margin: 0;
+		background-color: var(--color-base);
+	}
+
+	.tituloFormAct {
+		width: 100%;
+		text-align: left;
+		font-size: 1.5em;
+		font-weight: 600;
+		line-height: 1em;
+		color: rgb(113, 108, 108);
+	}
+
+	.formActContainer::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	.formActContainer::-webkit-scrollbar-track {
+		border-radius: 10px;
+	}
+
+	/* Handle */
+	.formActContainer::-webkit-scrollbar-thumb {
+		background: rgb(215, 210, 210);
+		border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	.formActContainer::-webkit-scrollbar-thumb:hover {
+		background: var(--color-base);
+	}
+
+	.hidden {
+		display: none;
+	}
 
 	
 	.navStyle {
@@ -315,8 +505,21 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 		font-weight: bold;
 	}
 
+	
+
 	@media (min-width: 768px) and (max-width: 1024px) {
 		
+		.formShow{
+			position: absolute;
+			z-index: 100;
+			right: 10%;
+			top: 80px;
+			width: 350px;
+			height: 600px;
+			display: none;
+			transition: all ease-in-out 0.6s;
+		}
+
 		header{
 			padding: 0 1em;
 		}
@@ -355,6 +558,20 @@ import GrupoIsotipo from "../../public/GrupoIsotipo.astro";
 	}
 
 	@media (max-width: 767px) {
+
+		.formShow{
+			position: absolute;
+			z-index: 100;
+			right: 0;
+			left: 0;
+			top: 90px;
+			width: 90%;
+			margin-left: 2.5%;
+			height: 600px;
+			display: none;
+			transition: all ease-in-out 0.6s;
+		}
+
 		.social-links {
 			display: none;
 		}
